@@ -24,7 +24,7 @@ export function BlurText({
     <MotionComponent className={className}>
       {parts.map((part, index) => (
         <motion.span
-          className="inline-block will-change-[transform,filter,opacity]"
+          className="inline-block max-w-full will-change-[transform,filter,opacity]"
           initial={{ filter: "blur(10px)", opacity: 0, y: 18 }}
           key={`${part}-${index}`}
           transition={{

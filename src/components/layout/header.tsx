@@ -27,10 +27,10 @@ export function Header() {
         />
       ) : null}
 
-      <header className="fixed left-0 right-0 top-3 z-[60] px-4 sm:top-4">
+      <header className="fixed left-0 right-0 top-3 z-[60] px-3 sm:top-4 sm:px-4">
         <div
           className={cn(
-            "mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 py-3 shadow-lg backdrop-blur-xl transition-all duration-300 sm:px-6",
+            "mx-auto flex max-w-6xl items-center justify-between rounded-full px-3 py-2 shadow-lg backdrop-blur-xl transition-all duration-300 sm:px-6 sm:py-3",
             isHome
               ? "border border-[#0f172c]/10 bg-white/90 text-[#0f172c] ring-1 ring-black/5 dark:border-white/15 dark:bg-white/10 dark:text-white"
               : "border border-[#0f172c]/10 bg-white/95 text-[#0f172c] ring-1 ring-black/5 dark:border-white/10 dark:bg-[#111936]/90 dark:text-white"
@@ -39,7 +39,7 @@ export function Header() {
           <Link className="flex items-center px-1" href="/" aria-label={`${site.name} home`}>
             <Image
               alt={site.name}
-              className="h-10 w-auto rounded-md object-contain sm:h-11"
+              className="h-9 w-auto rounded-md object-contain sm:h-11"
               height={1024}
               preload
               src="/assests/logo.png"
@@ -103,7 +103,7 @@ export function Header() {
             aria-expanded={open}
             aria-label="Toggle navigation"
             className={cn(
-              "inline-flex size-10 items-center justify-center rounded-full transition md:hidden",
+              "inline-flex size-10 shrink-0 items-center justify-center rounded-full transition md:hidden",
               isHome
                 ? "bg-[#0f172c]/8 text-[#0f172c] dark:bg-white/10 dark:text-white"
                 : "bg-[#0f172c]/8 text-[#0f172c] dark:text-white"

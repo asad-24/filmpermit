@@ -34,7 +34,7 @@ const chips = [
 export function Hero() {
   return (
     <PointerGlowBackground>
-      <section className="relative z-10 min-h-screen overflow-hidden px-6 pb-16 pt-32 sm:pt-28 md:pt-36">
+      <section className="relative z-10 min-h-screen overflow-hidden px-4 pb-14 pt-28 sm:px-6 sm:pt-28 md:pt-36">
         <div className="pointer-events-none absolute inset-0">
           {floatingIcons.map(({ Icon, label, left, top, depth, duration, delay }) => (
             <div
@@ -54,26 +54,25 @@ export function Hero() {
           ))}
         </div>
 
-        <div className="relative mx-auto flex min-h-[calc(100vh-9rem)] max-w-6xl items-center justify-center">
-          <div className="mx-auto max-w-5xl text-center">
+        <div className="relative mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-6xl items-center justify-center sm:min-h-[calc(100vh-9rem)]">
+          <div className="mx-auto w-full max-w-5xl min-w-0 text-center">
             <FadeContent blur>
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#0f172c]/10 bg-white/80 px-4 py-2 text-[11px] font-black uppercase tracking-[0.16em] text-[#0f172c]/78 shadow-sm backdrop-blur dark:border-white/20 dark:bg-white/10 dark:text-white/88">
+              <div className="mx-auto inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-[#0f172c]/10 bg-white/80 px-3 py-2 text-center text-[10px] font-black uppercase tracking-[0.1em] text-[#0f172c]/78 shadow-sm backdrop-blur sm:px-4 sm:text-[11px] sm:tracking-[0.16em] dark:border-white/20 dark:bg-white/10 dark:text-white/88">
                 FilmPermit.ae
                 <span className="size-1 rounded-full bg-[#2f6df6]" />
                 UAE Filming Support
               </div>
             </FadeContent>
 
-            <h1 className="mt-6 text-4xl font-black leading-[1.02] tracking-normal text-[#0a1024] sm:text-5xl md:text-7xl dark:text-white">
+            <h1 className="mx-auto mt-6 max-w-[20rem] text-[2.35rem] font-black leading-[1.04] tracking-normal text-[#0a1024] sm:max-w-3xl sm:text-5xl md:max-w-5xl md:text-7xl dark:text-white">
               <BlurText
                 as="span"
-                className="justify-center"
+                className="block break-words text-center"
                 text="Apply for UAE Filming"
               />
               <BlurText
                 as="span"
-                by="letters"
-                className="justify-center text-[#0f172c]/88 dark:text-white/90"
+                className="block break-words text-center text-[#0f172c]/88 dark:text-white/90"
                 delay={28}
                 text="& Photography Permits"
               />
@@ -88,18 +87,18 @@ export function Hero() {
             </FadeContent>
 
             <FadeContent className="mt-9" delay={350} blur>
-              <div className="mx-auto max-w-4xl rounded-[28px] border border-[#0f172c]/10 bg-white/82 p-4 text-left shadow-[0_22px_70px_rgba(15,23,44,0.12)] backdrop-blur-md sm:p-5 dark:border-white/15 dark:bg-white/10 dark:shadow-[0_22px_70px_rgba(0,0,0,0.22)]">
+              <div className="mx-auto w-full max-w-4xl rounded-2xl border border-[#0f172c]/10 bg-white/82 p-4 text-left shadow-[0_22px_70px_rgba(15,23,44,0.12)] backdrop-blur-md sm:rounded-[28px] sm:p-5 dark:border-white/15 dark:bg-white/10 dark:shadow-[0_22px_70px_rgba(0,0,0,0.22)]">
                 <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-                  <div className="flex items-start gap-4">
-                    <div className="inline-flex size-14 shrink-0 items-center justify-center rounded-2xl border border-[#0f172c]/10 bg-[#f5f7fb] text-[#2f6df6] dark:border-white/15 dark:bg-white/10">
+                  <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:items-start">
+                    <div className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl border border-[#0f172c]/10 bg-[#f5f7fb] text-[#2f6df6] sm:size-14 dark:border-white/15 dark:bg-white/10">
                       <ShieldCheck className="size-6" />
                     </div>
-                    <div>
-                      <div className="inline-flex items-center gap-2 rounded-full border border-[#0f172c]/10 bg-[#0f172c]/5 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-[#0f172c]/70 dark:border-white/10 dark:bg-black/10 dark:text-white/80">
+                    <div className="min-w-0">
+                      <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-[#0f172c]/10 bg-[#0f172c]/5 px-3 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-[#0f172c]/70 sm:tracking-[0.18em] dark:border-white/10 dark:bg-black/10 dark:text-white/80">
                         <span className="size-2 rounded-full bg-[#2f6df6]" />
                         Featured Service
                       </div>
-                      <h2 className="mt-3 text-xl font-black text-[#0a1024] dark:text-white">
+                      <h2 className="mt-3 max-w-full text-[1.55rem] font-black leading-tight text-[#0a1024] sm:text-xl dark:text-white">
                         UAE filming permit coordination
                       </h2>
                       <p className="mt-2 max-w-2xl text-sm leading-7 text-[#4a5874] dark:text-white/72">
@@ -111,7 +110,7 @@ export function Hero() {
                   </div>
 
                   <Link
-                    className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#2f6df6] px-6 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#5b8cff] hover:shadow-xl"
+                    className="group inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-[#2f6df6] px-6 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#5b8cff] hover:shadow-xl sm:w-auto"
                     href="/contact?type=permit"
                   >
                     Start Application
@@ -137,10 +136,10 @@ export function Hero() {
               </div>
             </FadeContent>
 
-            <div className="mt-8 flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:justify-center sm:overflow-visible">
+            <div className="mt-8 flex max-w-full flex-wrap justify-center gap-2 pb-2">
               {chips.map(({ Icon, text, href }) => (
                 <Link
-                  className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-[#0f172c]/10 bg-white/80 px-3 py-2 text-xs font-semibold text-[#0f172c]/82 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:bg-white dark:border-white/15 dark:bg-white/10 dark:text-white/90 dark:hover:bg-white/15"
+                  className="group inline-flex max-w-full items-center gap-2 rounded-full border border-[#0f172c]/10 bg-white/80 px-3 py-2 text-xs font-semibold text-[#0f172c]/82 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:bg-white dark:border-white/15 dark:bg-white/10 dark:text-white/90 dark:hover:bg-white/15"
                   href={href}
                   key={text}
                 >

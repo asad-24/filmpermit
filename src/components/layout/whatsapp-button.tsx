@@ -10,7 +10,7 @@ export function WhatsAppButton() {
   return (
     <a
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl shadow-[#0f172c]/30 transition hover:scale-105"
+      className="fixed bottom-5 right-5 z-50 hidden size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl shadow-[#0f172c]/30 transition hover:scale-105 sm:flex"
       href={`https://wa.me/${site.whatsapp}?text=${message}`}
       rel="noreferrer"
       target="_blank"

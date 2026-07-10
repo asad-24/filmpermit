@@ -123,12 +123,14 @@
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: clip;
     transition:
       background-color 220ms ease,
       color 220ms ease;
   }
   html {
     @apply font-sans;
+    overflow-x: clip;
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
   }
