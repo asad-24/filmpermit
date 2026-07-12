@@ -11,7 +11,7 @@ type ImageParallaxProps = Omit<ImageProps, "className"> & {
   imageClassName?: string;
 };
 
-export function ImageParallax({ imageClassName, ...props }: ImageParallaxProps) {
+export function ImageParallax({ alt, imageClassName, ...props }: ImageParallaxProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export function ImageParallax({ imageClassName, ...props }: ImageParallaxProps) 
 
   return (
     <div className="absolute inset-0" ref={ref}>
-      <Image className={imageClassName} {...props} />
+      <Image alt={alt} className={imageClassName} {...props} />
     </div>
   );
 }

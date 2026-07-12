@@ -25,8 +25,8 @@ export function AnimatedCounter({
     }
 
     if (prefersReduced) {
-      setValue(end);
-      return;
+      const frame = requestAnimationFrame(() => setValue(end));
+      return () => cancelAnimationFrame(frame);
     }
 
     let frame = 0;
