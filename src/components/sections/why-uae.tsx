@@ -27,10 +27,10 @@ const reasons = [
 export function WhyUAE() {
   return (
     <section className="relative overflow-hidden bg-white px-6 py-20 dark:bg-[#111936]">
-      <div className="pointer-events-none absolute -left-24 top-8 h-72 w-72 rounded-full bg-[#2f6df6]/18 blur-3xl" />
+      <div className="pointer-events-none absolute -left-24 top-8 h-72 w-72 rounded-full bg-[#00a86b]/18 blur-3xl" />
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-[#2f6df6]">
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-[#00a86b]">
             UAE Advantage
           </p>
           <h2 className="mt-3 text-4xl font-black tracking-normal text-[#0f172c] md:text-5xl dark:text-white">
@@ -79,7 +79,7 @@ export function WhyUAE() {
 
               return (
                 <div className="grid grid-cols-[3.5rem_1fr] gap-5" key={reason.title}>
-                  <div className="flex size-12 items-center justify-center rounded-2xl bg-[#0f172c] text-[#2f6df6] dark:bg-[#2f6df6] dark:text-white">
+                  <div className="flex size-12 items-center justify-center rounded-2xl bg-[#0f172c] text-[#00a86b] dark:bg-[#00a86b] dark:text-white">
                     <Icon className="size-5" />
                   </div>
                   <div>

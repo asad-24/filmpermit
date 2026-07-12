@@ -10,7 +10,7 @@ export function CinematicShowcase() {
     <section className="relative overflow-hidden bg-[#f5f7fb] px-6 py-24 dark:bg-[#080e1f]">
       <div className="mx-auto max-w-7xl">
         <RevealSection className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-[#2f6df6]">
+          <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
             Production-ready UAE
           </p>
           <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-6xl dark:text-white">
@@ -35,7 +35,7 @@ export function CinematicShowcase() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050915] via-[#050915]/46 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
-                  <span className="rounded-full border border-white/12 bg-white/10 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-[#9fb8ff] backdrop-blur">
+                  <span className="rounded-full border border-white/12 bg-white/10 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-[#7de8c5] backdrop-blur">
                     {card.eyebrow}
                   </span>
                   <h3 className="mt-4 text-2xl font-black leading-tight text-white">
@@ -52,7 +52,7 @@ export function CinematicShowcase() {
 
         <RevealSection className="mt-12 flex justify-center" delay={200}>
           <Link
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#2f6df6] px-7 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#5b8cff] hover:shadow-xl hover:shadow-[#2f6df6]/20"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#00a86b] px-7 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#18c987] hover:shadow-xl hover:shadow-[#00a86b]/20"
             href="/services"
           >
             See Production Services

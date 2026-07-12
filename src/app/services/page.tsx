@@ -36,13 +36,13 @@ export default function ServicesPage() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.32fr_1fr]">
           <aside className="hidden lg:block">
             <div className="sticky top-28 rounded-[28px] border border-[#0f172c]/10 bg-white/82 p-5 shadow-[0_18px_60px_rgba(15,23,44,0.08)] backdrop-blur dark:border-white/10 dark:bg-white/[0.06]">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-[#2f6df6]">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-[#00a86b]">
                 Core pillars
               </p>
               <nav className="mt-4 grid gap-2">
                 {serviceCards.map((service) => (
                   <Link
-                    className="rounded-2xl px-4 py-3 text-sm font-black text-[#24304a] transition hover:bg-[#2f6df6]/10 hover:text-[#0a1024] dark:text-white/75 dark:hover:bg-white/10 dark:hover:text-white"
+                    className="rounded-2xl px-4 py-3 text-sm font-black text-[#24304a] transition hover:bg-[#00a86b]/10 hover:text-[#0a1024] dark:text-white/75 dark:hover:bg-white/10 dark:hover:text-white"
                     href={service.href}
                     key={service.title}
                   >
@@ -70,7 +70,7 @@ export default function ServicesPage() {
                     />
                   </div>
                   <div className="p-6 md:p-8">
-                    <p className="text-xs font-black uppercase tracking-[0.22em] text-[#2f6df6]">
+                    <p className="text-xs font-black uppercase tracking-[0.22em] text-[#00a86b]">
                       {service.eyebrow}
                     </p>
                     <h2 className="mt-4 text-3xl font-black tracking-normal text-[#0a1024] dark:text-white">
@@ -81,7 +81,7 @@ export default function ServicesPage() {
                     </p>
                     <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                       <Link
-                        className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#2f6df6] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#5b8cff]"
+                        className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#00a86b] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#18c987]"
                         href={`/contact?type=permit&service=${service.href.split("#")[1]}`}
                       >
                         Request This Service
@@ -105,7 +105,7 @@ export default function ServicesPage() {
       <section className="bg-white px-6 py-24 dark:bg-[#0a1024]">
         <div className="mx-auto max-w-7xl">
           <RevealSection className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#2f6df6]">
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
               Full support network
             </p>
             <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
@@ -119,8 +119,8 @@ export default function ServicesPage() {
 
               return (
                 <RevealSection delay={(index % 4) * 70} key={service.id}>
-                  <article className="h-full rounded-[26px] border border-[#0f172c]/10 bg-[#f5f7fb] p-6 transition hover:-translate-y-1 hover:border-[#2f6df6]/40 hover:shadow-[0_18px_60px_rgba(15,23,44,0.08)] dark:border-white/10 dark:bg-white/[0.05]">
-                    <div className="flex size-12 items-center justify-center rounded-2xl bg-[#0a1024] text-[#2f6df6] dark:bg-[#2f6df6] dark:text-white">
+                  <article className="h-full rounded-[26px] border border-[#0f172c]/10 bg-[#f5f7fb] p-6 transition hover:-translate-y-1 hover:border-[#00a86b]/40 hover:shadow-[0_18px_60px_rgba(15,23,44,0.08)] dark:border-white/10 dark:bg-white/[0.05]">
+                    <div className="flex size-12 items-center justify-center rounded-2xl bg-[#0a1024] text-[#00a86b] dark:bg-[#00a86b] dark:text-white">
                       <Icon className="size-5" />
                     </div>
                     <h3 className="mt-6 text-base font-black text-[#0a1024] dark:text-white">

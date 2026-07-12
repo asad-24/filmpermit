@@ -66,7 +66,7 @@ export function BlogEditor({ posts }: { posts: BlogPost[] }) {
       <section className="rounded-[28px] bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,0.06)] ring-1 ring-[#0f172c]/10">
         <div className="flex items-center justify-between gap-4">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#2f6df6]">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#00a86b]">
               Admin
             </p>
             <h1 className="mt-2 text-3xl font-black text-[#0f172c]">
@@ -120,7 +120,7 @@ export function BlogEditor({ posts }: { posts: BlogPost[] }) {
           <label className="grid gap-2 text-sm font-black text-[#0f172c]">
             Excerpt
             <textarea
-              className="min-h-24 rounded-xl border border-[#0f172c]/15 bg-white px-3 py-3 text-sm outline-none focus:border-[#2f6df6] focus:ring-2 focus:ring-[#2f6df6]/20"
+              className="min-h-24 rounded-xl border border-[#0f172c]/15 bg-white px-3 py-3 text-sm outline-none focus:border-[#00a86b] focus:ring-2 focus:ring-[#00a86b]/20"
               name="excerpt"
               required
             />
@@ -128,7 +128,7 @@ export function BlogEditor({ posts }: { posts: BlogPost[] }) {
           <label className="grid gap-2 text-sm font-black text-[#0f172c]">
             Content
             <textarea
-              className="min-h-56 rounded-xl border border-[#0f172c]/15 bg-white px-3 py-3 text-sm outline-none focus:border-[#2f6df6] focus:ring-2 focus:ring-[#2f6df6]/20"
+              className="min-h-56 rounded-xl border border-[#0f172c]/15 bg-white px-3 py-3 text-sm outline-none focus:border-[#00a86b] focus:ring-2 focus:ring-[#00a86b]/20"
               name="content"
               placeholder="Use blank lines between paragraphs."
               required
@@ -136,7 +136,7 @@ export function BlogEditor({ posts }: { posts: BlogPost[] }) {
           </label>
           {error ? <p className="text-sm font-semibold text-red-600">{error}</p> : null}
           <Button
-            className="h-11 rounded-full bg-[#2f6df6] font-black text-white hover:bg-[#5b8cff]"
+            className="h-11 rounded-full bg-[#00a86b] font-black text-white hover:bg-[#18c987]"
             disabled={loading}
             type="submit"
           >
@@ -156,7 +156,7 @@ export function BlogEditor({ posts }: { posts: BlogPost[] }) {
               key={post.slug}
               target="_blank"
             >
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#2f6df6]">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#00a86b]">
                 {post.category}
               </p>
               <h3 className="mt-2 font-black">{post.title}</h3>

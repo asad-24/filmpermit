@@ -29,7 +29,7 @@ export async function BlogCards() {
                 src={post.image}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050915]/56 via-transparent to-transparent" />
-              <Badge className="absolute left-4 top-4 rounded-full bg-[#2f6df6] px-3 py-1 text-white">
+              <Badge className="absolute left-4 top-4 rounded-full bg-[#00a86b] px-3 py-1 text-white">
                 {post.category}
               </Badge>
             </div>

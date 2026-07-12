@@ -63,7 +63,7 @@ export function PointerGlowBackground({ children }: { children: ReactNode }) {
         className="pointer-events-none absolute inset-0 dark:hidden"
         style={{
           backgroundImage: `
-            radial-gradient(820px circle at var(--mxp, 50%) var(--myp, 35%), rgba(47,109,246,.16), transparent 60%),
+            radial-gradient(820px circle at var(--mxp, 50%) var(--myp, 35%), rgba(0,168,107,.16), transparent 60%),
             radial-gradient(700px circle at 82% 20%, rgba(15,23,44,.08), transparent 55%),
             linear-gradient(135deg, #ffffff 0%, #f5f7fb 52%, #e8eefc 100%)
           `,
@@ -75,7 +75,7 @@ export function PointerGlowBackground({ children }: { children: ReactNode }) {
         style={{
           backgroundImage: `
             radial-gradient(800px circle at var(--mxp, 50%) var(--myp, 35%), rgba(255,255,255,.18), transparent 60%),
-            radial-gradient(700px circle at 78% 24%, rgba(47,109,246,.22), transparent 55%),
+            radial-gradient(700px circle at 78% 24%, rgba(0,168,107,.22), transparent 55%),
             linear-gradient(135deg, #0f172c 0%, #18213a 55%, #0a1024 100%)
           `,
         }}

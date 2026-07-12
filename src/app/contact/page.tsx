@@ -44,7 +44,7 @@ export default function ContactPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050915]/88 via-[#050915]/32 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#9fb8ff]">
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#7de8c5]">
                     Before you apply
                   </p>
                   <h2 className="mt-3 text-3xl font-black">
@@ -75,11 +75,11 @@ export default function ContactPage() {
           <RevealSection delay={120}>
             <div className="rounded-[34px] border border-[#0f172c]/10 bg-white p-6 shadow-[0_24px_90px_rgba(15,23,44,0.1)] md:p-8 dark:border-white/10 dark:bg-white/[0.05]">
               <div className="flex items-center gap-3">
-                <span className="flex size-12 items-center justify-center rounded-2xl bg-[#2f6df6] text-white">
+                <span className="flex size-12 items-center justify-center rounded-2xl bg-[#00a86b] text-white">
                   <Timer className="size-5" />
                 </span>
                 <div>
-                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#2f6df6]">
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#00a86b]">
                     Production intake
                   </p>
                   <h2 className="text-2xl font-black text-[#0a1024] dark:text-white">
@@ -117,10 +117,10 @@ function ContactTile({
     "group rounded-2xl border border-[#0f172c]/10 bg-white/82 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_18px_60px_rgba(15,23,44,0.08)] dark:border-white/10 dark:bg-white/[0.06]";
   const content = (
     <>
-      <span className="flex size-11 items-center justify-center rounded-xl bg-[#0a1024] text-[#2f6df6] dark:bg-[#2f6df6] dark:text-white">
+      <span className="flex size-11 items-center justify-center rounded-xl bg-[#0a1024] text-[#00a86b] dark:bg-[#00a86b] dark:text-white">
         {icon}
       </span>
-      <p className="mt-4 text-xs font-black uppercase tracking-[0.2em] text-[#2f6df6]">
+      <p className="mt-4 text-xs font-black uppercase tracking-[0.2em] text-[#00a86b]">
         {label}
       </p>
       <p className="mt-2 text-sm font-semibold text-[#24304a] dark:text-white/72">

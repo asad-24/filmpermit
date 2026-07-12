@@ -18,14 +18,14 @@ export function CTA() {
           src="/images/cta-production-basecamp.png"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,9,21,0.9),rgba(5,9,21,0.62),rgba(5,9,21,0.28))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,109,246,0.3),transparent_24rem)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,168,107,0.3),transparent_24rem)]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-8 rounded-[36px] border border-white/14 bg-white/[0.08] p-6 shadow-[0_30px_100px_rgba(0,0,0,0.34)] backdrop-blur-xl md:grid-cols-[1.2fr_0.8fr] md:items-center md:p-10">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/10 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-white/84">
-              <span className="size-2 rounded-full bg-[#2f6df6]" />
+              <span className="size-2 rounded-full bg-[#00a86b]" />
               Let’s plan your shoot
             </p>
             <h2 className="mt-5 max-w-3xl text-4xl font-black leading-tight tracking-normal md:text-6xl">
@@ -40,7 +40,7 @@ export function CTA() {
 
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-end md:flex-col md:items-end">
             <Link
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2f6df6] px-6 py-4 font-black text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[#5b8cff] hover:shadow-xl sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#00a86b] px-6 py-4 font-black text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[#18c987] hover:shadow-xl sm:w-auto"
               href="/contact?type=permit"
             >
               <Mail className="size-4" />

@@ -22,7 +22,7 @@ export function ServicesList() {
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-5">
                   <span className="flex items-center gap-4">
-                    <span className="flex size-11 items-center justify-center rounded-lg bg-[#0f172c] text-white dark:bg-[#2f6df6] dark:text-[#0a1024]">
+                    <span className="flex size-11 items-center justify-center rounded-lg bg-[#0f172c] text-white dark:bg-[#00a86b] dark:text-[#0a1024]">
                       <Icon className="size-5" />
                     </span>
                     <span className="text-lg font-black text-[#0a1024] dark:text-white">

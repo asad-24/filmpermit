@@ -69,7 +69,7 @@ export default function ArticlePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950/86 via-slate-950/35 to-transparent" />
             <div className="absolute inset-y-0 left-0 flex max-w-md flex-col justify-center p-8 text-white">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#9fb8ff]">
+              <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#7de8c5]">
                 A guide for commercial productions
               </p>
               <h2 className="mt-4 text-3xl font-black leading-tight">

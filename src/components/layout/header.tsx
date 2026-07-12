@@ -54,7 +54,7 @@ export function Header() {
               return (
                 <Link
                   className={cn(
-                    "rounded-full px-3 py-2 text-[#0f172c]/72 transition hover:bg-[#2f6df6]/10 hover:text-[#2f6df6] dark:text-white/78 dark:hover:bg-white/10 dark:hover:text-white",
+                    "rounded-full px-3 py-2 text-[#0f172c]/72 transition hover:bg-[#00a86b]/10 hover:text-[#00a86b] dark:text-white/78 dark:hover:bg-white/10 dark:hover:text-white",
                     active && "bg-[#0f172c]/8 text-[#0f172c] dark:bg-white/12 dark:text-white"
                   )}
                   href={item.href}
@@ -80,7 +80,7 @@ export function Header() {
             <Link
               className={cn(
                 buttonVariants(),
-                "rounded-full bg-[#2f6df6] px-5 font-black text-white hover:-translate-y-0.5 hover:bg-[#5b8cff] hover:shadow-lg"
+                "rounded-full bg-[#00a86b] px-5 font-black text-white hover:-translate-y-0.5 hover:bg-[#18c987] hover:shadow-lg"
               )}
               href="/contact?type=permit"
             >
@@ -133,7 +133,7 @@ export function Header() {
           <div className="grid gap-1 text-[15px] font-black">
             {navItems.map((item) => (
               <Link
-                className="rounded-2xl px-4 py-3 transition hover:bg-[#2f6df6]/15 dark:hover:bg-white/10"
+                className="rounded-2xl px-4 py-3 transition hover:bg-[#00a86b]/15 dark:hover:bg-white/10"
                 href={item.href}
                 key={item.label}
                 onClick={() => setOpen(false)}
@@ -146,7 +146,7 @@ export function Header() {
 
         <div className="border-t border-[#0f172c]/10 p-4 dark:border-white/10">
           <Link
-            className="inline-flex w-full items-center justify-center rounded-full bg-[#2f6df6] px-5 py-3 text-sm font-black text-white"
+            className="inline-flex w-full items-center justify-center rounded-full bg-[#00a86b] px-5 py-3 text-sm font-black text-white"
             href="/contact?type=permit"
             onClick={() => setOpen(false)}
           >

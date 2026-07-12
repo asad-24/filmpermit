@@ -24,11 +24,11 @@ const pillars = [
 export function Mission() {
   return (
     <section className="relative overflow-hidden bg-white px-6 py-24 dark:bg-[#080e1f]" id="about">
-      <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-[#0f172c]/10 blur-3xl dark:bg-[#2f6df6]/12" />
+      <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-[#0f172c]/10 blur-3xl dark:bg-[#00a86b]/12" />
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
         <RevealSection>
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#2f6df6]">
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
               What we make simple
             </p>
             <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-6xl dark:text-white">
@@ -46,7 +46,7 @@ export function Mission() {
                   className="group grid grid-cols-[3.5rem_1fr] gap-4 rounded-2xl border border-[#0f172c]/10 bg-[#f5f7fb]/80 p-4 transition hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_60px_rgba(15,23,44,0.08)] dark:border-white/10 dark:bg-white/[0.05] dark:hover:bg-white/[0.08]"
                   key={pillar.title}
                 >
-                  <div className="flex size-12 items-center justify-center rounded-2xl bg-[#0a1024] text-[#2f6df6] dark:bg-[#2f6df6] dark:text-white">
+                  <div className="flex size-12 items-center justify-center rounded-2xl bg-[#0a1024] text-[#00a86b] dark:bg-[#00a86b] dark:text-white">
                     <Icon className="size-5" />
                   </div>
                   <div>
@@ -75,7 +75,7 @@ export function Mission() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050915]/82 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/12 bg-black/30 p-5 text-white backdrop-blur-xl">
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#9fb8ff]">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#7de8c5]">
                   Local production desk
                 </p>
                 <p className="mt-3 text-2xl font-black">

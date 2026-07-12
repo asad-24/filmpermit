@@ -52,7 +52,7 @@ export function LoginForm() {
       </label>
       {error ? <p className="text-sm font-semibold text-red-600">{error}</p> : null}
       <Button
-        className="h-11 rounded-full bg-[#2f6df6] font-black text-white hover:bg-[#5b8cff]"
+        className="h-11 rounded-full bg-[#00a86b] font-black text-white hover:bg-[#18c987]"
         disabled={loading}
         type="submit"
       >

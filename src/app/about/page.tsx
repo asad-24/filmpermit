@@ -37,7 +37,7 @@ export default function AboutPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050915]/88 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/12 bg-black/30 p-5 text-white backdrop-blur-xl">
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#9fb8ff]">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#7de8c5]">
                   Production-first support
                 </p>
                 <p className="mt-3 text-2xl font-black">
@@ -71,7 +71,7 @@ export default function AboutPage() {
                   "Practical timelines and expectations",
                 ].map((item) => (
                   <span className="flex gap-3 text-sm font-semibold text-[#4a5874] dark:text-white/65" key={item}>
-                    <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-[#2f6df6]" />
+                    <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-[#00a86b]" />
                     {item}
                   </span>
                 ))}
@@ -84,7 +84,7 @@ export default function AboutPage() {
       <section className="bg-[#f5f7fb] px-6 py-24 dark:bg-[#0a1024]">
         <div className="mx-auto max-w-7xl">
           <RevealSection className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#2f6df6]">
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
               Our Operating Values
             </p>
             <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
@@ -99,7 +99,7 @@ export default function AboutPage() {
               return (
                 <RevealSection delay={index * 90} key={value.title}>
                   <article className="h-full rounded-[28px] border border-[#0f172c]/10 bg-white p-6 text-center shadow-[0_18px_60px_rgba(15,23,44,0.07)] transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.05]">
-                    <div className="mx-auto flex size-14 items-center justify-center rounded-2xl bg-[#0a1024] text-[#2f6df6] dark:bg-[#2f6df6] dark:text-white">
+                    <div className="mx-auto flex size-14 items-center justify-center rounded-2xl bg-[#0a1024] text-[#00a86b] dark:bg-[#00a86b] dark:text-white">
                       <Icon className="size-6" />
                     </div>
                     <h3 className="mt-6 text-xl font-black text-[#0a1024] dark:text-white">
@@ -119,7 +119,7 @@ export default function AboutPage() {
       <section className="bg-white px-6 py-24 dark:bg-[#080e1f]">
         <div className="mx-auto max-w-7xl">
           <RevealSection className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#2f6df6]">
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
               How we work
             </p>
             <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
@@ -132,11 +132,11 @@ export default function AboutPage() {
               <RevealSection delay={index * 80} key={step.step}>
                 <article className="h-full rounded-[28px] border border-[#0f172c]/10 bg-[#f5f7fb] p-6 dark:border-white/10 dark:bg-white/[0.05]">
                   <div className="flex items-center justify-between">
-                    <span className="text-3xl font-black text-[#2f6df6]">{step.step}</span>
+                    <span className="text-3xl font-black text-[#00a86b]">{step.step}</span>
                     {index === permitJourney.length - 1 ? (
-                      <BadgeCheck className="size-6 text-[#2f6df6]" />
+                      <BadgeCheck className="size-6 text-[#00a86b]" />
                     ) : (
-                      <ShieldCheck className="size-6 text-[#2f6df6]" />
+                      <ShieldCheck className="size-6 text-[#00a86b]" />
                     )}
                   </div>
                   <h3 className="mt-6 text-xl font-black text-[#0a1024] dark:text-white">

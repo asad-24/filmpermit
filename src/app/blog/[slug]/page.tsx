@@ -98,7 +98,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           </div>
 
           <Link
-            className={cn(buttonVariants({ size: "lg" }), "mt-10 rounded-full bg-[#2f6df6] px-7 font-black text-white hover:bg-[#5b8cff]")}
+            className={cn(buttonVariants({ size: "lg" }), "mt-10 rounded-full bg-[#00a86b] px-7 font-black text-white hover:bg-[#18c987]")}
             href="/contact?type=permit"
           >
             Apply for Permit

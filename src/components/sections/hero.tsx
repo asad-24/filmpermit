@@ -46,13 +46,13 @@ export function Hero() {
           src="/images/cinematic-hero.png"
         />
         <div className="absolute inset-0 z-0 bg-[linear-gradient(90deg,rgba(5,9,21,0.86)_0%,rgba(5,9,21,0.58)_48%,rgba(5,9,21,0.18)_100%)]" />
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_var(--mxp,48%)_var(--myp,35%),rgba(47,109,246,0.32),transparent_28rem)]" />
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_var(--mxp,48%)_var(--myp,35%),rgba(0,168,107,0.32),transparent_28rem)]" />
 
         <div className="pointer-events-none absolute inset-0 z-10 hidden sm:block">
           {floatingIcons.map(({ Icon, label, left, top, depth, duration, delay }) => (
             <div
               aria-label={label}
-              className="floating-icon absolute rounded-3xl border border-white/15 bg-white/10 p-4 text-[#9fb8ff] shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur-md"
+              className="floating-icon absolute rounded-3xl border border-white/15 bg-white/10 p-4 text-[#7de8c5] shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur-md"
               key={label}
               style={{
                 left,
@@ -73,7 +73,7 @@ export function Hero() {
               <FadeContent blur>
                 <div className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.18em] text-white/88 shadow-sm backdrop-blur">
                   FilmPermit.ae
-                  <span className="size-1 rounded-full bg-[#2f6df6]" />
+                  <span className="size-1 rounded-full bg-[#00a86b]" />
                   UAE production support
                 </div>
               </FadeContent>
@@ -101,7 +101,7 @@ export function Hero() {
                   <Link
                     className={cn(
                       buttonVariants({ size: "lg" }),
-                      "h-12 rounded-full bg-[#2f6df6] px-7 font-black text-white hover:-translate-y-0.5 hover:bg-[#5b8cff] hover:shadow-xl hover:shadow-[#2f6df6]/25"
+                      "h-12 rounded-full bg-[#00a86b] px-7 font-black text-white hover:-translate-y-0.5 hover:bg-[#18c987] hover:shadow-xl hover:shadow-[#00a86b]/25"
                     )}
                     href="/contact?type=permit"
                   >
@@ -122,7 +122,7 @@ export function Hero() {
             </div>
 
             <FadeContent className="rounded-[28px] border border-white/15 bg-black/28 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.34)] backdrop-blur-xl" delay={430} blur>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-[#9fb8ff]">
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-[#7de8c5]">
                 Shoot readiness
               </p>
               <div className="mt-5 grid gap-3">
@@ -131,7 +131,7 @@ export function Hero() {
                     className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.07] p-3"
                     key={label}
                   >
-                    <span className="flex size-11 items-center justify-center rounded-xl bg-[#2f6df6] text-white">
+                    <span className="flex size-11 items-center justify-center rounded-xl bg-[#00a86b] text-white">
                       <Icon className="size-5" />
                     </span>
                     <span className="font-black">{label}</span>

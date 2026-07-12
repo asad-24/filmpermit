@@ -24,7 +24,7 @@ export default async function AdminBlogsPage() {
     return (
       <main className="min-h-screen bg-[#f5f7fb] px-6 py-32">
         <section className="mx-auto max-w-2xl rounded-[28px] bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,0.06)] ring-1 ring-[#0f172c]/10">
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-[#2f6df6]">
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-[#00a86b]">
             Database setup required
           </p>
           <h1 className="mt-3 text-3xl font-black text-[#0f172c]">

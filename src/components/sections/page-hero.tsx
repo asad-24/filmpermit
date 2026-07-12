@@ -24,14 +24,14 @@ export function PageHero({
         src={image}
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,9,21,0.9),rgba(5,9,21,0.62),rgba(5,9,21,0.28))]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(47,109,246,0.28),transparent_24rem)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(0,168,107,0.28),transparent_24rem)]" />
       <div
         className={[
           "relative mx-auto max-w-7xl",
           align === "center" ? "text-center" : "",
         ].join(" ")}
       >
-        <p className="text-sm font-black uppercase tracking-[0.24em] text-[#9fb8ff]">
+        <p className="text-sm font-black uppercase tracking-[0.24em] text-[#7de8c5]">
           {eyebrow}
         </p>
         <h1

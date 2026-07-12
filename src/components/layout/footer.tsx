@@ -22,7 +22,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 pt-16">
         <div className="mb-12 grid gap-7 rounded-[34px] border border-[#0f172c]/10 bg-white/82 p-6 shadow-[0_24px_90px_rgba(15,23,44,0.12)] backdrop-blur-xl md:grid-cols-[1fr_0.9fr] md:items-center md:p-8 dark:border-white/10 dark:bg-white/[0.06]">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#2f6df6]">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#00a86b]">
               Production notes
             </p>
             <h2 className="mt-3 text-3xl font-black tracking-normal">
@@ -40,7 +40,7 @@ export function Footer() {
               type="email"
             />
             <Button
-              className="h-12 rounded-full bg-[#2f6df6] px-7 font-black text-white hover:bg-[#5b8cff]"
+              className="h-12 rounded-full bg-[#00a86b] px-7 font-black text-white hover:bg-[#18c987]"
               type="button"
             >
               Subscribe
@@ -65,7 +65,7 @@ export function Footer() {
               production logistics, crew, equipment, and on-ground support.
             </p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#0f172c]/10 bg-white/80 px-4 py-2 text-xs text-[#4a5874] dark:border-white/10 dark:bg-white/5 dark:text-white/80">
-              <span className="size-2 rounded-full bg-[#2f6df6]" />
+              <span className="size-2 rounded-full bg-[#00a86b]" />
               Dubai, UAE
             </div>
           </div>
@@ -86,15 +86,15 @@ export function Footer() {
             <p className="text-sm font-black text-[#0a1024] dark:text-white">Contact Info</p>
             <div className="mt-4 space-y-4 text-sm text-[#4a5874] dark:text-white/78">
               <div className="flex gap-3">
-                <MapPin className="mt-0.5 size-4 flex-none text-[#2f6df6]" />
+                <MapPin className="mt-0.5 size-4 flex-none text-[#00a86b]" />
                 <p>{site.address}</p>
               </div>
               <a className="flex items-center gap-3 transition hover:text-[#0a1024] dark:hover:text-white" href={`mailto:${site.email}`}>
-                <Mail className="size-4 flex-none text-[#2f6df6]" />
+                <Mail className="size-4 flex-none text-[#00a86b]" />
                 {site.email}
               </a>
               <a className="flex items-center gap-3 transition hover:text-[#0a1024] dark:hover:text-white" href={`tel:${site.phone}`}>
-                <Phone className="size-4 flex-none text-[#2f6df6]" />
+                <Phone className="size-4 flex-none text-[#00a86b]" />
                 {site.phone}
               </a>
             </div>

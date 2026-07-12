@@ -5,10 +5,10 @@ import { faqs } from "@/lib/site-data";
 export function FAQ() {
   return (
     <section className="relative overflow-hidden bg-white px-6 py-20 dark:bg-[#080e1f]" id="faq">
-      <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-[#0f172c]/10 blur-3xl dark:bg-[#2f6df6]/12" />
+      <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-[#0f172c]/10 blur-3xl dark:bg-[#00a86b]/12" />
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.7fr_1fr]">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-[#2f6df6]">
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-[#00a86b]">
             FAQ
           </p>
           <h2 className="mt-3 text-4xl font-black tracking-normal text-[#0f172c] md:text-5xl dark:text-white">
@@ -28,7 +28,7 @@ export function FAQ() {
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-5 text-lg font-black text-[#0f172c] dark:text-white">
                 {faq.question}
-                <ChevronDown className="size-5 shrink-0 text-[#2f6df6] transition group-open:rotate-180" />
+                <ChevronDown className="size-5 shrink-0 text-[#00a86b] transition group-open:rotate-180" />
               </summary>
               <p className="mt-4 text-sm leading-7 text-[#4a5874] dark:text-white/60">
                 {faq.answer}

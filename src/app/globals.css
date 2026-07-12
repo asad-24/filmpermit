@@ -61,13 +61,13 @@
   --secondary-foreground: #0a1024;
   --muted: #eef2f8;
   --muted-foreground: #647086;
-  --accent: #2f6df6;
+  --accent: #00a86b;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
   --border: rgba(15, 23, 44, 0.12);
   --input: rgba(15, 23, 44, 0.14);
-  --ring: #2f6df6;
-  --chart-1: #2f6df6;
+  --ring: #00a86b;
+  --chart-1: #00a86b;
   --chart-2: #0f172c;
   --chart-3: #18213a;
   --chart-4: #6d7fa8;
@@ -90,18 +90,18 @@
   --card-foreground: #ffffff;
   --popover: #111936;
   --popover-foreground: #ffffff;
-  --primary: #2f6df6;
+  --primary: #00a86b;
   --primary-foreground: #ffffff;
   --secondary: rgba(255, 255, 255, 0.08);
   --secondary-foreground: #ffffff;
   --muted: rgba(255, 255, 255, 0.08);
   --muted-foreground: rgba(255, 255, 255, 0.66);
-  --accent: #2f6df6;
+  --accent: #00a86b;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.704 0.191 22.216);
   --border: rgba(255, 255, 255, 0.12);
   --input: rgba(255, 255, 255, 0.16);
-  --ring: #2f6df6;
+  --ring: #00a86b;
   --chart-1: oklch(0.78 0.12 164);
   --chart-2: oklch(0.73 0.12 75);
   --chart-3: oklch(0.65 0.12 260);
@@ -138,7 +138,7 @@ html {
 
 .dark body {
   background:
-    radial-gradient(circle at 18% 12%, rgba(47, 109, 246, 0.18), transparent 30rem),
+    radial-gradient(circle at 18% 12%, rgba(0,168,107, 0.18), transparent 30rem),
     radial-gradient(circle at 86% 8%, rgba(255, 255, 255, 0.08), transparent 28rem),
     linear-gradient(135deg, #070c1c 0%, #0f172c 55%, #0a1024 100%);
 }
@@ -150,7 +150,7 @@ html {
 
 .navy-glow::before {
   background:
-    radial-gradient(circle at top right, rgba(47, 109, 246, 0.08), transparent 18rem),
+    radial-gradient(circle at top right, rgba(0,168,107, 0.08), transparent 18rem),
     radial-gradient(circle at bottom left, rgba(15, 23, 44, 0.06), transparent 20rem);
   content: "";
   inset: 0;
@@ -161,7 +161,7 @@ html {
 .dark .navy-glow::before {
   background:
     radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 18rem),
-    radial-gradient(circle at bottom left, rgba(47, 109, 246, 0.22), transparent 20rem);
+    radial-gradient(circle at bottom left, rgba(0,168,107, 0.22), transparent 20rem);
 }
 
 .floating-icon {
@@ -229,11 +229,11 @@ html {
   animation: running-light-spin 3.2s linear infinite;
   background: conic-gradient(
     from 0deg,
-    rgba(47, 109, 246, 0),
-    rgba(47, 109, 246, 0.95),
+    rgba(0,168,107, 0),
+    rgba(0,168,107, 0.95),
     rgba(255, 255, 255, 0.9),
-    rgba(47, 109, 246, 0.2),
-    rgba(47, 109, 246, 0)
+    rgba(0,168,107, 0.2),
+    rgba(0,168,107, 0)
   );
   content: "";
   inset: -120%;
@@ -283,7 +283,7 @@ html {
 
 .fp-preloader {
   background:
-    radial-gradient(circle at 18% 18%, rgba(47, 109, 246, 0.22), transparent 30rem),
+    radial-gradient(circle at 18% 18%, rgba(0,168,107, 0.22), transparent 30rem),
     linear-gradient(135deg, #0f172c 0%, #0a1024 100%);
   color: #ffffff;
   font-family: var(--font-outfit), system-ui, sans-serif;
@@ -322,7 +322,7 @@ html {
 }
 
 .fp-reveal-box {
-  background-color: #2f6df6;
+  background-color: #00a86b;
   border-radius: 999px;
   height: 100%;
   opacity: 0;

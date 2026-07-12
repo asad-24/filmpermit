@@ -7,11 +7,11 @@ import { permitJourney } from "@/lib/site-data";
 export function PermitJourney() {
   return (
     <section className="relative overflow-hidden bg-white px-6 py-24 dark:bg-[#0a1024]">
-      <div className="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-[#2f6df6]/14 blur-3xl" />
+      <div className="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-[#00a86b]/14 blur-3xl" />
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
         <RevealSection>
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#2f6df6]">
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
               Permit Journey
             </p>
             <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-6xl dark:text-white">
@@ -42,10 +42,10 @@ export function PermitJourney() {
                     <RevealSection delay={index * 90} key={item.step}>
                       <article className="group h-full rounded-2xl border border-white/12 bg-white/[0.08] p-4 text-white backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.13]">
                         <div className="flex items-center justify-between gap-3">
-                          <span className="text-xs font-black uppercase tracking-[0.2em] text-[#9fb8ff]">
+                          <span className="text-xs font-black uppercase tracking-[0.2em] text-[#7de8c5]">
                             {item.step}
                           </span>
-                          <ArrowRight className="size-4 text-[#2f6df6] transition group-hover:translate-x-1" />
+                          <ArrowRight className="size-4 text-[#00a86b] transition group-hover:translate-x-1" />
                         </div>
                         <h3 className="mt-3 text-lg font-black">{item.title}</h3>
                         <p className="mt-2 text-sm leading-6 text-white/68">
