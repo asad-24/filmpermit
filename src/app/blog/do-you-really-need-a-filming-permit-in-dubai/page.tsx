@@ -39,8 +39,8 @@ export default function ArticlePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         type="application/ld+json"
       />
-      <main className="bg-[#f5f7fb] pb-4 pt-36 dark:bg-[#0f172c]">
-        <article className="mx-auto max-w-4xl px-6">
+      <main className="bg-[#f5f7fb] px-6 pb-10 pt-36 dark:bg-[#080e1f]">
+        <article className="mx-auto max-w-4xl rounded-[34px] border border-[#0f172c]/10 bg-white/80 p-5 shadow-[0_24px_90px_rgba(15,23,44,0.08)] backdrop-blur md:p-8 dark:border-white/10 dark:bg-white/[0.05]">
           <Link
             className="inline-flex items-center gap-2 text-sm font-black text-[#24304a] hover:text-[#0a1024] dark:text-white/70 dark:hover:text-white"
             href="/blog"
@@ -58,7 +58,7 @@ export default function ArticlePage() {
             {article.title}
           </h1>
 
-          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-lg shadow-2xl shadow-slate-950/10">
+          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[28px] shadow-2xl shadow-slate-950/10">
             <Image
               alt={article.alt}
               className="object-cover"
@@ -82,7 +82,7 @@ export default function ArticlePage() {
             Published: {article.published}
           </p>
 
-          <div className="prose-space mt-16 rounded-lg bg-white/70 px-0 py-2 dark:bg-transparent">
+          <div className="prose-space mt-16 rounded-[28px] bg-white/45 px-0 py-2 dark:bg-transparent">
             {article.sections.map((section) => (
               <section className="mb-20" key={section.heading}>
                 <h2 className="text-3xl font-black tracking-normal text-[#0a1024] dark:text-white">
@@ -112,7 +112,7 @@ export default function ArticlePage() {
             ))}
           </div>
 
-          <div className="mb-20 rounded-lg bg-[#0f172c] p-8 text-center text-white md:p-10">
+          <div className="mb-20 rounded-[28px] bg-[#0a1024] p-8 text-center text-white shadow-[0_18px_60px_rgba(15,23,44,0.18)] md:p-10">
             <h2 className="text-3xl font-black tracking-normal">
               Apply for Your Filming Permit
             </h2>
@@ -123,7 +123,7 @@ export default function ArticlePage() {
             <Link
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "mt-8 bg-white text-[#0a1024] hover:bg-[#dbe7ff]"
+                "mt-8 rounded-full bg-white px-7 font-black text-[#0a1024] hover:bg-[#dbe7ff]"
               )}
               href="/contact?type=permit"
             >

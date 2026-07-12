@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { CheckCircle2, HeartHandshake } from "lucide-react";
+import Image from "next/image";
+import { BadgeCheck, CheckCircle2, HeartHandshake, ShieldCheck } from "lucide-react";
 
+import { RevealSection } from "@/components/motion/reveal-section";
 import { CTA } from "@/components/sections/cta";
-import { stats, values } from "@/lib/site-data";
+import { PageHero } from "@/components/sections/page-hero";
+import { permitJourney, values } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "About",
@@ -13,128 +16,142 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-[#0f172c] px-6 pb-28 pt-40 text-center text-white dark:bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.14),transparent_32rem),#07111f]">
-        <div className="mx-auto max-w-4xl">
-          <h1 className="text-5xl font-black tracking-normal md:text-6xl">
-            About FilmPermit.ae
-          </h1>
-          <p className="mt-6 text-xl leading-8 text-white/65">
-            Your trusted partner for seamless production services across the UAE.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="About FilmPermit.ae"
+        image="/images/cinematic-hero.png"
+        title="A local production desk for ambitious UAE shoots."
+        description="We help creative teams move through permit planning, authority coordination, crew, gear, logistics, and shoot-day support with less uncertainty."
+        align="center"
+      />
 
-      <section className="bg-white px-6 py-20 dark:bg-[#0f172c]">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-center">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#eef2f8] px-4 py-2 text-sm font-semibold text-[#4a5874] dark:bg-white/10 dark:text-white/70">
-              <HeartHandshake className="size-4" />
-              Our Mission
-            </span>
-            <h2 className="mt-6 text-4xl font-black tracking-normal text-[#0a1024] dark:text-white">
-              Making UAE Productions Effortless
-            </h2>
-            <p className="mt-6 text-lg leading-9 text-[#647086] dark:text-white/62">
-              We believe creativity should never be slowed down by uncertainty,
-              paperwork, or unclear processes. Our role is to make filming
-              permissions simple, reliable, and predictable. Behind every permit
-              is a responsibility, and we take that responsibility seriously as
-              a trusted local partner that protects productions, locations, and
-              the integrity of the creative process.
-            </p>
-          </div>
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            {stats.map((item) => (
-              <div
-                className="rounded-lg bg-[#f5f7fb] p-8 text-center dark:bg-white/5"
-                key={item.label}
-              >
-                <div className="text-5xl font-black text-[#24304a] dark:text-white">
-                  {item.value}
-                </div>
-                <p className="mt-3 text-sm font-medium text-[#8490a8]">{item.label}</p>
+      <section className="bg-white px-6 py-24 dark:bg-[#080e1f]">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <RevealSection>
+            <div className="relative min-h-[560px] overflow-hidden rounded-[36px] border border-[#0f172c]/10 shadow-[0_28px_90px_rgba(15,23,44,0.14)] dark:border-white/10">
+              <Image
+                alt="UAE film crew and production support team"
+                className="object-cover"
+                fill
+                sizes="(min-width: 1024px) 48vw, 100vw"
+                src="/images/production-services.png"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050915]/88 via-transparent to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/12 bg-black/30 p-5 text-white backdrop-blur-xl">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#9fb8ff]">
+                  Production-first support
+                </p>
+                <p className="mt-3 text-2xl font-black">
+                  Clear approvals, organized people, reliable logistics.
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          </RevealSection>
+
+          <RevealSection delay={120}>
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#eef2f8] px-4 py-2 text-sm font-black text-[#4a5874] dark:bg-white/10 dark:text-white/70">
+                <HeartHandshake className="size-4" />
+                Our Mission
+              </span>
+              <h2 className="mt-6 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
+                Making UAE productions feel controlled from the first call.
+              </h2>
+              <p className="mt-6 text-lg leading-9 text-[#647086] dark:text-white/62">
+                Creativity should not be slowed by unclear rules, scattered
+                suppliers, or last-minute paperwork. FilmPermit.ae exists to
+                connect the approval path with the actual production plan, so
+                producers know what is possible, what needs time, and what must
+                be prepared before shoot day.
+              </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {[
+                  "Authority-aware permit guidance",
+                  "Production logistics coordination",
+                  "Crew, vendor, and equipment support",
+                  "Practical timelines and expectations",
+                ].map((item) => (
+                  <span className="flex gap-3 text-sm font-semibold text-[#4a5874] dark:text-white/65" key={item}>
+                    <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-[#2f6df6]" />
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </RevealSection>
         </div>
       </section>
 
-      <section className="bg-[#f5f7fb] px-6 py-20 dark:bg-[#0a1024]">
+      <section className="bg-[#f5f7fb] px-6 py-24 dark:bg-[#0a1024]">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="text-4xl font-black tracking-normal text-[#0a1024] dark:text-white">
-              Our Core Values
-            </h2>
-            <p className="mt-4 text-lg text-[#8490a8]">
-              The principles that guide everything we do
+          <RevealSection className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#2f6df6]">
+              Our Operating Values
             </p>
-          </div>
+            <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
+              Built around clarity, accountability, and local integrity.
+            </h2>
+          </RevealSection>
 
-          <div className="mt-14 grid gap-7 md:grid-cols-4">
-            {values.map((value) => {
+          <div className="mt-12 grid gap-6 md:grid-cols-4">
+            {values.map((value, index) => {
               const Icon = value.icon;
 
               return (
-                <div
-                className="rounded-lg bg-white p-8 text-center shadow-sm dark:border dark:border-white/10 dark:bg-white/[0.04]"
-                  key={value.title}
-                >
-                  <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-[#eef2f8] text-[#4a5874] dark:bg-white/10 dark:text-white">
-                    <Icon className="size-7" />
-                  </div>
-                  <h3 className="mt-7 text-xl font-black text-[#0a1024] dark:text-white">
-                    {value.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-[#8490a8]">
-                    {value.description}
-                  </p>
-                </div>
+                <RevealSection delay={index * 90} key={value.title}>
+                  <article className="h-full rounded-[28px] border border-[#0f172c]/10 bg-white p-6 text-center shadow-[0_18px_60px_rgba(15,23,44,0.07)] transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.05]">
+                    <div className="mx-auto flex size-14 items-center justify-center rounded-2xl bg-[#0a1024] text-[#2f6df6] dark:bg-[#2f6df6] dark:text-white">
+                      <Icon className="size-6" />
+                    </div>
+                    <h3 className="mt-6 text-xl font-black text-[#0a1024] dark:text-white">
+                      {value.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-[#647086] dark:text-white/58">
+                      {value.description}
+                    </p>
+                  </article>
+                </RevealSection>
               );
             })}
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20 dark:bg-[#0f172c]">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
-          <div className="rounded-lg bg-[#f5f7fb] p-8 dark:bg-white/5">
-            <h2 className="flex items-center gap-3 text-xl font-black text-[#0a1024] dark:text-white">
-              <HeartHandshake className="size-5 text-[#647086]" />
-              Why Choose FilmPermit.ae
-            </h2>
-            <div className="mt-8 grid gap-5 text-sm text-[#647086] sm:grid-cols-2 dark:text-white/60">
-              {[
-                "Expertise in UAE filming and photography permits",
-                "Fast and hassle-free approval guidance",
-                "Tailored support for every production",
-                "Trusted by professionals and brands",
-                "Transparent guidance and support",
-                "Multilingual production coordination",
-              ].map((item) => (
-                <span className="flex gap-3" key={item}>
-                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-[#647086]" />
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-4xl font-black tracking-normal text-[#0a1024] dark:text-white">
-              We&apos;ve Got You Covered
-            </h2>
-            <p className="mt-6 text-lg leading-9 text-[#647086] dark:text-white/62">
-              Our team simplifies the UAE film and photography permit process,
-              handling approvals for projects from social media content to
-              large commercial productions. With local knowledge, fast
-              coordination, and a multilingual team, we help your project run
-              smoothly, legally, and on schedule from first inquiry through the
-              final wrap.
+      <section className="bg-white px-6 py-24 dark:bg-[#080e1f]">
+        <div className="mx-auto max-w-7xl">
+          <RevealSection className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#2f6df6]">
+              How we work
             </p>
+            <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
+              One practical path from brief to shoot.
+            </h2>
+          </RevealSection>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-4">
+            {permitJourney.map((step, index) => (
+              <RevealSection delay={index * 80} key={step.step}>
+                <article className="h-full rounded-[28px] border border-[#0f172c]/10 bg-[#f5f7fb] p-6 dark:border-white/10 dark:bg-white/[0.05]">
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl font-black text-[#2f6df6]">{step.step}</span>
+                    {index === permitJourney.length - 1 ? (
+                      <BadgeCheck className="size-6 text-[#2f6df6]" />
+                    ) : (
+                      <ShieldCheck className="size-6 text-[#2f6df6]" />
+                    )}
+                  </div>
+                  <h3 className="mt-6 text-xl font-black text-[#0a1024] dark:text-white">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-[#647086] dark:text-white/58">
+                    {step.description}
+                  </p>
+                </article>
+              </RevealSection>
+            ))}
           </div>
         </div>
       </section>
+
       <CTA />
     </>
   );

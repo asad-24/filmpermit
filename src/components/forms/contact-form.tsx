@@ -40,19 +40,19 @@ export function ContactForm() {
   return (
     <form className="grid gap-4" onSubmit={handleSubmit}>
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-semibold text-[#24304a] dark:text-white/75">
+        <label className="grid gap-2 text-sm font-black text-[#24304a] dark:text-white/75">
           Full name
           <Input
-            className="h-11 bg-white dark:border-white/10 dark:bg-white/[0.06] dark:text-white"
+            className="h-12 rounded-2xl bg-[#f5f7fb] dark:border-white/10 dark:bg-white/[0.06] dark:text-white"
             name="name"
             placeholder="Your name"
             required
           />
         </label>
-        <label className="grid gap-2 text-sm font-semibold text-[#24304a] dark:text-white/75">
+        <label className="grid gap-2 text-sm font-black text-[#24304a] dark:text-white/75">
           Email
           <Input
-            className="h-11 bg-white dark:border-white/10 dark:bg-white/[0.06] dark:text-white"
+            className="h-12 rounded-2xl bg-[#f5f7fb] dark:border-white/10 dark:bg-white/[0.06] dark:text-white"
             name="email"
             placeholder="you@company.com"
             required
@@ -61,18 +61,18 @@ export function ContactForm() {
         </label>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-semibold text-[#24304a] dark:text-white/75">
+        <label className="grid gap-2 text-sm font-black text-[#24304a] dark:text-white/75">
           Phone / WhatsApp
           <Input
-            className="h-11 bg-white dark:border-white/10 dark:bg-white/[0.06] dark:text-white"
+            className="h-12 rounded-2xl bg-[#f5f7fb] dark:border-white/10 dark:bg-white/[0.06] dark:text-white"
             name="phone"
             placeholder="+971 ..."
           />
         </label>
-        <label className="grid gap-2 text-sm font-semibold text-[#24304a] dark:text-white/75">
+        <label className="grid gap-2 text-sm font-black text-[#24304a] dark:text-white/75">
           Service needed
           <select
-            className="h-11 rounded-lg border border-input bg-white px-3 text-sm outline-none transition focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 dark:border-white/10 dark:bg-[#0a1024] dark:text-white"
+            className="h-12 rounded-2xl border border-input bg-[#f5f7fb] px-3 text-sm outline-none transition focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 dark:border-white/10 dark:bg-white/[0.06] dark:text-white"
             name="service"
           >
             <option>Apply for a permit</option>
@@ -84,16 +84,16 @@ export function ContactForm() {
           </select>
         </label>
       </div>
-      <label className="grid gap-2 text-sm font-semibold text-[#24304a] dark:text-white/75">
+      <label className="grid gap-2 text-sm font-black text-[#24304a] dark:text-white/75">
         Project details
         <textarea
-          className="min-h-36 rounded-lg border border-input bg-white px-3 py-3 text-sm outline-none transition placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 dark:border-white/10 dark:bg-white/[0.06] dark:text-white"
+          className="min-h-40 rounded-2xl border border-input bg-[#f5f7fb] px-4 py-4 text-sm outline-none transition placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 dark:border-white/10 dark:bg-white/[0.06] dark:text-white"
           name="message"
           placeholder="Shoot dates, locations, crew size, equipment, drone use, and any urgent deadlines."
           required
         />
       </label>
-      <Button className="h-11 w-full sm:w-fit" type="submit">
+      <Button className="h-12 w-full rounded-full bg-[#2f6df6] px-7 font-black text-white hover:bg-[#5b8cff] sm:w-fit" type="submit">
         Send Enquiry
         <Send className="size-4" />
       </Button>

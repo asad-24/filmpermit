@@ -60,8 +60,8 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
   return (
     <>
-      <main className="bg-[#f5f7fb] px-6 pb-20 pt-36 dark:bg-[#0f172c]">
-        <article className="mx-auto max-w-4xl">
+      <main className="bg-[#f5f7fb] px-6 pb-24 pt-36 dark:bg-[#080e1f]">
+        <article className="mx-auto max-w-4xl rounded-[34px] border border-[#0f172c]/10 bg-white/80 p-5 shadow-[0_24px_90px_rgba(15,23,44,0.08)] backdrop-blur md:p-8 dark:border-white/10 dark:bg-white/[0.05]">
           <Link
             className="inline-flex items-center gap-2 text-sm font-black text-[#24304a] hover:text-[#0a1024] dark:text-white/70 dark:hover:text-white"
             href="/blog"
@@ -76,7 +76,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           <h1 className="mt-5 text-4xl font-black leading-tight tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
             {post.title}
           </h1>
-          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-lg shadow-2xl shadow-slate-950/10">
+          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[28px] shadow-2xl shadow-slate-950/10">
             <Image
               alt={post.alt}
               className="object-cover"
@@ -98,7 +98,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           </div>
 
           <Link
-            className={cn(buttonVariants({ size: "lg" }), "mt-10")}
+            className={cn(buttonVariants({ size: "lg" }), "mt-10 rounded-full bg-[#2f6df6] px-7 font-black text-white hover:bg-[#5b8cff]")}
             href="/contact?type=permit"
           >
             Apply for Permit

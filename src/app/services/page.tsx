@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BedDouble, Building2, Clock3, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
+import { RevealSection } from "@/components/motion/reveal-section";
 import { CTA } from "@/components/sections/cta";
+import { PageHero } from "@/components/sections/page-hero";
+import { allServices, serviceCards } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -11,151 +14,123 @@ export const metadata: Metadata = {
     "Explore UAE filming permits, photography permits, customs clearance, crew hire, equipment rental, drone support, location scouting, logistics, and full production support.",
 };
 
-const featuredServices = [
-  {
-    id: "permits",
-    title: "Permits",
-    description:
-      "Paperwork is not creative, but it should not slow creativity either. We handle filming and photography approvals so your team can focus on the shoot.",
-    image: "/images/service-permits.png",
-    alt: "Approved filming permit paperwork and production checklist",
-  },
-  {
-    id: "customs-clearance",
-    title: "Customs Clearance",
-    description:
-      "Your gear should land ready, not stuck. We coordinate equipment documentation, airport handling, and customs support for visiting productions.",
-    image: "/images/service-customs.png",
-    alt: "Production crew clearing filming equipment through UAE customs",
-  },
-  {
-    id: "crew-hire",
-    title: "Crew Hire",
-    description:
-      "Need people who actually know the ground? We connect you with local crew, fixers, assistants, drivers, and production support teams.",
-    image: "/images/service-crew.png",
-    alt: "Film crew preparing camera equipment in Dubai",
-  },
-  {
-    id: "equipment-rental",
-    title: "Equipment Rental",
-    description:
-      "The right gear, when you need it. We help source reliable cameras, lenses, lighting, grip, sound, drone, and support equipment locally.",
-    image: "/images/service-equipment.png",
-    alt: "Professional filming equipment and camera rental setup",
-  },
-];
-
-const additionalServices = [
-  {
-    title: "Studio Booking",
-    description: "Access to production studios and controlled shoot spaces across the UAE.",
-    icon: Building2,
-  },
-  {
-    title: "Accommodation",
-    description: "Crew housing and talent accommodation coordination for visiting teams.",
-    icon: BedDouble,
-  },
-  {
-    title: "24/7 Support",
-    description: "Round-the-clock assistance during active production windows.",
-    icon: Clock3,
-  },
-  {
-    title: "Insurance",
-    description: "Production insurance and liability coverage coordination.",
-    icon: ShieldCheck,
-  },
+const serviceImages = [
+  "/images/permit-journey.png",
+  "/images/production-services.png",
+  "/images/uae-locations-showcase.png",
+  "/images/cta-production-basecamp.png",
 ];
 
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-[#0f172c] px-6 pb-24 pt-36 text-center text-white">
-        <div className="mx-auto max-w-4xl">
-          <h1 className="text-4xl font-black leading-tight tracking-normal md:text-6xl">
-            UAE Filming & Production Services
-          </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/62 md:text-lg">
-            From permits to post-production support, we provide everything you
-            need for a successful shoot in the UAE.
-          </p>
+      <PageHero
+        eyebrow="Production Services"
+        image="/images/production-services.png"
+        title="Everything a UAE shoot needs before cameras roll."
+        description="Permits, approvals, customs, crew, equipment, locations, transport, vendors, and on-ground production coordination from one local partner."
+        align="center"
+      />
+
+      <section className="bg-[#f5f7fb] px-6 py-24 dark:bg-[#080e1f]">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.32fr_1fr]">
+          <aside className="hidden lg:block">
+            <div className="sticky top-28 rounded-[28px] border border-[#0f172c]/10 bg-white/82 p-5 shadow-[0_18px_60px_rgba(15,23,44,0.08)] backdrop-blur dark:border-white/10 dark:bg-white/[0.06]">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-[#2f6df6]">
+                Core pillars
+              </p>
+              <nav className="mt-4 grid gap-2">
+                {serviceCards.map((service) => (
+                  <Link
+                    className="rounded-2xl px-4 py-3 text-sm font-black text-[#24304a] transition hover:bg-[#2f6df6]/10 hover:text-[#0a1024] dark:text-white/75 dark:hover:bg-white/10 dark:hover:text-white"
+                    href={service.href}
+                    key={service.title}
+                  >
+                    {service.eyebrow}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </aside>
+
+          <div className="grid gap-8">
+            {serviceCards.map((service, index) => (
+              <RevealSection delay={index * 90} key={service.title}>
+                <article
+                  className="grid overflow-hidden rounded-[34px] border border-[#0f172c]/10 bg-white shadow-[0_22px_80px_rgba(15,23,44,0.1)] dark:border-white/10 dark:bg-white/[0.05] lg:grid-cols-[0.92fr_1.08fr]"
+                  id={service.href.split("#")[1]}
+                >
+                  <div className="relative min-h-[320px] overflow-hidden">
+                    <Image
+                      alt={service.alt}
+                      className="object-cover transition duration-700 hover:scale-105"
+                      fill
+                      sizes="(min-width: 1024px) 38vw, 100vw"
+                      src={serviceImages[index] ?? service.image}
+                    />
+                  </div>
+                  <div className="p-6 md:p-8">
+                    <p className="text-xs font-black uppercase tracking-[0.22em] text-[#2f6df6]">
+                      {service.eyebrow}
+                    </p>
+                    <h2 className="mt-4 text-3xl font-black tracking-normal text-[#0a1024] dark:text-white">
+                      {service.title}
+                    </h2>
+                    <p className="mt-4 text-base leading-8 text-[#4a5874] dark:text-white/62">
+                      {service.description}
+                    </p>
+                    <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                      <Link
+                        className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#2f6df6] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#5b8cff]"
+                        href={`/contact?type=permit&service=${service.href.split("#")[1]}`}
+                      >
+                        Request This Service
+                        <ArrowRight className="size-4" />
+                      </Link>
+                      <Link
+                        className="inline-flex h-12 items-center justify-center rounded-full border border-[#0f172c]/15 px-6 text-sm font-black text-[#0a1024] transition hover:-translate-y-0.5 hover:bg-[#0a1024] hover:text-white dark:border-white/20 dark:text-white dark:hover:bg-white dark:hover:text-[#0a1024]"
+                        href="/contact"
+                      >
+                        Talk to Producer Desk
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              </RevealSection>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-[#f5f7fb] px-6 py-20 dark:bg-[#080e1f]">
-        <div className="mx-auto max-w-6xl space-y-20">
-          {featuredServices.map((service, index) => (
-            <article
-              className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10 lg:gap-14"
-              id={service.id}
-              key={service.id}
-            >
-              <div className={index % 2 === 1 ? "md:order-2" : undefined}>
-                <div className="relative aspect-[1.7/1] overflow-hidden rounded-xl shadow-[0_18px_50px_rgba(15,23,44,0.10)] ring-1 ring-[#0f172c]/10 dark:ring-white/10">
-                  <Image
-                    alt={service.alt}
-                    className="object-cover transition duration-500 hover:scale-[1.03]"
-                    fill
-                    sizes="(min-width: 1024px) 520px, 100vw"
-                    src={service.image}
-                  />
-                </div>
-              </div>
+      <section className="bg-white px-6 py-24 dark:bg-[#0a1024]">
+        <div className="mx-auto max-w-7xl">
+          <RevealSection className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#2f6df6]">
+              Full support network
+            </p>
+            <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
+              The details that make production smoother.
+            </h2>
+          </RevealSection>
 
-              <div className={index % 2 === 1 ? "md:order-1" : undefined}>
-                <h2 className="text-2xl font-black text-[#0a1024] dark:text-white">
-                  {service.title}
-                </h2>
-                <p className="mt-4 max-w-xl text-sm leading-7 text-[#8490a8] dark:text-white/58">
-                  {service.description}
-                </p>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <Link
-                    className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-[#0f172c] px-5 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#19233f]"
-                    href={`/services#${service.id}`}
-                  >
-                    View Service
-                    <ArrowRight className="size-4" />
-                  </Link>
-                  <Link
-                    className="inline-flex h-11 items-center justify-center rounded-lg border border-[#0f172c] px-5 text-sm font-black text-[#0f172c] transition hover:-translate-y-0.5 hover:bg-[#0f172c] hover:text-white dark:border-white/20 dark:text-white dark:hover:bg-white dark:hover:text-[#0f172c]"
-                    href={`/contact?type=permit&service=${service.id}`}
-                  >
-                    Request This Service
-                  </Link>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-white px-6 py-20 dark:bg-[#0a1024]">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-black text-[#0a1024] dark:text-white">
-            Additional Services
-          </h2>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {additionalServices.map((service) => {
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {allServices.map((service, index) => {
               const Icon = service.icon;
 
               return (
-                <div
-                  className="rounded-xl border border-[#0f172c]/12 bg-[#f5f7fb] p-6 transition hover:-translate-y-1 hover:border-[#2f6df6]/40 hover:shadow-[0_16px_40px_rgba(15,23,44,0.08)] dark:border-white/10 dark:bg-white/[0.04]"
-                  key={service.title}
-                >
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-[#e8eefc] text-[#2f6df6] dark:bg-white/10">
-                    <Icon className="size-5" />
-                  </div>
-                  <h3 className="mt-7 text-sm font-black text-[#0a1024] dark:text-white">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-[#8490a8] dark:text-white/55">
-                    {service.description}
-                  </p>
-                </div>
+                <RevealSection delay={(index % 4) * 70} key={service.id}>
+                  <article className="h-full rounded-[26px] border border-[#0f172c]/10 bg-[#f5f7fb] p-6 transition hover:-translate-y-1 hover:border-[#2f6df6]/40 hover:shadow-[0_18px_60px_rgba(15,23,44,0.08)] dark:border-white/10 dark:bg-white/[0.05]">
+                    <div className="flex size-12 items-center justify-center rounded-2xl bg-[#0a1024] text-[#2f6df6] dark:bg-[#2f6df6] dark:text-white">
+                      <Icon className="size-5" />
+                    </div>
+                    <h3 className="mt-6 text-base font-black text-[#0a1024] dark:text-white">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-6 text-[#647086] dark:text-white/55">
+                      {service.description}
+                    </p>
+                  </article>
+                </RevealSection>
               );
             })}
           </div>

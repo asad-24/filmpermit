@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, MessageCircle, Phone, Timer } from "lucide-react";
 
 import { ContactForm } from "@/components/forms/contact-form";
-import { buttonVariants } from "@/components/ui/button";
+import { RevealSection } from "@/components/motion/reveal-section";
+import { PageHero } from "@/components/sections/page-hero";
 import { site } from "@/lib/site-data";
-import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -12,92 +13,127 @@ export const metadata: Metadata = {
     "Contact FilmPermit.ae for UAE filming permits, photography permits, production logistics, equipment support, and on-ground production coordination.",
 };
 
+const intake = [
+  "Shoot dates and timing",
+  "Locations and emirate",
+  "Crew size and equipment",
+  "Drone, roads, talent, or sensitive locations",
+];
+
 export default function ContactPage() {
-  const whatsappMessage = encodeURIComponent(
-    "Hello, I want to apply for a UAE filming or photography permit."
-  );
-
   return (
-    <main className="bg-[#f5f7fb] dark:bg-[#0f172c]">
-      <section className="bg-[#0f172c] px-6 pb-16 pt-40 text-white">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#9fb8ff]">
-            Contact
-          </p>
-          <h1 className="mt-4 max-w-4xl text-5xl font-black leading-tight tracking-normal md:text-6xl">
-            Tell us what you need to film in the UAE.
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
-            Send dates, locations, crew size, equipment, drone requirements, and
-            deadlines. We will help map the right permit and support plan.
-          </p>
-        </div>
-      </section>
+    <main className="bg-[#f5f7fb] dark:bg-[#080e1f]">
+      <PageHero
+        eyebrow="Apply / Contact"
+        image="/images/permit-journey.png"
+        title="Tell us what you need to film in the UAE."
+        description="Send the production essentials once. We will help map the right permit route, support requirements, and next steps."
+      />
 
-      <section className="px-6 py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="space-y-6">
-            <div className="rounded-lg border border-[#0f172c]/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
-              <h2 className="text-2xl font-black text-[#0a1024] dark:text-white">
-                Company Details
-              </h2>
-              <div className="mt-6 grid gap-4 text-sm text-[#4a5874] dark:text-white/62">
-                <a
-                  className="flex items-center gap-3 hover:text-[#0a1024] dark:hover:text-white"
-                  href={`mailto:${site.email}`}
-                >
-                  <Mail className="size-5 text-[#8490a8] dark:text-[#9fb8ff]" />
-                  {site.email}
-                </a>
-                <a
-                  className="flex items-center gap-3 hover:text-[#0a1024] dark:hover:text-white"
-                  href={`tel:${site.phone}`}
-                >
-                  <Phone className="size-5 text-[#8490a8] dark:text-[#9fb8ff]" />
-                  {site.phone}
-                </a>
-                <span className="flex items-center gap-3">
-                  <MapPin className="size-5 text-[#8490a8] dark:text-[#9fb8ff]" />
-                  {site.address}
-                </span>
+      <section className="px-6 py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <RevealSection>
+            <div className="space-y-6">
+              <div className="relative min-h-[460px] overflow-hidden rounded-[34px] border border-[#0f172c]/10 shadow-[0_28px_90px_rgba(15,23,44,0.14)] dark:border-white/10">
+                <Image
+                  alt="UAE production planning and permit desk"
+                  className="object-cover"
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  src="/images/permit-journey.png"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050915]/88 via-[#050915]/32 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#9fb8ff]">
+                    Before you apply
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black">
+                    A better brief creates a faster path.
+                  </h2>
+                  <div className="mt-5 grid gap-2">
+                    {intake.map((item) => (
+                      <span
+                        className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold backdrop-blur"
+                        key={item}
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <ContactTile icon={<Mail className="size-5" />} label="Email" value={site.email} href={`mailto:${site.email}`} />
+                <ContactTile icon={<Phone className="size-5" />} label="Phone" value={site.phone} href={`tel:${site.phone}`} />
+                <ContactTile icon={<MessageCircle className="size-5" />} label="WhatsApp" value="Start a chat" href={`https://wa.me/${site.whatsapp}`} />
+                <ContactTile icon={<MapPin className="size-5" />} label="Base" value={site.address} />
               </div>
             </div>
+          </RevealSection>
 
-            <div className="rounded-lg bg-[#0f172c] p-6 text-white">
-              <h2 className="text-2xl font-black">Apply for a Permit</h2>
-              <p className="mt-3 text-sm leading-7 text-white/65">
-                Need permit help urgently? Start on WhatsApp and include your
-                production date, location, and content type.
+          <RevealSection delay={120}>
+            <div className="rounded-[34px] border border-[#0f172c]/10 bg-white p-6 shadow-[0_24px_90px_rgba(15,23,44,0.1)] md:p-8 dark:border-white/10 dark:bg-white/[0.05]">
+              <div className="flex items-center gap-3">
+                <span className="flex size-12 items-center justify-center rounded-2xl bg-[#2f6df6] text-white">
+                  <Timer className="size-5" />
+                </span>
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#2f6df6]">
+                    Production intake
+                  </p>
+                  <h2 className="text-2xl font-black text-[#0a1024] dark:text-white">
+                    Project Enquiry
+                  </h2>
+                </div>
+              </div>
+              <p className="mt-4 text-sm leading-7 text-[#647086] dark:text-white/58">
+                The form opens your email client with the enquiry details ready
+                to send to our team.
               </p>
-              <a
-                className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "mt-6 bg-white text-[#0a1024] hover:bg-[#dbe7ff]"
-                )}
-                href={`https://wa.me/${site.whatsapp}?text=${whatsappMessage}`}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <MessageCircle className="size-4" />
-                Apply on WhatsApp
-              </a>
+              <div className="mt-7">
+                <ContactForm />
+              </div>
             </div>
-          </div>
-
-          <div className="rounded-lg border border-[#0f172c]/10 bg-white p-6 shadow-sm md:p-8 dark:border-white/10 dark:bg-white/[0.04]">
-            <h2 className="text-2xl font-black text-[#0a1024] dark:text-white">
-              Project Enquiry
-            </h2>
-            <p className="mt-2 text-sm leading-7 text-[#647086] dark:text-white/58">
-              The form opens your email client with the enquiry details ready to
-              send to our team.
-            </p>
-            <div className="mt-7">
-              <ContactForm />
-            </div>
-          </div>
+          </RevealSection>
         </div>
       </section>
     </main>
+  );
+}
+
+function ContactTile({
+  href,
+  icon,
+  label,
+  value,
+}: {
+  href?: string;
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+}) {
+  const className =
+    "group rounded-2xl border border-[#0f172c]/10 bg-white/82 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_18px_60px_rgba(15,23,44,0.08)] dark:border-white/10 dark:bg-white/[0.06]";
+  const content = (
+    <>
+      <span className="flex size-11 items-center justify-center rounded-xl bg-[#0a1024] text-[#2f6df6] dark:bg-[#2f6df6] dark:text-white">
+        {icon}
+      </span>
+      <p className="mt-4 text-xs font-black uppercase tracking-[0.2em] text-[#2f6df6]">
+        {label}
+      </p>
+      <p className="mt-2 text-sm font-semibold text-[#24304a] dark:text-white/72">
+        {value}
+      </p>
+    </>
+  );
+
+  return href ? (
+    <a className={className} href={href} rel="noreferrer" target={href.startsWith("http") ? "_blank" : undefined}>
+      {content}
+    </a>
+  ) : (
+    <div className={className}>{content}</div>
   );
 }

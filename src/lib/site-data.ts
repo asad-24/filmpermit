@@ -40,12 +40,103 @@ export const stats = [
   { value: "7", label: "Emirates Covered" },
 ];
 
+export const trustMetrics = [
+  { value: 200, suffix: "+", label: "productions guided", detail: "Commercial, documentary, creator, and broadcast teams." },
+  { value: 7, suffix: "", label: "emirates covered", detail: "Dubai, Abu Dhabi, Sharjah, and wider UAE coordination." },
+  { value: 24, suffix: "/7", label: "shoot-window support", detail: "Urgent guidance for permits, crew, gear, and logistics." },
+  { value: 99, suffix: "%", label: "clarity before shoot day", detail: "Practical expectations before paperwork moves." },
+];
+
+export const permitJourney = [
+  {
+    step: "01",
+    title: "Brief Intake",
+    description:
+      "We map your shoot dates, locations, crew size, equipment list, drone needs, and final usage.",
+  },
+  {
+    step: "02",
+    title: "Documents & Route",
+    description:
+      "Your production gets a clear permit route with the right authority requirements and supporting paperwork.",
+  },
+  {
+    step: "03",
+    title: "Authority Coordination",
+    description:
+      "We coordinate submissions, location approvals, follow-ups, and practical production constraints.",
+  },
+  {
+    step: "04",
+    title: "Shoot-Day Support",
+    description:
+      "Crew, equipment, transport, vendors, and on-ground support stay aligned so your team can create.",
+  },
+];
+
+export const showcaseCards = [
+  {
+    title: "Locations with range",
+    eyebrow: "UAE locations",
+    image: "/images/uae-locations-showcase.png",
+    description:
+      "Desert roads, skylines, coastline, heritage districts, studios, hotels, and controlled environments.",
+  },
+  {
+    title: "Crew and gear that move",
+    eyebrow: "Production support",
+    image: "/images/production-services.png",
+    description:
+      "Local crew, fixers, camera, lighting, grip, drone, sound, transport, and vendor coordination.",
+  },
+  {
+    title: "Paperwork with a plan",
+    eyebrow: "Permit planning",
+    image: "/images/permit-journey.png",
+    description:
+      "Clear requirements, realistic timelines, location approvals, and shoot-specific compliance guidance.",
+  },
+];
+
+export const testimonials = [
+  {
+    quote:
+      "The team gave us a clear permit path, helped with location coordination, and kept the shoot moving under a tight timeline.",
+    name: "Commercial Producer",
+    role: "International brand shoot",
+  },
+  {
+    quote:
+      "We arrived with equipment, crew, and a changing schedule. FilmPermit.ae helped us understand what needed approval first.",
+    name: "Line Producer",
+    role: "Documentary unit",
+  },
+  {
+    quote:
+      "The process felt organized from the first brief. We knew what to prepare, what would take time, and who was handling each step.",
+    name: "Agency Lead",
+    role: "Campaign production",
+  },
+];
+
+export const productionPartners = [
+  "Permits",
+  "Crew",
+  "Locations",
+  "Customs",
+  "Transport",
+  "Studios",
+  "Equipment",
+  "Drone",
+  "Vendors",
+];
+
 export const serviceCards = [
   {
     title: "Filming & Photography Permits in the UAE",
     eyebrow: "Permits",
     href: "/services#permits",
-    image: "/images/service-permits.png",
+    image: "/images/permit-journey.png",
     alt: "Permit paperwork and checklist for UAE filming approvals",
     description:
       "We coordinate permit requirements, authority paperwork, location approvals, and application follow-up for productions filming across the UAE.",
@@ -54,7 +145,7 @@ export const serviceCards = [
     title: "Equipment Customs Clearance",
     eyebrow: "Customs Clearance",
     href: "/services#customs-clearance",
-    image: "/images/service-customs.png",
+    image: "/images/cta-production-basecamp.png",
     alt: "Cinema equipment cases at an airport customs counter in Dubai",
     description:
       "We help your cameras, lenses, drones, and production gear move through customs with the right documentation and local coordination.",
@@ -63,7 +154,7 @@ export const serviceCards = [
     title: "Crew Hire in the UAE",
     eyebrow: "Crew Hire",
     href: "/services#crew-hire",
-    image: "/images/service-crew.png",
+    image: "/images/production-services.png",
     alt: "Local film crew preparing a camera setup in Dubai",
     description:
       "From assistants and coordinators to camera, lighting, sound, and production teams, we source reliable local crew for your shoot.",
@@ -72,7 +163,7 @@ export const serviceCards = [
     title: "Professional Equipment Rental",
     eyebrow: "Equipment Rental",
     href: "/services#equipment-rental",
-    image: "/images/service-equipment.png",
+    image: "/images/uae-locations-showcase.png",
     alt: "Professional cinema cameras, lenses, lights, and cases in a Dubai rental room",
     description:
       "Source camera bodies, lenses, lighting, grip, sound, drones, and support equipment locally so your production keeps moving.",

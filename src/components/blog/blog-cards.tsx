@@ -19,16 +19,17 @@ export async function BlogCards() {
     <div className="grid gap-7 md:grid-cols-3">
       {blogPosts.map((post) => (
         <Link href={`/blog/${post.slug}`} key={post.title}>
-          <Card className="h-full overflow-hidden rounded-[28px] border-0 bg-white py-0 shadow-[0_8px_30px_rgba(15,23,42,0.06)] ring-1 ring-[#0f172c]/10 transition hover:-translate-y-1 hover:shadow-[0_14px_40px_rgba(13,53,76,0.14)] dark:bg-white/[0.06] dark:ring-white/10">
-            <div className="relative min-h-56">
+          <Card className="group h-full overflow-hidden rounded-[30px] border-0 bg-white py-0 shadow-[0_18px_60px_rgba(15,23,42,0.08)] ring-1 ring-[#0f172c]/10 transition hover:-translate-y-1 hover:shadow-[0_24px_80px_rgba(13,53,76,0.16)] dark:bg-white/[0.06] dark:ring-white/10">
+            <div className="relative min-h-64 overflow-hidden">
               <Image
                 alt={post.alt}
-                className="object-cover"
+                className="object-cover transition duration-700 group-hover:scale-105"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
                 src={post.image}
               />
-              <Badge className="absolute left-4 top-4 bg-[#2f6df6] text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050915]/56 via-transparent to-transparent" />
+              <Badge className="absolute left-4 top-4 rounded-full bg-[#2f6df6] px-3 py-1 text-white">
                 {post.category}
               </Badge>
             </div>

@@ -128,7 +128,7 @@
       background-color 220ms ease,
       color 220ms ease;
   }
-  html {
+html {
     @apply font-sans;
     overflow-x: clip;
     scroll-behavior: smooth;
@@ -150,12 +150,18 @@
 
 .navy-glow::before {
   background:
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 18rem),
-    radial-gradient(circle at bottom left, rgba(47, 109, 246, 0.22), transparent 20rem);
+    radial-gradient(circle at top right, rgba(47, 109, 246, 0.08), transparent 18rem),
+    radial-gradient(circle at bottom left, rgba(15, 23, 44, 0.06), transparent 20rem);
   content: "";
   inset: 0;
   pointer-events: none;
   position: absolute;
+}
+
+.dark .navy-glow::before {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 18rem),
+    radial-gradient(circle at bottom left, rgba(47, 109, 246, 0.22), transparent 20rem);
 }
 
 .floating-icon {
@@ -198,6 +204,81 @@
 
 .animate-in {
   animation: soft-rise 700ms ease-out both;
+}
+
+.loop-mask {
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.logo-loop-track {
+  animation: logo-loop 26s linear infinite;
+}
+
+.logo-loop-track:hover {
+  animation-play-state: paused;
+}
+
+.running-light-card {
+  border-color: transparent;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.running-light-card::before {
+  animation: running-light-spin 3.2s linear infinite;
+  background: conic-gradient(
+    from 0deg,
+    rgba(47, 109, 246, 0),
+    rgba(47, 109, 246, 0.95),
+    rgba(255, 255, 255, 0.9),
+    rgba(47, 109, 246, 0.2),
+    rgba(47, 109, 246, 0)
+  );
+  content: "";
+  inset: -120%;
+  pointer-events: none;
+  position: absolute;
+  z-index: -2;
+}
+
+.running-light-card::after {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: calc(var(--radius-2xl) - 2px);
+  content: "";
+  inset: 1px;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.dark .running-light-card::after {
+  background: rgba(31, 40, 64, 0.96);
+}
+
+@keyframes running-light-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes logo-loop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-loop-track {
+    animation: none;
+  }
+
+  .running-light-card::before {
+    animation: none;
+  }
 }
 
 .fp-preloader {
