@@ -25,7 +25,11 @@ export function CinematicShowcase() {
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {showcaseCards.map((card, index) => (
             <RevealSection delay={index * 110} key={card.title}>
-              <article className="group relative min-h-[520px] overflow-hidden rounded-[32px] border border-[#0f172c]/10 bg-[#0a1024] shadow-[0_25px_80px_rgba(15,23,44,0.14)] dark:border-white/10">
+              <Link
+                aria-label={`${card.title} - open related page`}
+                className="group relative block min-h-[520px] overflow-hidden rounded-[32px] border border-[#0f172c]/10 bg-[#0a1024] shadow-[0_25px_80px_rgba(15,23,44,0.14)] transition hover:-translate-y-1 hover:shadow-[0_30px_100px_rgba(0,168,107,0.18)] dark:border-white/10"
+                href={card.href}
+              >
                 <Image
                   alt={card.title}
                   className="object-cover transition duration-700 group-hover:scale-105"
@@ -44,8 +48,12 @@ export function CinematicShowcase() {
                   <p className="mt-3 text-sm leading-7 text-white/70">
                     {card.description}
                   </p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-[#7de8c5]">
+                    Open
+                    <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
+                  </span>
                 </div>
-              </article>
+              </Link>
             </RevealSection>
           ))}
         </div>

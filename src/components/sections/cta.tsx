@@ -41,7 +41,7 @@ export function CTA() {
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-end md:flex-col md:items-end">
             <Link
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#00a86b] px-6 py-4 font-black text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[#18c987] hover:shadow-xl sm:w-auto"
-              href="/contact?type=permit"
+              href="/apply-permit"
             >
               <Mail className="size-4" />
               Apply for Permit

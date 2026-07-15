@@ -82,7 +82,7 @@ export function Header() {
                 buttonVariants(),
                 "rounded-full bg-[#00a86b] px-5 font-black text-white hover:-translate-y-0.5 hover:bg-[#18c987] hover:shadow-lg"
               )}
-              href="/contact?type=permit"
+              href="/apply-permit"
             >
               Apply For A Permit
             </Link>
@@ -147,7 +147,7 @@ export function Header() {
         <div className="border-t border-[#0f172c]/10 p-4 dark:border-white/10">
           <Link
             className="inline-flex w-full items-center justify-center rounded-full bg-[#00a86b] px-5 py-3 text-sm font-black text-white"
-            href="/contact?type=permit"
+            href="/apply-permit"
             onClick={() => setOpen(false)}
           >
             Apply For A Permit

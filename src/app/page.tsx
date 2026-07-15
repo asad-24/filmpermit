@@ -71,8 +71,7 @@ export default function Home() {
       />
       <Hero />
       <TrustStrip />
-      <PermitJourney />
-      <Mission />
+  
       <ServicesOverview />
       <CinematicShowcase />
       <Testimonials />

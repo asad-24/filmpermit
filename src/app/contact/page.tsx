@@ -34,34 +34,7 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <RevealSection>
             <div className="space-y-6">
-              <div className="relative min-h-[460px] overflow-hidden rounded-[34px] border border-[#0f172c]/10 shadow-[0_28px_90px_rgba(15,23,44,0.14)] dark:border-white/10">
-                <Image
-                  alt="UAE production planning and permit desk"
-                  className="object-cover"
-                  fill
-                  sizes="(min-width: 1024px) 42vw, 100vw"
-                  src="/images/permit-journey.png"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050915]/88 via-[#050915]/32 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#7de8c5]">
-                    Before you apply
-                  </p>
-                  <h2 className="mt-3 text-3xl font-black">
-                    A better brief creates a faster path.
-                  </h2>
-                  <div className="mt-5 grid gap-2">
-                    {intake.map((item) => (
-                      <span
-                        className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold backdrop-blur"
-                        key={item}
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+           
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <ContactTile icon={<Mail className="size-5" />} label="Email" value={site.email} href={`mailto:${site.email}`} />

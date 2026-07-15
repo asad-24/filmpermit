@@ -125,7 +125,7 @@ export default function ArticlePage() {
                 buttonVariants({ size: "lg" }),
                 "mt-8 rounded-full bg-white px-7 font-black text-[#0a1024] hover:bg-[#dbe7ff]"
               )}
-              href="/contact?type=permit"
+              href="/apply-permit"
             >
               Apply Now for Filming Permit
               <ArrowRight className="size-4" />

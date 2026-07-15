@@ -103,7 +103,7 @@ export function Hero() {
                       buttonVariants({ size: "lg" }),
                       "h-12 rounded-full bg-[#00a86b] px-7 font-black text-white hover:-translate-y-0.5 hover:bg-[#18c987] hover:shadow-xl hover:shadow-[#00a86b]/25"
                     )}
-                    href="/contact?type=permit"
+                    href="/apply-permit"
                   >
                     Start Permit Application
                     <ArrowRight className="size-4" />
@@ -121,28 +121,7 @@ export function Hero() {
               </FadeContent>
             </div>
 
-            <FadeContent className="rounded-[28px] border border-white/15 bg-black/28 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.34)] backdrop-blur-xl" delay={430} blur>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-[#7de8c5]">
-                Shoot readiness
-              </p>
-              <div className="mt-5 grid gap-3">
-                {heroPills.map(({ Icon, label }) => (
-                  <div
-                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.07] p-3"
-                    key={label}
-                  >
-                    <span className="flex size-11 items-center justify-center rounded-xl bg-[#00a86b] text-white">
-                      <Icon className="size-5" />
-                    </span>
-                    <span className="font-black">{label}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-5 text-sm leading-7 text-white/68">
-                Send the brief once. We help shape the support path before the
-                shoot clock starts.
-              </p>
-            </FadeContent>
+       
           </div>
         </div>
 

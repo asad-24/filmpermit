@@ -82,7 +82,7 @@ export default function ServicesPage() {
                     <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                       <Link
                         className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#00a86b] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#18c987]"
-                        href={`/contact?type=permit&service=${service.href.split("#")[1]}`}
+                        href={`/apply-permit?service=${service.href.split("#")[1]}`}
                       >
                         Request This Service
                         <ArrowRight className="size-4" />

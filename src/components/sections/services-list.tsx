@@ -40,7 +40,7 @@ export function ServicesList() {
                       buttonVariants({ variant: "outline" }),
                       "bg-white dark:bg-transparent dark:text-white"
                     )}
-                    href="/contact?type=permit"
+                    href="/apply-permit"
                   >
                     Request Support
                     <ArrowRight className="size-4" />

@@ -94,7 +94,7 @@ export function ContactForm() {
         />
       </label>
       <Button className="h-12 w-full rounded-full bg-[#00a86b] px-7 font-black text-white hover:bg-[#18c987] sm:w-fit" type="submit">
-        Send Enquiry
+       Submit
         <Send className="size-4" />
       </Button>
       {sent ? (

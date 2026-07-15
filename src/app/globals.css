@@ -339,6 +339,12 @@ html {
   line-height: 1.15;
 }
 
+.fp-preloader-title {
+  font-size: clamp(1.75rem, 3.4vw, 3rem);
+  max-width: min(1120px, calc(100vw - 32px));
+  text-align: center;
+}
+
 .fp-thin {
   font-weight: 300;
 }
