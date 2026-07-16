@@ -1,15 +1,13 @@
 import {
   BadgeCheck,
-  Camera,
   Car,
   ClipboardCheck,
   Drone,
   FileCheck2,
   Handshake,
+  Hotel,
   MapPinned,
   Plane,
-  RadioTower,
-  Settings,
   ShieldCheck,
   Users,
   Warehouse,
@@ -27,10 +25,15 @@ export const site = {
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Apply", href: "/apply-permit" },
   { label: "FAQ", href: "/faq" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
+];
+
+export const heroCredibility = [
+  { value: "350+", label: "Permits Issued" },
+  { value: "24/7", label: "Customer Support" },
+  { value: "99%", label: "Approval Rate" },
 ];
 
 export const stats = [
@@ -136,157 +139,187 @@ export const productionPartners = [
 
 export const serviceCards = [
   {
+    id: "permits",
     title: "Filming & Photography Permits in the UAE",
     eyebrow: "Permits",
     href: "/services#permits",
+    icon: FileCheck2,
     image: "/images/service-permits.png",
     alt: "Permit paperwork and checklist for UAE filming approvals",
     description:
       "We coordinate permit requirements, authority paperwork, location approvals, and application follow-up for productions filming across the UAE.",
-  },
-  {
-    title: "Equipment Customs Clearance",
-    eyebrow: "Customs Clearance",
-    href: "/services#customs-clearance",
-    image: "/images/service-customs.png",
-    alt: "Cinema equipment cases at an airport customs counter in Dubai",
-    description:
-      "We help your cameras, lenses, drones, and production gear move through customs with the right documentation and local coordination.",
-  },
-  {
-    title: "Crew Hire in the UAE",
-    eyebrow: "Crew Hire",
-    href: "/services#crew-hire",
-    image: "/images/service-crew.png",
-    alt: "Local film crew preparing a camera setup in Dubai",
-    description:
-      "From assistants and coordinators to camera, lighting, sound, and production teams, we source reliable local crew for your shoot.",
-  },
-  {
-    title: "Professional Equipment Rental",
-    eyebrow: "Equipment Rental",
-    href: "/services#equipment-rental",
-    image: "/images/service-equipment.png",
-    alt: "Professional cinema cameras, lenses, lights, and cases in a Dubai rental room",
-    description:
-      "Source camera bodies, lenses, lighting, grip, sound, drones, and support equipment locally so your production keeps moving.",
-  },
-];
-
-export const allServices = [
-  {
-    id: "permits",
-    title: "Filming Permits",
-    icon: FileCheck2,
-    description:
-      "End-to-end coordination for commercial, documentary, corporate, branded, and broadcast filming permit applications.",
-  },
-  {
-    id: "photography-permits",
-    title: "Photography Permits",
-    icon: Camera,
-    description:
-      "Fast support for editorial, brand, fashion, tourism, real estate, and campaign photography permissions.",
-  },
-  {
-    id: "government-approvals",
-    title: "Government Approvals",
-    icon: BadgeCheck,
-    description:
-      "Coordination with relevant authorities, municipalities, free zones, venues, and private property owners.",
+    bullets: [
+      "Commercial filming permits",
+      "Photography approvals",
+      "Authority paperwork",
+      "Location coordination",
+    ],
   },
   {
     id: "customs-clearance",
     title: "Equipment Customs Clearance",
+    eyebrow: "Customs Clearance",
+    href: "/services#customs-clearance",
     icon: Plane,
+    image: "/images/service-customs.png",
+    alt: "Cinema equipment cases at an airport customs counter in Dubai",
     description:
-      "Documentation support for temporary import, carnet planning, airport handling, and sensitive production equipment.",
+      "We help your cameras, lenses, drones, and production gear move through customs with the right documentation and local coordination.",
+    bullets: [
+      "Temporary import guidance",
+      "Carnet planning",
+      "Airport handling support",
+      "Gear documentation",
+    ],
   },
   {
     id: "crew-hire",
-    title: "Local Crew Hire",
+    title: "Crew Hire in the UAE",
+    eyebrow: "Crew Hire",
+    href: "/services#crew-hire",
     icon: Users,
+    image: "/images/service-crew.png",
+    alt: "Local film crew preparing a camera setup in Dubai",
     description:
-      "Trusted local production teams, camera assistants, fixers, runners, drivers, sound, lighting, and logistics support.",
+      "From assistants and coordinators to camera, lighting, sound, and production teams, we source reliable local crew for your shoot.",
+    bullets: [
+      "Local fixers and producers",
+      "Camera and lighting crew",
+      "Runners and coordinators",
+      "Sound and production teams",
+    ],
   },
   {
     id: "equipment-rental",
-    title: "Professional Filming Equipment Rental",
+    title: "Professional Equipment Rental",
+    eyebrow: "Equipment Rental",
+    href: "/services#equipment-rental",
     icon: Warehouse,
+    image: "/images/service-equipment.png",
+    alt: "Professional cinema cameras, lenses, lights, and cases in a Dubai rental room",
     description:
-      "Access to UAE-based camera, lens, lighting, grip, drone, sound, and specialty production equipment suppliers.",
+      "Source camera bodies, lenses, lighting, grip, sound, drones, and support equipment locally so your production keeps moving.",
+    bullets: [
+      "Camera and lens packages",
+      "Lighting and grip",
+      "Sound equipment",
+      "Drone and specialty gear",
+    ],
   },
   {
-    id: "drone-support",
+    id: "drone-filming-support",
     title: "Drone Filming Support",
+    eyebrow: "Drone Support",
+    href: "/services#drone-filming-support",
     icon: Drone,
+    image: "/images/uae-locations-showcase.png",
+    alt: "Drone filming support for UAE aerial production",
     description:
-      "Drone crew sourcing, location planning, flight coordination, and permit guidance for compliant aerial filming.",
+      "Plan compliant aerial filming with drone crew sourcing, location checks, flight coordination, and authority-aware permit guidance.",
+    bullets: [
+      "Licensed drone crew sourcing",
+      "Flight area planning",
+      "Authority coordination",
+      "Aerial shoot scheduling",
+    ],
   },
   {
     id: "location-scouting",
     title: "Location Scouting",
+    eyebrow: "Locations",
+    href: "/services#location-scouting",
     icon: MapPinned,
+    image: "/images/hero-dubai-film-production.png",
+    alt: "Dubai skyline and UAE filming location scouting",
     description:
-      "Curated UAE locations from Dubai skylines and desert roads to industrial spaces, beaches, studios, and private venues.",
+      "Find production-ready UAE locations from skylines and deserts to private venues, beaches, industrial areas, studios, and controlled spaces.",
+    bullets: [
+      "Dubai and Abu Dhabi locations",
+      "Desert and coastline options",
+      "Private venue coordination",
+      "Recce planning",
+    ],
   },
   {
-    id: "production-logistics",
-    title: "Production Logistics",
-    icon: Settings,
-    description:
-      "Scheduling, movement plans, call-time coordination, supplier handling, production paperwork, and day-to-day operations.",
-  },
-  {
-    id: "transportation",
-    title: "Transportation & Airport Transfers",
+    id: "transportation-support",
+    title: "Transportation Support",
+    eyebrow: "Transport",
+    href: "/services#transportation-support",
     icon: Car,
+    image: "/images/cta-production-basecamp.png",
+    alt: "Transportation support for UAE film crews and production equipment",
     description:
-      "Crew cars, VIP transfers, equipment vans, airport pickups, and route planning for efficient shoot days.",
+      "Coordinate crew cars, airport pickups, equipment vans, route planning, and movement schedules for efficient UAE shoot days.",
+    bullets: [
+      "Crew and talent cars",
+      "Equipment vans",
+      "Airport transfers",
+      "Shoot-day route planning",
+    ],
   },
   {
-    id: "accommodation",
+    id: "accommodation-coordination",
     title: "Accommodation Coordination",
-    icon: ShieldCheck,
+    eyebrow: "Accommodation",
+    href: "/services#accommodation-coordination",
+    icon: Hotel,
+    image: "/images/production-services.png",
+    alt: "Accommodation coordination for visiting UAE production teams",
     description:
-      "Hotel sourcing and stay coordination for visiting producers, crew, talent, photographers, and agency teams.",
-  },
-  {
-    id: "vendor-coordination",
-    title: "Vendor Coordination",
-    icon: RadioTower,
-    description:
-      "Reliable supplier coordination for catering, security, set builds, studios, interpreters, talent, transport, and venues.",
-  },
-  {
-    id: "full-support",
-    title: "Full UAE Production Support",
-    icon: ClipboardCheck,
-    description:
-      "A single local partner for permits, crew, gear, logistics, transport, vendors, and on-ground production support.",
+      "Support hotel sourcing and stay coordination for visiting producers, directors, crew, photographers, talent, and agency teams.",
+    bullets: [
+      "Hotel sourcing",
+      "Crew stay coordination",
+      "Producer and talent lodging",
+      "Schedule-aware booking support",
+    ],
   },
 ];
+
+export const allServices = serviceCards;
+
+export const emiratesBanner = {
+  title: "Smooth Permit Approvals Across All Emirates",
+  description:
+    "FilmPermit.ae coordinates permit planning and production support across Dubai, Abu Dhabi, Sharjah, Ras Al Khaimah, Ajman, Al Ain, and wider UAE locations. We help match your shoot scope with the right local requirements, timelines, and documentation before cameras roll.",
+  emirates: ["Dubai", "Abu Dhabi", "Sharjah", "Ras Al Khaimah", "Ajman", "Al Ain"],
+};
 
 export const faqs = [
   {
     question: "Do I need a permit to film in Dubai or the UAE?",
     answer:
-      "Most commercial filming and professional photography requires approval. Requirements depend on the emirate, location, crew size, equipment, drone use, and final usage.",
+      "Yes. Commercial filming, brand content, TV, film, professional photography, and many organized creator shoots usually need approval before production begins.",
   },
   {
-    question: "How quickly can a filming permit be arranged?",
+    question: "How long does a filming permit approval take?",
     answer:
-      "Simple approvals can move quickly when the brief, locations, dates, equipment list, and company documents are ready. Complex locations, drones, roads, or government areas need more lead time.",
+      "Timelines depend on the emirate, locations, shoot scope, equipment, and authorities involved. Straightforward permits may move within a few working days, while complex shoots need more lead time.",
   },
   {
-    question: "Can you support international productions?",
+    question: "Can foreign production companies film in the UAE?",
     answer:
-      "Yes. We support visiting broadcasters, production companies, agencies, brands, photographers, and creator teams with permits, customs, crew, equipment, transport, and local coordination.",
+      "Yes. International production teams can film in the UAE when they work through the correct local channels and secure the necessary permits and supporting approvals.",
+  },
+  {
+    question: "Can you handle permits and equipment customs clearance together?",
+    answer:
+      "Yes. We can coordinate permit requirements, authority follow-up, equipment documentation, temporary import planning, and local production support as one connected workflow.",
+  },
+  {
+    question: "Are drone shoots allowed in Dubai or the UAE?",
+    answer:
+      "Drone filming is possible only with the right approvals and compliant planning. Each request depends on location, flight scope, operator requirements, schedule, and authority review.",
+  },
+  {
+    question: "How much does a filming permit cost in the UAE?",
+    answer:
+      "Costs vary by emirate, shoot type, location, duration, crew size, equipment, drone use, and required authority fees. We review the brief first and provide a clearer cost path before proceeding.",
   },
   {
     question: "Do you cover all Emirates?",
     answer:
-      "We coordinate support across Dubai, Abu Dhabi, Sharjah, Ras Al Khaimah, Ajman, Umm Al Quwain, and Fujairah through the appropriate local channels.",
+      "Yes. We coordinate support across Dubai, Abu Dhabi, Sharjah, Ras Al Khaimah, Ajman, Al Ain, and wider UAE locations through the appropriate local channels.",
   },
 ];
 

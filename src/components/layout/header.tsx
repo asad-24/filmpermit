@@ -3,17 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
+import { ChevronDown, Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
 import { useState } from "react";
 
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { buttonVariants } from "@/components/ui/button";
-import { navItems, site } from "@/lib/site-data";
+import { navItems, serviceCards, site } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
     <>
@@ -50,6 +51,36 @@ export function Header() {
                 item.href === "/"
                   ? pathname === "/"
                   : baseHref !== "/" && pathname.startsWith(baseHref);
+
+              if (item.label === "Services") {
+                return (
+                  <div className="group relative" key={item.label}>
+                    <Link
+                      className={cn(
+                        "flex items-center gap-1 rounded-full px-3 py-2 text-[#0f172c]/72 transition hover:bg-[#00a86b]/10 hover:text-[#00a86b] dark:text-white/78 dark:hover:bg-white/10 dark:hover:text-white",
+                        active && "bg-[#0f172c]/8 text-[#0f172c] dark:bg-white/12 dark:text-white"
+                      )}
+                      href={item.href}
+                    >
+                      {item.label}
+                      <ChevronDown className="size-4 transition group-hover:rotate-180" />
+                    </Link>
+                    <div className="invisible absolute left-0 top-full z-50 w-72 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                      <div className="rounded-3xl border border-[#0f172c]/10 bg-white/96 p-2 shadow-[0_24px_80px_rgba(15,23,44,0.18)] backdrop-blur-xl dark:border-white/10 dark:bg-[#07111f]/96">
+                        {serviceCards.map((service) => (
+                          <Link
+                            className="block rounded-2xl px-4 py-3 text-sm font-black text-[#24304a] transition hover:bg-[#00a86b]/10 hover:text-[#00a86b] dark:text-white/78 dark:hover:bg-white/10 dark:hover:text-white"
+                            href={service.href}
+                            key={service.id}
+                          >
+                            {service.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
 
               return (
                 <Link
@@ -131,16 +162,55 @@ export function Header() {
 
         <div className="flex-1 overflow-y-auto px-4 py-5">
           <div className="grid gap-1 text-[15px] font-black">
-            {navItems.map((item) => (
-              <Link
-                className="rounded-2xl px-4 py-3 transition hover:bg-[#00a86b]/15 dark:hover:bg-white/10"
-                href={item.href}
-                key={item.label}
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              if (item.label === "Services") {
+                return (
+                  <div className="rounded-2xl" key={item.label}>
+                    <button
+                      className="flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left transition hover:bg-[#00a86b]/15 dark:hover:bg-white/10"
+                      onClick={() => setServicesOpen((value) => !value)}
+                      type="button"
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className={cn(
+                          "size-4 transition",
+                          servicesOpen && "rotate-180"
+                        )}
+                      />
+                    </button>
+                    {servicesOpen ? (
+                      <div className="mt-1 grid gap-1 pl-3">
+                        {serviceCards.map((service) => (
+                          <Link
+                            className="rounded-2xl px-4 py-3 text-sm text-[#4a5874] transition hover:bg-[#00a86b]/15 hover:text-[#00a86b] dark:text-white/70 dark:hover:bg-white/10 dark:hover:text-white"
+                            href={service.href}
+                            key={service.id}
+                            onClick={() => {
+                              setOpen(false);
+                              setServicesOpen(false);
+                            }}
+                          >
+                            {service.title}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  className="rounded-2xl px-4 py-3 transition hover:bg-[#00a86b]/15 dark:hover:bg-white/10"
+                  href={item.href}
+                  key={item.label}
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
 

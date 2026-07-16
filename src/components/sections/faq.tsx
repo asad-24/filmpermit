@@ -1,8 +1,11 @@
-import { ChevronDown } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
 import { faqs } from "@/lib/site-data";
 
 export function FAQ() {
+  const homeFaqs = faqs.slice(0, 4);
+
   return (
     <section className="relative overflow-hidden bg-white px-6 py-20 dark:bg-[#080e1f]" id="faq">
       <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-[#0f172c]/10 blur-3xl dark:bg-[#00a86b]/12" />
@@ -18,10 +21,17 @@ export function FAQ() {
             Every project is different. These answers cover common permit and
             production support questions for UAE shoots.
           </p>
+          <Link
+            className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#00a86b] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#18c987]"
+            href="/faq"
+          >
+            View All FAQs
+            <ArrowRight className="size-4" />
+          </Link>
         </div>
 
         <div className="grid gap-3">
-          {faqs.map((faq) => (
+          {homeFaqs.map((faq) => (
             <details
               className="group rounded-2xl bg-white/90 p-6 shadow-[0_8px_30px_rgba(15,23,42,0.06)] ring-1 ring-[#0f172c]/10 transition hover:shadow-[0_14px_40px_rgba(13,53,76,0.12)] dark:bg-white/[0.06] dark:ring-white/10"
               key={faq.question}

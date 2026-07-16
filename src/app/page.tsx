@@ -1,13 +1,9 @@
 import { BlogCards } from "@/components/blog/blog-cards";
 import { CTA } from "@/components/sections/cta";
-import { CinematicShowcase } from "@/components/sections/cinematic-showcase";
+import { EmiratesBanner } from "@/components/sections/emirates-banner";
 import { FAQ } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
-import { Mission } from "@/components/sections/mission";
-import { PermitJourney } from "@/components/sections/permit-journey";
 import { ServicesOverview } from "@/components/sections/services-overview";
-import { Testimonials } from "@/components/sections/testimonials";
-import { TrustStrip } from "@/components/sections/trust-strip";
 import { faqs, serviceCards, site } from "@/lib/site-data";
 
 export const dynamic = "force-dynamic";
@@ -70,11 +66,8 @@ export default function Home() {
         type="application/ld+json"
       />
       <Hero />
-      <TrustStrip />
-  
       <ServicesOverview />
-      <CinematicShowcase />
-      <Testimonials />
+      <EmiratesBanner />
       <FAQ />
       <section className="relative overflow-hidden bg-[#f5f7fb] px-6 py-24 dark:bg-[#080e1f]">
         <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-[#00a86b]/14 blur-3xl" />

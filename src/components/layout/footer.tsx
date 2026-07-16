@@ -4,7 +4,7 @@ import { ArrowUpRight, Mail, MapPin, Phone, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { navItems, site } from "@/lib/site-data";
+import { navItems, serviceCards, site } from "@/lib/site-data";
 
 export function Footer() {
   return (
@@ -74,12 +74,10 @@ export function Footer() {
 
           <FooterLinks
             title="Services"
-            links={[
-              { label: "Filming Permits", href: "/services#permits" },
-              { label: "Customs Clearance", href: "/services#customs-clearance" },
-              { label: "Crew Hire", href: "/services#crew-hire" },
-              { label: "Equipment Rental", href: "/services#equipment-rental" },
-            ]}
+            links={serviceCards.map((service) => ({
+              label: service.eyebrow,
+              href: service.href,
+            }))}
           />
 
           <div>

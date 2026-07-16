@@ -9,29 +9,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { faqs } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
-const extraFaqs = [
-  {
-    question: "Can foreign production companies film in the UAE?",
-    answer:
-      "Yes. Foreign companies can film in the UAE when the correct approvals, local coordination, and production documentation are arranged before the shoot.",
-  },
-  {
-    question: "Can you handle filming permits and equipment clearance on our behalf?",
-    answer:
-      "We can coordinate the permit route, prepare required information, support authority submissions, and guide customs clearance planning for professional production gear.",
-  },
-  {
-    question: "Are drone shoots allowed in Dubai?",
-    answer:
-      "Drone filming requires specific approvals and careful planning. Requirements depend on location, schedule, flight scope, operator status, and the production purpose.",
-  },
-  {
-    question: "How much does a filming permit cost in Dubai or the UAE?",
-    answer:
-      "Costs depend on the emirate, location, shoot type, crew size, equipment, number of days, drone use, and authority requirements. Share your scope for accurate guidance.",
-  },
-];
-
 export const metadata: Metadata = {
   title: "FAQ",
   description:
@@ -39,8 +16,6 @@ export const metadata: Metadata = {
 };
 
 export default function FAQPage() {
-  const pageFaqs = [...faqs, ...extraFaqs];
-
   return (
     <>
       <PageHero
@@ -74,7 +49,7 @@ export default function FAQPage() {
           </RevealSection>
 
           <div className="grid gap-4">
-            {pageFaqs.map((faq, index) => (
+            {faqs.map((faq, index) => (
               <RevealSection delay={(index % 4) * 70} key={faq.question}>
                 <details className="group rounded-[24px] border border-[#0f172c]/10 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,44,0.05)] transition hover:shadow-[0_18px_60px_rgba(15,23,44,0.08)] dark:border-white/10 dark:bg-white/[0.05]">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-5 text-lg font-black text-[#0a1024] dark:text-white">

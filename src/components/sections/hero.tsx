@@ -4,11 +4,8 @@ import {
   ArrowRight,
   Camera,
   Car,
-  ClipboardCheck,
   Drone,
   FileCheck2,
-  MapPinned,
-  ShieldCheck,
   Users,
 } from "lucide-react";
 
@@ -17,6 +14,7 @@ import { FadeContent } from "@/components/motion/fade-content";
 import { LogoLoopLite } from "@/components/motion/logo-loop-lite";
 import { PointerGlowBackground } from "@/components/motion/pointer-glow-background";
 import { buttonVariants } from "@/components/ui/button";
+import { heroCredibility } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 const floatingIcons = [
@@ -25,12 +23,6 @@ const floatingIcons = [
   { Icon: Users, label: "Crew", left: "82%", top: "28%", depth: 0.9, duration: "11s", delay: "-5s" },
   { Icon: Drone, label: "Drone", left: "88%", top: "58%", depth: 1.1, duration: "13s", delay: "-7s" },
   { Icon: Car, label: "Logistics", left: "53%", top: "78%", depth: 0.65, duration: "14s", delay: "-2s" },
-];
-
-const heroPills = [
-  { Icon: ClipboardCheck, label: "Permit route" },
-  { Icon: MapPinned, label: "Location approvals" },
-  { Icon: ShieldCheck, label: "Shoot-day support" },
 ];
 
 export function Hero() {
@@ -69,31 +61,49 @@ export function Hero() {
 
         <div className="relative z-20 mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-7xl items-center">
           <div className="grid w-full gap-10 lg:grid-cols-[1.05fr_0.7fr] lg:items-end">
-            <div className="max-w-4xl">
+            <div className="max-w-5xl">
               <FadeContent blur>
                 <div className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.18em] text-white/88 shadow-sm backdrop-blur">
                   FilmPermit.ae
                   <span className="size-1 rounded-full bg-[#00a86b]" />
-                  UAE production support
+                  Official UAE Permit Coordination Partner
                 </div>
               </FadeContent>
 
-              <h1 className="mt-6 max-w-5xl text-[2.8rem] font-black leading-[0.98] tracking-normal sm:text-6xl lg:text-7xl">
-                <BlurText as="span" className="block" text="UAE filming permits" />
+              <h1 className="mt-6 w-7xl text-[2.8rem] font-black leading-[0.98] tracking-normal sm:text-6xl lg:text-6xl">
+                <BlurText as="span" className="block" text="Apply for UAE Filming" />
                 <BlurText
                   as="span"
                   className="block text-white/88"
                   delay={32}
-                  text="handled like production."
+                  text="& Photography Permits Today"
                 />
               </h1>
 
-              <FadeContent className="mt-6 max-w-2xl" delay={260}>
+              <FadeContent className="mt-6 max-w-4xl" delay={260}>
                 <p className="text-base leading-8 text-white/76 sm:text-lg">
-                  A cinematic local partner for permits, location approvals,
-                  customs, crew, equipment, and on-ground logistics across the
-                  Emirates.
+                  Official UAE permit coordination for commercial filming,
+                  professional photography, drone shoots, equipment clearance,
+                  locations, crew, transport, and production support.
                 </p>
+              </FadeContent>
+
+              <FadeContent className="mt-7" delay={320} blur>
+                <div className="grid max-w-3xl gap-3 sm:grid-cols-3">
+                  {heroCredibility.map((point) => (
+                    <div
+                      className="rounded-2xl border border-white/14 bg-white/10 px-4 py-4 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur"
+                      key={point.label}
+                    >
+                      <div className="text-3xl font-black tracking-normal text-white">
+                        {point.value}
+                      </div>
+                      <p className="mt-1 text-xs font-black uppercase tracking-[0.14em] text-[#7de8c5]">
+                        {point.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </FadeContent>
 
               <FadeContent className="mt-9" delay={360} blur>
@@ -120,8 +130,6 @@ export function Hero() {
                 </div>
               </FadeContent>
             </div>
-
-       
           </div>
         </div>
 

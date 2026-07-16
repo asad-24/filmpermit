@@ -19,7 +19,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About FilmPermit.ae"
         image="/images/cinematic-hero.png"
-        title="A local production desk for ambitious UAE shoots."
+        title="About FilmPermit.ae"
         description="We help creative teams move through permit planning, authority coordination, crew, gear, logistics, and shoot-day support with less uncertainty."
         align="center"
       />
@@ -29,11 +29,11 @@ export default function AboutPage() {
           <RevealSection>
             <div className="relative min-h-[560px] overflow-hidden rounded-[36px] border border-[#0f172c]/10 shadow-[0_28px_90px_rgba(15,23,44,0.14)] dark:border-white/10">
               <Image
-                alt="UAE film crew and production support team"
+                alt="UAE filming permit paperwork and production coordination"
                 className="object-cover"
                 fill
                 sizes="(min-width: 1024px) 48vw, 100vw"
-                src="/images/production-services.png"
+                src="/images/service-permits.png"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050915]/88 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/12 bg-black/30 p-5 text-white backdrop-blur-xl">
