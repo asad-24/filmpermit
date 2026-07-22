@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone, Send } from "lucide-react";
 
+import { BrandLogo } from "@/components/layout/brand-logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { navItems, serviceCards, site } from "@/lib/site-data";
@@ -51,15 +52,7 @@ export function Footer() {
 
         <div className="grid gap-10 pb-10 md:grid-cols-[1.35fr_0.8fr_0.9fr_1.1fr]">
           <div>
-            <Link className="inline-flex items-center gap-3" href="/">
-              <Image
-                alt={site.name}
-                className="h-16 w-auto rounded-lg object-contain"
-                height={1024}
-                src="/assests/logo.png"
-                width={1536}
-              />
-            </Link>
+            <BrandLogo size="footer" />
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#4a5874] dark:text-white/72">
               Your trusted partner for UAE filming permits, photography permits,
               production logistics, crew, equipment, and on-ground support.
@@ -102,12 +95,21 @@ export function Footer() {
         <div className="border-t border-[#0f172c]/10 py-6 dark:border-white/10">
           <div className="flex flex-col gap-3 text-sm text-[#647086] md:flex-row md:items-center md:justify-between dark:text-white/65">
             <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <Link className="transition hover:text-[#0a1024] dark:hover:text-white" href="/privacy">
                 Privacy Policy
               </Link>
               <Link className="transition hover:text-[#0a1024] dark:hover:text-white" href="/terms">
                 Terms
+              </Link>
+              <Link className="transition hover:text-[#0a1024] dark:hover:text-white" href="/policy">
+                Policy
+              </Link>
+              <Link className="transition hover:text-[#0a1024] dark:hover:text-white" href="/ad-policy">
+                Ad Policy
+              </Link>
+              <Link className="transition hover:text-[#0a1024] dark:hover:text-white" href="/cookies">
+                Cookies
               </Link>
             </div>
           </div>

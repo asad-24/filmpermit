@@ -120,20 +120,22 @@ async function getBlogCollection() {
 }
 
 async function seedBlogPostsIfNeeded(collection: Awaited<ReturnType<typeof getBlogCollection>>) {
-  const count = await collection.estimatedDocumentCount();
+  const now = Date.now();
+  const operations = (seedPosts as BlogPost[]).map((post, index) => ({
+    updateOne: {
+      filter: { slug: post.slug },
+      update: {
+        $setOnInsert: {
+          ...post,
+          createdAt: new Date(now - index * 1000),
+          updatedAt: new Date(),
+        },
+      },
+      upsert: true,
+    },
+  }));
 
-  if (count > 0) {
-    return;
-  }
-
-  await collection.insertMany(
-    (seedPosts as BlogPost[]).map((post, index) => ({
-      ...post,
-      createdAt: new Date(Date.now() - index * 1000),
-      updatedAt: new Date(),
-    })),
-    { ordered: false }
-  );
+  await collection.bulkWrite(operations, { ordered: false });
 }
 
 async function uniqueSlug(baseSlug: string) {

@@ -19,10 +19,10 @@ export default function ServicesPage() {
     <>
       <PageHero
         align="center"
-        description="Permits, approvals, customs, crew, equipment, locations, transport, accommodation, and on-ground coordination from one UAE production support partner."
+        description="Complete production coordination for international crews filming anywhere in the UAE, from permits and customs to crew, equipment, locations, transport, and accommodation."
         eyebrow="Production Services"
         image="/images/production-services.png"
-        title="Everything a Production Needs Before Cameras Roll"
+        title="Everything Your Production Needs Before Cameras Roll"
       />
 
       <section className="bg-[#f5f7fb] px-6 py-24 dark:bg-[#080e1f]">
@@ -83,7 +83,7 @@ export default function ServicesPage() {
                         className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#00a86b] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#18c987]"
                         href={`/apply-permit?service=${service.id}`}
                       >
-                        {service.id === "permits" ? "Apply" : "Request This Service"}
+                        Learn More
                         <ArrowRight className="size-4" />
                       </Link>
                     </div>

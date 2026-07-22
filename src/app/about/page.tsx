@@ -8,7 +8,7 @@ import { PageHero } from "@/components/sections/page-hero";
 import { permitJourney, values } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Why Us",
   description:
     "Learn about FilmPermit.ae, a UAE production support partner for filming permits, photography permits, logistics, crew, equipment, and on-ground coordination.",
 };
@@ -17,10 +17,10 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About FilmPermit.ae"
+        eyebrow="Why FilmPermit.ae"
         image="/images/cinematic-hero.png"
-        title="About FilmPermit.ae"
-        description="We help creative teams move through permit planning, authority coordination, crew, gear, logistics, and shoot-day support with less uncertainty."
+        title="Your Production Partner Across the UAE"
+        description="We help international crews secure filming permits, coordinate local logistics, and keep productions moving smoothly across the Emirates."
         align="center"
       />
 
@@ -54,21 +54,19 @@ export default function AboutPage() {
                 Our Mission
               </span>
               <h2 className="mt-6 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
-                Making UAE productions feel controlled from the first call.
+                Helping Productions Film in the UAE Without the Guesswork.
               </h2>
               <p className="mt-6 text-lg leading-9 text-[#647086] dark:text-white/62">
-                Creativity should not be slowed by unclear rules, scattered
-                suppliers, or last-minute paperwork. FilmPermit.ae exists to
-                connect the approval path with the actual production plan, so
-                producers know what is possible, what needs time, and what must
-                be prepared before shoot day.
+                FilmPermit.ae simplifies permits, logistics, authorities, crew,
+                equipment, and production support so your team can focus on the
+                shoot instead of scattered coordination.
               </p>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {[
-                  "Authority-aware permit guidance",
-                  "Production logistics coordination",
-                  "Crew, vendor, and equipment support",
-                  "Practical timelines and expectations",
+                  "Permit planning",
+                  "Local crew",
+                  "Equipment & logistics",
+                  "Practical guidance",
                 ].map((item) => (
                   <span className="flex gap-3 text-sm font-semibold text-[#4a5874] dark:text-white/65" key={item}>
                     <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-[#00a86b]" />
@@ -88,7 +86,7 @@ export default function AboutPage() {
               Our Operating Values
             </p>
             <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
-              Built around clarity, accountability, and local integrity.
+              The Principles Behind Every Production We Support.
             </h2>
           </RevealSection>
 
@@ -123,7 +121,7 @@ export default function AboutPage() {
               How we work
             </p>
             <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
-              One practical path from brief to shoot.
+              Project Brief to Production Support.
             </h2>
           </RevealSection>
 

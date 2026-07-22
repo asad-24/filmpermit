@@ -3,7 +3,20 @@ import type { MetadataRoute } from "next";
 import { getBlogPosts } from "@/lib/blog-store";
 import { site } from "@/lib/site-data";
 
-const routes = ["", "/services", "/apply-permit", "/contact", "/blog", "/faq", "/about"];
+const routes = [
+  "",
+  "/services",
+  "/apply-permit",
+  "/contact",
+  "/blog",
+  "/faq",
+  "/about",
+  "/privacy",
+  "/terms",
+  "/policy",
+  "/ad-policy",
+  "/cookies",
+];
 
 export const dynamic = "force-dynamic";
 

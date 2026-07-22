@@ -99,7 +99,7 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
       <div className="fp-preloader-animation">
         <div className="fp-pos-abs fp-animation-1">
           <p className="fp-h3 fp-preloader-title">
-            UAE FILMING SUPPORT: Permits Made Simple
+            Permits Made Simple Production Made Possible
           </p>
         </div>
         <div className="fp-pos-abs fp-animation-2">
