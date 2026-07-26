@@ -7,13 +7,13 @@ import { showcaseCards } from "@/lib/site-data";
 
 export function CinematicShowcase() {
   return (
-    <section className="relative overflow-hidden bg-[#f5f7fb] px-6 py-24 dark:bg-[#080e1f]">
+    <section className="relative overflow-hidden bg-[#f5f7fb] px-6 py-20 dark:bg-[#080e1f]">
       <div className="mx-auto max-w-7xl">
         <RevealSection className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
             Production-ready UAE
           </p>
-          <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-6xl dark:text-white">
+          <h2 className="mt-4 text-3xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
             Locations, gear, crew, and logistics in one frame.
           </h2>
           <p className="mt-5 text-base leading-8 text-[#4a5874] dark:text-white/62">
@@ -22,12 +22,12 @@ export function CinematicShowcase() {
           </p>
         </RevealSection>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {showcaseCards.map((card, index) => (
             <RevealSection delay={index * 110} key={card.title}>
               <Link
                 aria-label={`${card.title} - open related page`}
-                className="group relative block min-h-[520px] overflow-hidden rounded-[32px] border border-[#0f172c]/10 bg-[#0a1024] shadow-[0_25px_80px_rgba(15,23,44,0.14)] transition hover:-translate-y-1 hover:shadow-[0_30px_100px_rgba(0,168,107,0.18)] dark:border-white/10"
+                className="group relative block min-h-[460px] overflow-hidden rounded-[26px] border border-[#0f172c]/10 bg-[#0a1024] shadow-[0_22px_70px_rgba(15,23,44,0.13)] transition hover:-translate-y-1 hover:shadow-[0_26px_80px_rgba(0,168,107,0.16)] dark:border-white/10"
                 href={card.href}
               >
                 <Image

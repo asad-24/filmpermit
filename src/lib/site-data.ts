@@ -33,6 +33,8 @@ export const navItems = [
 export const heroCredibility = [
   { value: "350+", label: "Productions Supported" },
   { value: "Trusted", label: "By International Productions" },
+  { value: "24/7", label: "Customer Support" },
+  { value: "99%", label: "Approval Rate" },
 ];
 
 export const stats = [
@@ -126,14 +128,8 @@ export const testimonials = [
 
 export const productionPartners = [
   "Permits",
-  "Crew",
-  "Locations",
-  "Customs",
-  "Transport",
-  "Studios",
-  "Equipment",
-  "Drone",
-  "Vendors",
+  "Crew Hire",
+  "Location Scouting",
 ];
 
 export const serviceCards = [
@@ -280,8 +276,16 @@ export const allServices = serviceCards;
 export const emiratesBanner = {
   title: "Permits and Production Support Across All Emirates",
   description:
-    "Whether you are filming in Dubai, Abu Dhabi, Sharjah, Ras Al Khaimah, Ajman or Al Ain, we coordinate permits, production logistics and local support from start to finish.",
-  emirates: ["Dubai", "Abu Dhabi", "Sharjah", "Ras Al Khaimah", "Ajman", "Al Ain"],
+    "Whether you are filming in Dubai, Abu Dhabi, Sharjah, Fujairah, Ajman, Umm Al Quwain, or Ras Al Khaimah, we coordinate permits, production logistics, and local support from start to finish.",
+  emirates: [
+    "Dubai",
+    "Abu Dhabi",
+    "Sharjah",
+    "Fujairah",
+    "Ajman",
+    "Umm Al Quwain",
+    "Ras Al Khaimah",
+  ],
 };
 
 export const faqs = [

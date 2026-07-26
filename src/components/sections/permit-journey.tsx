@@ -6,7 +6,7 @@ import { permitJourney } from "@/lib/site-data";
 
 export function PermitJourney() {
   return (
-    <section className="relative overflow-hidden bg-white px-6 py-24 dark:bg-[#0a1024]">
+    <section className="relative overflow-hidden bg-white px-6 py-20 dark:bg-[#0a1024]">
       <div className="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-[#00a86b]/14 blur-3xl" />
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
         <RevealSection>
@@ -14,7 +14,7 @@ export function PermitJourney() {
             <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
               Permit Journey
             </p>
-            <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-6xl dark:text-white">
+            <h2 className="mt-4 text-3xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
               From brief to approved shoot path.
             </h2>
             <p className="mt-5 text-base leading-8 text-[#4a5874] dark:text-white/65">
@@ -27,7 +27,7 @@ export function PermitJourney() {
 
         <div className="relative">
           <RevealSection>
-            <div className="relative min-h-[420px] overflow-hidden rounded-[34px] border border-[#0f172c]/10 shadow-[0_28px_90px_rgba(15,23,44,0.16)] dark:border-white/10">
+            <div className="relative min-h-[380px] overflow-hidden rounded-[26px] border border-[#0f172c]/10 shadow-[0_24px_70px_rgba(15,23,44,0.14)] dark:border-white/10">
               <Image
                 alt="UAE filming permit planning desk"
                 className="object-cover"

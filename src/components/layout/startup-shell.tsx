@@ -35,12 +35,7 @@ export function StartupShell({ children }: { children: ReactNode }) {
   return (
     <>
       {showPreloader ? <StartupPreloader onDone={handleDone} /> : null}
-      <div
-        className={[
-          "min-h-full flex flex-col transition-opacity duration-300",
-          ready ? "opacity-100" : "pointer-events-none opacity-0",
-        ].join(" ")}
-      >
+      <div className="min-h-full flex flex-col">
         {children}
       </div>
     </>

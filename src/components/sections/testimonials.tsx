@@ -5,14 +5,14 @@ import { testimonials } from "@/lib/site-data";
 
 export function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-white px-6 py-24 dark:bg-[#0a1024]">
+    <section className="relative overflow-hidden bg-white px-6 py-20 dark:bg-[#0a1024]">
       <div className="pointer-events-none absolute -right-32 top-8 h-80 w-80 rounded-full bg-[#00a86b]/14 blur-3xl" />
       <div className="mx-auto max-w-7xl">
         <RevealSection className="max-w-3xl">
           <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
             Producer confidence
           </p>
-          <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-6xl dark:text-white">
+          <h2 className="mt-4 text-3xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
             Built for teams who cannot afford confusion.
           </h2>
         </RevealSection>

@@ -20,6 +20,10 @@ export function ContactForm() {
     const service = String(form.get("service") ?? "");
     const message = String(form.get("message") ?? "");
 
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      return;
+    }
+
     const subject = encodeURIComponent(`New production support enquiry from ${name}`);
     const body = encodeURIComponent(
       [
@@ -67,6 +71,7 @@ export function ContactForm() {
             className="h-12 rounded-2xl bg-[#f5f7fb] dark:border-white/10 dark:bg-white/[0.06] dark:text-white"
             name="phone"
             placeholder="+971 ..."
+            required
           />
         </label>
         <label className="grid gap-2 text-sm font-black text-[#24304a] dark:text-white/75">

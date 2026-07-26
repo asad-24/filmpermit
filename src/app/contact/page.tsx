@@ -13,13 +13,6 @@ export const metadata: Metadata = {
     "Contact FilmPermit.ae for UAE filming permits, photography permits, production logistics, equipment support, and on-ground production coordination.",
 };
 
-const intake = [
-  "Shoot dates and timing",
-  "Locations and emirate",
-  "Crew size and equipment",
-  "Drone, roads, talent, or sensitive locations",
-];
-
 export default function ContactPage() {
   return (
     <main className="bg-[#f5f7fb] dark:bg-[#080e1f]">
@@ -30,8 +23,16 @@ export default function ContactPage() {
         description="Send the production essentials once. We will help map the right permit route, support requirements, and next steps."
       />
 
-      <section className="px-6 py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+      <section className="relative overflow-hidden px-6 py-20">
+        <Image
+          alt=""
+          className="absolute inset-0 object-cover opacity-20 dark:opacity-24"
+          fill
+          sizes="100vw"
+          src="/images/production-services.png"
+        />
+        <div className="absolute inset-0 bg-[#f5f7fb]/86 dark:bg-[#080e1f]/88" />
+        <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <RevealSection>
             <div className="space-y-6">
            
@@ -46,16 +47,16 @@ export default function ContactPage() {
           </RevealSection>
 
           <RevealSection delay={120}>
-            <div className="rounded-[34px] border border-[#0f172c]/10 bg-white p-6 shadow-[0_24px_90px_rgba(15,23,44,0.1)] md:p-8 dark:border-white/10 dark:bg-white/[0.05]">
+            <div className="rounded-[26px] border border-[#0f172c]/10 bg-white p-5 shadow-[0_18px_70px_rgba(15,23,44,0.09)] md:p-7 dark:border-white/10 dark:bg-white/[0.05]">
               <div className="flex items-center gap-3">
-                <span className="flex size-12 items-center justify-center rounded-2xl bg-[#00a86b] text-white">
+                <span className="flex size-11 items-center justify-center rounded-2xl bg-[#00a86b] text-white">
                   <Timer className="size-5" />
                 </span>
                 <div>
                   <p className="text-xs font-black uppercase tracking-[0.2em] text-[#00a86b]">
                     Production intake
                   </p>
-                  <h2 className="text-2xl font-black text-[#0a1024] dark:text-white">
+                  <h2 className="text-xl font-black text-[#0a1024] dark:text-white">
                     Project Enquiry
                   </h2>
                 </div>
@@ -87,7 +88,7 @@ function ContactTile({
   value: string;
 }) {
   const className =
-    "group rounded-2xl border border-[#0f172c]/10 bg-white/82 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_18px_60px_rgba(15,23,44,0.08)] dark:border-white/10 dark:bg-white/[0.06]";
+    "group rounded-2xl border border-[#0f172c]/10 bg-white/82 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_18px_60px_rgba(15,23,44,0.08)] dark:border-white/10 dark:bg-white/[0.06]";
   const content = (
     <>
       <span className="flex size-11 items-center justify-center rounded-xl bg-[#0a1024] text-[#00a86b] dark:bg-[#00a86b] dark:text-white">

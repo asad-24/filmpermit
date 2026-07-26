@@ -23,7 +23,7 @@ const pillars = [
 
 export function Mission() {
   return (
-    <section className="relative overflow-hidden bg-white px-6 py-24 dark:bg-[#080e1f]" id="about">
+    <section className="relative overflow-hidden bg-white px-6 py-20 dark:bg-[#080e1f]" id="about">
       <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-[#0f172c]/10 blur-3xl dark:bg-[#00a86b]/12" />
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
         <RevealSection>
@@ -31,7 +31,7 @@ export function Mission() {
             <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
               What we make simple
             </p>
-            <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-6xl dark:text-white">
+            <h2 className="mt-4 text-3xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
               Less paperwork anxiety. More production momentum.
             </h2>
             <p className="mt-5 text-base leading-8 text-[#4a5874] dark:text-white/66">
@@ -65,7 +65,7 @@ export function Mission() {
 
         <RevealSection delay={140}>
           <div className="relative">
-            <div className="relative min-h-[560px] overflow-hidden rounded-[36px] border border-[#0f172c]/10 shadow-[0_28px_100px_rgba(15,23,44,0.16)] dark:border-white/10">
+            <div className="relative min-h-[500px] overflow-hidden rounded-[28px] border border-[#0f172c]/10 shadow-[0_24px_80px_rgba(15,23,44,0.14)] dark:border-white/10">
               <Image
                 alt="Production crew preparing a UAE shoot"
                 className="object-cover"

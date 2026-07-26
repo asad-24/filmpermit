@@ -31,8 +31,8 @@ export function ServicesList() {
                   </span>
                   <ChevronDown className="size-5 shrink-0 text-[#8490a8] transition group-open:rotate-180 dark:text-white/45" />
                 </summary>
-                <div className="ml-0 mt-5 grid gap-5 md:ml-[3.75rem] md:grid-cols-[1fr_auto] md:items-center">
-                  <p className="text-sm leading-7 text-[#647086] dark:text-white/60">
+                <div className="ml-0 mt-5 grid gap-5 md:ml-[3.75rem] md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+                  <p className="text-sm leading-7 text-[#647086] dark:text-white/60 md:whitespace-nowrap">
                     {service.description}
                   </p>
                   <Link

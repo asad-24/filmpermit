@@ -6,7 +6,7 @@ import { Calendar, Send } from "lucide-react";
 import { site } from "@/lib/site-data";
 
 const fieldClass =
-  "h-[60px] w-full rounded-xl border border-[#c8d3e6] bg-[#f3f5fa] px-5 text-base text-[#0a1024] outline-none transition placeholder:text-[#9ba9c1] focus:border-[#0a1024] focus:ring-3 focus:ring-[#0a1024]/10";
+  "h-12 w-full rounded-xl border border-[#c8d3e6] bg-[#f3f5fa] px-4 text-sm text-[#0a1024] outline-none transition placeholder:text-[#9ba9c1] focus:border-[#0a1024] focus:ring-3 focus:ring-[#0a1024]/10";
 
 export function PermitApplicationForm() {
   const [sent, setSent] = useState(false);
@@ -25,6 +25,10 @@ export function PermitApplicationForm() {
     const endDate = String(form.get("endDate") ?? "");
     const crewSize = String(form.get("crewSize") ?? "");
     const description = String(form.get("description") ?? "");
+
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      return;
+    }
 
     const subject = encodeURIComponent(`Permit application from ${name}`);
     const body = encodeURIComponent(
@@ -49,8 +53,8 @@ export function PermitApplicationForm() {
   }
 
   return (
-    <form className="grid gap-7" onSubmit={handleSubmit}>
-      <div className="grid gap-6 md:grid-cols-2">
+    <form className="grid gap-5" onSubmit={handleSubmit}>
+      <div className="grid gap-5 md:grid-cols-2">
         <Field label="Full Name *">
           <input className={fieldClass} name="name" placeholder="John Smith" required />
         </Field>
@@ -65,7 +69,7 @@ export function PermitApplicationForm() {
         </Field>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2">
         <Field label="Phone Number *">
           <input className={fieldClass} name="phone" placeholder="+971 50 123 4567" required />
         </Field>
@@ -96,7 +100,7 @@ export function PermitApplicationForm() {
         />
       </Field>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-5 md:grid-cols-3">
         <Field label="Start Date *">
           <DateLikeInput name="startDate" required />
         </Field>
@@ -110,7 +114,7 @@ export function PermitApplicationForm() {
 
       <Field label="Project Description *">
         <textarea
-          className="min-h-44 w-full rounded-xl border border-[#c8d3e6] bg-[#f3f5fa] px-5 py-4 text-base leading-7 text-[#0a1024] outline-none transition placeholder:text-[#9ba9c1] focus:border-[#0a1024] focus:ring-3 focus:ring-[#0a1024]/10"
+          className="min-h-36 w-full rounded-xl border border-[#c8d3e6] bg-[#f3f5fa] px-4 py-4 text-sm leading-7 text-[#0a1024] outline-none transition placeholder:text-[#9ba9c1] focus:border-[#0a1024] focus:ring-3 focus:ring-[#0a1024]/10"
           name="description"
           placeholder="Tell us about your project, specific requirements, or any questions you have..."
           required
@@ -118,7 +122,7 @@ export function PermitApplicationForm() {
       </Field>
 
       <button
-        className="inline-flex h-[68px] w-full items-center justify-center gap-4 rounded-xl bg-[#070c1f] px-6 text-lg font-black text-white transition hover:-translate-y-0.5 hover:bg-[#101936] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#070c1f]/25"
+        className="inline-flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#070c1f] px-6 text-base font-black text-white transition hover:-translate-y-0.5 hover:bg-[#101936] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#070c1f]/25"
         type="submit"
       >
         Submit Application

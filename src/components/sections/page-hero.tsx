@@ -7,14 +7,14 @@ export function PageHero({
   image = "/images/cinematic-hero.png",
   align = "left",
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description: string;
   image?: string;
   align?: "left" | "center";
 }) {
   return (
-    <section className="relative overflow-hidden px-6 pb-24 pt-40 text-white">
+    <section className="relative overflow-hidden px-6 pb-20 pt-32 text-white md:pt-36">
       <Image
         alt={title}
         className="absolute inset-0 object-cover"
@@ -31,12 +31,15 @@ export function PageHero({
           align === "center" ? "text-center" : "",
         ].join(" ")}
       >
-        <p className="text-sm font-black uppercase tracking-[0.24em] text-[#7de8c5]">
-          {eyebrow}
-        </p>
+        {eyebrow ? (
+          <p className="text-sm font-black uppercase tracking-[0.24em] text-[#7de8c5]">
+            {eyebrow}
+          </p>
+        ) : null}
         <h1
           className={[
-            "mt-5 text-5xl font-black leading-tight tracking-normal md:text-7xl",
+            eyebrow ? "mt-5" : "",
+            "text-4xl font-black leading-tight tracking-normal sm:text-5xl md:text-6xl",
             align === "center" ? "mx-auto max-w-5xl" : "max-w-5xl",
           ].join(" ")}
         >
@@ -44,7 +47,7 @@ export function PageHero({
         </h1>
         <p
           className={[
-            "mt-6 text-lg leading-8 text-white/72",
+            "mt-5 text-base leading-8 text-white/72",
             align === "center" ? "mx-auto max-w-3xl" : "max-w-3xl",
           ].join(" ")}
         >

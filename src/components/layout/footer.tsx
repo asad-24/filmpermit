@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone, Send } from "lucide-react";
 
-import { BrandLogo } from "@/components/layout/brand-logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { navItems, serviceCards, site } from "@/lib/site-data";
@@ -23,10 +22,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 pt-16">
         <div className="mb-12 grid gap-7 rounded-[34px] border border-[#0f172c]/10 bg-white/82 p-6 shadow-[0_24px_90px_rgba(15,23,44,0.12)] backdrop-blur-xl md:grid-cols-[1fr_0.9fr] md:items-center md:p-8 dark:border-white/10 dark:bg-white/[0.06]">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#00a86b]">
-              Production notes
-            </p>
-            <h2 className="mt-3 text-3xl font-black tracking-normal">
+            <h2 className="text-3xl font-black tracking-normal">
               Stay updated on UAE filming news.
             </h2>
             <p className="mt-3 text-sm leading-7 text-[#647086] dark:text-white/65">
@@ -52,7 +48,21 @@ export function Footer() {
 
         <div className="grid gap-10 pb-10 md:grid-cols-[1.35fr_0.8fr_0.9fr_1.1fr]">
           <div>
-            <BrandLogo size="footer" />
+            <Link
+              aria-label={`${site.name} home`}
+              className="inline-flex rounded-2xl bg-white p-2"
+              href="/"
+            >
+              <span className="relative block h-[6.25rem] w-[9.4rem]">
+                <Image
+                  alt={site.name}
+                  className="object-contain"
+                  fill
+                  sizes="150px"
+                  src="/assests/new_logo.png"
+                />
+              </span>
+            </Link>
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#4a5874] dark:text-white/72">
               Your trusted partner for UAE filming permits, photography permits,
               production logistics, crew, equipment, and on-ground support.

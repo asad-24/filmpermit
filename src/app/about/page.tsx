@@ -19,15 +19,15 @@ export default function AboutPage() {
       <PageHero
         eyebrow="Why FilmPermit.ae"
         image="/images/cinematic-hero.png"
-        title="Your Production Partner Across the UAE"
+        title="From Project Brief to Production Support"
         description="We help international crews secure filming permits, coordinate local logistics, and keep productions moving smoothly across the Emirates."
         align="center"
       />
 
-      <section className="bg-white px-6 py-24 dark:bg-[#080e1f]">
+      <section className="bg-white px-6 py-20 dark:bg-[#080e1f]">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <RevealSection>
-            <div className="relative min-h-[560px] overflow-hidden rounded-[36px] border border-[#0f172c]/10 shadow-[0_28px_90px_rgba(15,23,44,0.14)] dark:border-white/10">
+            <div className="relative min-h-[500px] overflow-hidden rounded-[28px] border border-[#0f172c]/10 shadow-[0_24px_70px_rgba(15,23,44,0.13)] dark:border-white/10">
               <Image
                 alt="UAE filming permit paperwork and production coordination"
                 className="object-cover"
@@ -53,7 +53,7 @@ export default function AboutPage() {
                 <HeartHandshake className="size-4" />
                 Our Mission
               </span>
-              <h2 className="mt-6 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
+              <h2 className="mt-6 text-3xl font-black tracking-normal text-[#0a1024] md:text-4xl dark:text-white">
                 Helping Productions Film in the UAE Without the Guesswork.
               </h2>
               <p className="mt-6 text-lg leading-9 text-[#647086] dark:text-white/62">
@@ -79,25 +79,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#f5f7fb] px-6 py-24 dark:bg-[#0a1024]">
+      <section className="bg-[#f5f7fb] px-6 py-20 dark:bg-[#0a1024]">
         <div className="mx-auto max-w-7xl">
           <RevealSection className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
               Our Operating Values
             </p>
-            <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
+            <h2 className="mt-4 text-3xl font-black tracking-normal text-[#0a1024] md:text-4xl dark:text-white">
               The Principles Behind Every Production We Support.
             </h2>
           </RevealSection>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-4">
+          <div className="mt-10 grid gap-5 md:grid-cols-4">
             {values.map((value, index) => {
               const Icon = value.icon;
 
               return (
                 <RevealSection delay={index * 90} key={value.title}>
                   <article className="h-full rounded-[28px] border border-[#0f172c]/10 bg-white p-6 text-center shadow-[0_18px_60px_rgba(15,23,44,0.07)] transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.05]">
-                    <div className="mx-auto flex size-14 items-center justify-center rounded-2xl bg-[#0a1024] text-[#00a86b] dark:bg-[#00a86b] dark:text-white">
+                    <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-[#0a1024] text-[#00a86b] dark:bg-[#00a86b] dark:text-white">
                       <Icon className="size-6" />
                     </div>
                     <h3 className="mt-6 text-xl font-black text-[#0a1024] dark:text-white">
@@ -114,18 +114,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-24 dark:bg-[#080e1f]">
+      <section className="bg-white px-6 py-20 dark:bg-[#080e1f]">
         <div className="mx-auto max-w-7xl">
           <RevealSection className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
               How we work
             </p>
-            <h2 className="mt-4 text-4xl font-black tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
+            <h2 className="mt-4 text-3xl font-black tracking-normal text-[#0a1024] md:text-4xl dark:text-white">
               Project Brief to Production Support.
             </h2>
           </RevealSection>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-4">
+          <div className="mt-10 grid gap-5 md:grid-cols-4">
             {permitJourney.map((step, index) => (
               <RevealSection delay={index * 80} key={step.step}>
                 <article className="h-full rounded-[28px] border border-[#0f172c]/10 bg-[#f5f7fb] p-6 dark:border-white/10 dark:bg-white/[0.05]">

@@ -8,7 +8,7 @@ export function CTA() {
   const whatsappHref = `https://wa.me/${site.whatsapp}`;
 
   return (
-    <section className="relative overflow-hidden bg-[#f5f7fb] px-4 py-14 text-white dark:bg-[#070c1c] sm:px-6 sm:py-24">
+    <section className="relative overflow-hidden bg-[#f5f7fb] px-4 py-12 text-white dark:bg-[#070c1c] sm:px-6 sm:py-20">
       <div className="absolute inset-0">
         <Image
           alt="UAE production basecamp ready for shoot day"
@@ -22,13 +22,9 @@ export function CTA() {
       </div>
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-7 rounded-3xl border border-white/14 bg-white/[0.08] p-4 shadow-[0_30px_100px_rgba(0,0,0,0.34)] backdrop-blur-xl sm:p-6 md:grid-cols-[1.2fr_0.8fr] md:items-center md:p-10">
+        <div className="grid gap-7 rounded-2xl border border-white/14 bg-white/[0.08] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:p-6 md:grid-cols-[1.2fr_0.8fr] md:items-center md:p-8">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-white/84 sm:text-xs sm:tracking-[0.18em]">
-              <span className="size-2 rounded-full bg-[#00a86b]" />
-              Start your UAE production
-            </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-black leading-tight tracking-normal sm:mt-5 sm:text-4xl md:text-6xl">
+            <h2 className="max-w-3xl text-3xl font-black leading-tight tracking-normal sm:text-4xl md:text-5xl">
               Tell Us About Your Production. We’ll Handle the Rest.
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-white/72 sm:text-base sm:leading-8">

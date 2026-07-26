@@ -21,7 +21,7 @@ export function Header() {
       {open ? (
         <button
           aria-label="Close menu"
-          className="fixed inset-0 z-40 bg-[#080e1f]/55 backdrop-blur-sm xl:hidden"
+          className="fixed inset-0 z-[65] bg-[#080e1f]/55 backdrop-blur-sm xl:hidden"
           onClick={() => setOpen(false)}
           type="button"
         />
@@ -30,7 +30,7 @@ export function Header() {
       <header className="fixed left-0 right-0 top-3 z-[60] px-3 sm:top-4 sm:px-4">
         <div
           className={cn(
-            "mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-full border border-white/50 bg-white/82 px-3 py-2 text-[#0f172c] shadow-[0_18px_60px_rgba(15,23,44,0.16)] ring-1 ring-black/5 backdrop-blur-2xl transition-all duration-300 sm:px-5 sm:py-3 dark:border-white/15 dark:bg-[#07111f]/70 dark:text-white dark:shadow-[0_18px_60px_rgba(0,0,0,0.24)]"
+            "mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-full border border-[#0f172c]/10 bg-white px-3 py-2 text-[#0f172c] shadow-[0_18px_60px_rgba(15,23,44,0.16)] ring-1 ring-black/5 transition-all duration-300 sm:px-5 sm:py-3 dark:border-[#0f172c]/10 dark:bg-white dark:text-[#0f172c] dark:shadow-[0_18px_60px_rgba(15,23,44,0.16)]"
           )}
         >
           <BrandLogo />
@@ -48,8 +48,8 @@ export function Header() {
                   <div className="group relative" key={item.label}>
                     <Link
                       className={cn(
-                        "flex items-center gap-1 rounded-full px-3 py-2 text-[#0f172c]/72 transition hover:bg-[#00a86b]/10 hover:text-[#00a86b] dark:text-white/78 dark:hover:bg-white/10 dark:hover:text-white",
-                        active && "bg-[#0f172c]/8 text-[#0f172c] dark:bg-white/12 dark:text-white"
+                        "flex items-center gap-1 rounded-full px-3 py-2 text-[#0f172c]/72 transition hover:bg-[#00a86b]/10 hover:text-[#00a86b] dark:text-[#0f172c]/72 dark:hover:bg-[#00a86b]/10 dark:hover:text-[#00a86b]",
+                        active && "bg-[#0f172c]/8 text-[#0f172c] dark:bg-[#0f172c]/8 dark:text-[#0f172c]"
                       )}
                       href={item.href}
                     >
@@ -57,10 +57,10 @@ export function Header() {
                       <ChevronDown className="size-4 transition group-hover:rotate-180" />
                     </Link>
                     <div className="invisible absolute left-0 top-full z-50 w-72 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                      <div className="rounded-3xl border border-[#0f172c]/10 bg-white/96 p-2 shadow-[0_24px_80px_rgba(15,23,44,0.18)] backdrop-blur-xl dark:border-white/10 dark:bg-[#07111f]/96">
+                      <div className="rounded-3xl border border-[#0f172c]/10 bg-white p-2 shadow-[0_24px_80px_rgba(15,23,44,0.18)] dark:border-[#0f172c]/10 dark:bg-white">
                         {serviceCards.map((service) => (
                           <Link
-                            className="block rounded-2xl px-4 py-3 text-sm font-black text-[#24304a] transition hover:bg-[#00a86b]/10 hover:text-[#00a86b] dark:text-white/78 dark:hover:bg-white/10 dark:hover:text-white"
+                            className="block rounded-2xl px-4 py-3 text-sm font-black text-[#24304a] transition hover:bg-[#00a86b]/10 hover:text-[#00a86b] dark:text-[#24304a] dark:hover:bg-[#00a86b]/10 dark:hover:text-[#00a86b]"
                             href={service.href}
                             key={service.id}
                           >
@@ -76,8 +76,8 @@ export function Header() {
               return (
                 <Link
                   className={cn(
-                    "rounded-full px-3 py-2 text-[#0f172c]/72 transition hover:bg-[#00a86b]/10 hover:text-[#00a86b] dark:text-white/78 dark:hover:bg-white/10 dark:hover:text-white",
-                    active && "bg-[#0f172c]/8 text-[#0f172c] dark:bg-white/12 dark:text-white"
+                    "rounded-full px-3 py-2 text-[#0f172c]/72 transition hover:bg-[#00a86b]/10 hover:text-[#00a86b] dark:text-[#0f172c]/72 dark:hover:bg-[#00a86b]/10 dark:hover:text-[#00a86b]",
+                    active && "bg-[#0f172c]/8 text-[#0f172c] dark:bg-[#0f172c]/8 dark:text-[#0f172c]"
                   )}
                   href={item.href}
                   key={item.label}
@@ -93,7 +93,7 @@ export function Header() {
             <Link
               className={cn(
                 buttonVariants({ variant: "outline" }),
-                "rounded-full border-[#0f172c]/20 bg-white px-4 font-black text-[#0f172c] hover:bg-[#0f172c] hover:text-white dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-[#0f172c]"
+                "rounded-full border-[#0f172c]/20 bg-white px-4 font-black text-[#0f172c] hover:bg-[#0f172c] hover:text-white dark:border-[#0f172c]/20 dark:bg-white dark:text-[#0f172c] dark:hover:bg-[#0f172c] dark:hover:text-white"
               )}
               href="/contact"
             >
@@ -114,7 +114,7 @@ export function Header() {
             aria-expanded={open}
             aria-label="Toggle navigation"
             className={cn(
-              "inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-[#0f172c]/8 text-[#0f172c] transition xl:hidden dark:bg-white/10 dark:text-white"
+              "inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-[#0f172c]/8 text-[#0f172c] transition xl:hidden dark:bg-[#0f172c]/8 dark:text-[#0f172c]"
             )}
             onClick={() => setOpen((value) => !value)}
             type="button"
@@ -126,20 +126,20 @@ export function Header() {
 
       <aside
         className={cn(
-          "fixed inset-y-0 right-0 z-50 flex w-[88%] max-w-sm flex-col bg-white text-[#0f172c] shadow-2xl ring-1 ring-black/10 transition-transform duration-300 dark:bg-[#07111f] dark:text-white dark:ring-white/10 xl:hidden",
+          "fixed inset-y-0 right-0 z-[70] flex w-[88%] max-w-sm flex-col bg-white text-[#0f172c] shadow-2xl ring-1 ring-black/10 transition-transform duration-300 dark:bg-white dark:text-[#0f172c] dark:ring-black/10 xl:hidden",
           open ? "translate-x-0" : "translate-x-full"
         )}
       >
         <button
           aria-label="Close menu"
-          className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-white shadow-md ring-1 ring-black/5 dark:bg-white/10 dark:ring-white/10"
+          className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-[#0f172c]/8 text-[#0f172c] shadow-md ring-1 ring-black/5 dark:bg-[#0f172c]/8 dark:text-[#0f172c] dark:ring-black/5"
           onClick={() => setOpen(false)}
           type="button"
         >
           <X className="size-5" />
         </button>
 
-        <div className="border-b border-[#0f172c]/10 p-5 dark:border-white/10">
+        <div className="border-b border-[#0f172c]/10 p-5 dark:border-[#0f172c]/10">
           <BrandLogo onClick={() => setOpen(false)} size="drawer" />
         </div>
 
@@ -150,7 +150,7 @@ export function Header() {
                 return (
                   <div className="rounded-2xl" key={item.label}>
                     <button
-                      className="flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left transition hover:bg-[#00a86b]/15 dark:hover:bg-white/10"
+                      className="flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left transition hover:bg-[#00a86b]/15 dark:hover:bg-[#00a86b]/15"
                       onClick={() => setServicesOpen((value) => !value)}
                       type="button"
                     >
@@ -166,7 +166,7 @@ export function Header() {
                       <div className="mt-1 grid gap-1 pl-3">
                         {serviceCards.map((service) => (
                           <Link
-                            className="rounded-2xl px-4 py-3 text-sm text-[#4a5874] transition hover:bg-[#00a86b]/15 hover:text-[#00a86b] dark:text-white/70 dark:hover:bg-white/10 dark:hover:text-white"
+                            className="rounded-2xl px-4 py-3 text-sm text-[#4a5874] transition hover:bg-[#00a86b]/15 hover:text-[#00a86b] dark:text-[#4a5874] dark:hover:bg-[#00a86b]/15 dark:hover:text-[#00a86b]"
                             href={service.href}
                             key={service.id}
                             onClick={() => {
@@ -185,7 +185,7 @@ export function Header() {
 
               return (
                 <Link
-                  className="rounded-2xl px-4 py-3 transition hover:bg-[#00a86b]/15 dark:hover:bg-white/10"
+                  className="rounded-2xl px-4 py-3 transition hover:bg-[#00a86b]/15 dark:hover:bg-[#00a86b]/15"
                   href={item.href}
                   key={item.label}
                   onClick={() => setOpen(false)}
@@ -197,7 +197,7 @@ export function Header() {
           </div>
         </div>
 
-        <div className="border-t border-[#0f172c]/10 p-4 dark:border-white/10">
+        <div className="border-t border-[#0f172c]/10 p-4 dark:border-[#0f172c]/10">
           <Link
             className="inline-flex w-full items-center justify-center rounded-full bg-[#00a86b] px-5 py-3 text-sm font-black text-white"
             href="/apply-permit"
@@ -227,7 +227,7 @@ function QuickAction({
 }) {
   return (
     <a
-      className="flex flex-col items-center justify-center gap-1 rounded-2xl bg-[#0f172c]/6 px-2 py-3 text-[11px] font-black text-[#0f172c] dark:bg-white/10 dark:text-white"
+      className="flex flex-col items-center justify-center gap-1 rounded-2xl bg-[#0f172c]/6 px-2 py-3 text-[11px] font-black text-[#0f172c] dark:bg-[#0f172c]/6 dark:text-[#0f172c]"
       href={href}
       rel="noreferrer"
       target={href.startsWith("http") ? "_blank" : undefined}

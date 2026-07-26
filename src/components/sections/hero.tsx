@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 export function Hero() {
   return (
-    <section className="relative z-10 overflow-hidden px-4 pb-8 pt-24 text-white sm:px-6 sm:pb-10 md:pt-32 lg:min-h-screen lg:pt-36">
+    <section className="relative z-10 overflow-hidden px-4 pb-8 pt-24 text-white sm:px-6 sm:pb-10 md:pt-28 lg:min-h-[88vh] lg:pt-32">
       <Image
         alt="Cinematic Dubai production setup with camera and skyline"
         className="absolute inset-0 z-0 object-cover"
@@ -22,18 +22,18 @@ export function Hero() {
       />
       <div className="absolute inset-0 z-0 bg-[linear-gradient(90deg,rgba(5,9,21,0.86)_0%,rgba(5,9,21,0.58)_48%,rgba(5,9,21,0.18)_100%)]" />
 
-      <div className="relative z-20 mx-auto flex min-h-[calc(100svh-6rem)] w-full max-w-7xl items-center py-6 sm:min-h-[calc(100svh-7rem)] lg:min-h-[calc(100vh-7rem)] lg:py-0">
+      <div className="relative z-20 mx-auto flex min-h-[calc(100svh-6rem)] w-full max-w-7xl items-center py-6 sm:min-h-[calc(100svh-7rem)] lg:min-h-[calc(88vh-7rem)] lg:py-0">
         <div className="grid w-full gap-8 lg:grid-cols-[1.05fr_0.7fr] lg:items-end">
           <div className="max-w-5xl lg:col-span-2">
             <FadeContent blur>
               <div className="inline-flex max-w-full flex-wrap items-center gap-1.5 rounded-full border border-white/18 bg-white/10 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.12em] text-white/88 shadow-sm backdrop-blur sm:gap-2 sm:px-4 sm:py-2 sm:text-[11px] sm:tracking-[0.18em]">
                 FilmPermit.ae
                 <span className="size-1 rounded-full bg-[#00a86b]" />
-                Trusted UAE Film Permit Coordination
+                Trusted UAE Film Permit Partner
               </div>
             </FadeContent>
 
-            <h1 className="mt-5 max-w-5xl text-[2.35rem] font-black leading-[1.02] tracking-normal sm:mt-6 sm:text-5xl md:text-6xl lg:text-6xl">
+            <h1 className="mt-5 max-w-5xl text-[2.05rem] font-black leading-[1.04] tracking-normal sm:mt-6 sm:text-4xl md:text-5xl lg:text-[3.35rem]">
               <BlurText as="span" className="block" text="Everything You Need" />
               <BlurText
                 as="span"
@@ -44,10 +44,11 @@ export function Hero() {
             </h1>
 
             <FadeContent className="mt-5 max-w-4xl sm:mt-6" delay={260}>
-              <p className="text-sm leading-7 text-white/76 sm:text-base sm:leading-8 md:text-lg">
-                From permits to production logistics, we coordinate everything
-                your crew needs to film smoothly across Dubai, Abu Dhabi,
-                Sharjah, and the rest of the UAE.
+              <p className="text-sm leading-7 text-white/76 sm:text-base sm:leading-8 md:text-base">
+                Navigating filming regulations in the UAE doesn&apos;t have to be
+                complicated. From filming permits and government approvals to
+                local production support, we help international productions film
+                with confidence through one trusted partner.
               </p>
             </FadeContent>
 
@@ -58,7 +59,7 @@ export function Hero() {
                     className="min-w-0 rounded-2xl border border-white/14 bg-white/10 px-2 py-3 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur sm:px-4 sm:py-4"
                     key={point.label}
                   >
-                    <div className="text-2xl font-black tracking-normal text-white sm:text-3xl">
+                    <div className="text-xl font-black tracking-normal text-white sm:text-2xl">
                       {point.value}
                     </div>
                     <p className="mt-1 text-[10px] font-black uppercase leading-4 tracking-[0.08em] text-[#7de8c5] sm:text-xs sm:tracking-[0.14em]">

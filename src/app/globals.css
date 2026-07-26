@@ -289,10 +289,8 @@
 }
 
 .fp-preloader {
-  background:
-    radial-gradient(circle at 18% 18%, rgba(0,168,107, 0.22), transparent 30rem),
-    linear-gradient(135deg, #0f172c 0%, #0a1024 100%);
-  color: #ffffff;
+  background: #ffffff;
+  color: #0f172c;
   font-family: var(--font-inter), system-ui, sans-serif;
   height: 100vh;
   inset: 0;
@@ -302,11 +300,38 @@
   z-index: 1000000;
 }
 
+.fp-preloader::before,
+.fp-preloader::after {
+  content: "";
+  inset: -20%;
+  pointer-events: none;
+  position: absolute;
+}
+
+.fp-preloader::before {
+  animation: fp-line-drift 9s linear infinite;
+  background:
+    linear-gradient(90deg, transparent 0 12%, rgba(0, 168, 107, 0.16) 12.2%, transparent 12.5% 36%, rgba(15, 23, 44, 0.08) 36.2%, transparent 36.6% 68%, rgba(239, 28, 36, 0.13) 68.2%, transparent 68.5%),
+    repeating-linear-gradient(90deg, transparent 0 4.8rem, rgba(15, 23, 44, 0.055) 4.85rem, transparent 4.95rem);
+  opacity: 0.8;
+  transform: translateX(-4rem) rotate(-8deg);
+}
+
+.fp-preloader::after {
+  animation: fp-line-glide 7s ease-in-out infinite alternate;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 5.8rem, rgba(0, 168, 107, 0.1) 5.85rem, transparent 5.95rem),
+    linear-gradient(115deg, transparent 0 42%, rgba(239, 28, 36, 0.1) 42.2%, transparent 42.7% 62%, rgba(15, 23, 44, 0.06) 62.2%, transparent 62.7%);
+  opacity: 0.7;
+  transform: translateY(2rem) rotate(6deg);
+}
+
 .fp-preloader-animation {
-  color: #ffffff;
+  color: #0f172c;
   height: 100vh;
   opacity: 0;
   position: relative;
+  z-index: 1;
 }
 
 .fp-pos-abs {
@@ -324,22 +349,98 @@
 }
 
 .fp-reveal-frame {
-  padding: 0 30px;
   position: relative;
+}
+
+.fp-ellipse-orbit {
+  animation: fp-ellipse-spin 2.4s linear infinite;
+  display: block;
+  height: clamp(8.2rem, 17vw, 14rem);
+  inset: 50% auto auto 50%;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  width: clamp(13rem, 26vw, 21rem);
+  z-index: 1;
+}
+
+.fp-ellipse-ring {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  display: block;
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.fp-ellipse-ring-1 {
+  border-left-color: rgba(0, 168, 107, 0.72);
+  border-right-color: rgba(239, 28, 36, 0.46);
+  transform: rotate(-18deg);
+}
+
+.fp-ellipse-ring-2 {
+  border-bottom-color: rgba(15, 23, 44, 0.18);
+  border-top-color: rgba(0, 168, 107, 0.45);
+  inset: 9%;
+  transform: rotate(22deg);
+}
+
+.fp-ellipse-ring-3 {
+  border-left-color: rgba(239, 28, 36, 0.32);
+  border-top-color: rgba(15, 23, 44, 0.12);
+  inset: 17%;
+  transform: rotate(58deg);
+}
+
+.fp-ellipse-dot {
+  border-radius: 999px;
+  box-shadow: 0 0 26px currentColor;
+  display: block;
+  height: 0.55rem;
+  opacity: 0;
+  position: absolute;
+  width: 0.55rem;
+}
+
+.fp-ellipse-dot-1 {
+  background: #00a86b;
+  color: rgba(0, 168, 107, 0.38);
+  right: 7%;
+  top: 24%;
+}
+
+.fp-ellipse-dot-2 {
+  background: #ef1c24;
+  bottom: 20%;
+  color: rgba(239, 28, 36, 0.32);
+  left: 10%;
+}
+
+.fp-ellipse-dot-3 {
+  background: #0f172c;
+  bottom: 11%;
+  color: rgba(15, 23, 44, 0.18);
+  right: 24%;
 }
 
 .fp-reveal-box {
   background-color: #00a86b;
   border-radius: 999px;
   height: 100%;
+  inset: 0;
   opacity: 0;
   position: absolute;
-  width: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  width: 100%;
   z-index: 4;
 }
 
 .fp-h3 {
-  color: rgba(255, 255, 255, 0.94);
+  color: #0f172c;
   font-size: clamp(2rem, 5vw, 3.35rem);
   font-weight: 800;
   letter-spacing: 0;
@@ -352,8 +453,49 @@
   text-align: center;
 }
 
+.fp-preloader-logo {
+  display: block;
+  height: clamp(6.25rem, 13vw, 10.75rem);
+  opacity: 0;
+  overflow: hidden;
+  position: relative;
+  transform-origin: center;
+  width: clamp(9.4rem, 19.5vw, 16rem);
+  z-index: 2;
+}
+
 .fp-thin {
   font-weight: 300;
+}
+
+@keyframes fp-ellipse-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes fp-line-drift {
+  from {
+    transform: translateX(-4rem) rotate(-8deg);
+  }
+
+  to {
+    transform: translateX(4rem) rotate(-8deg);
+  }
+}
+
+@keyframes fp-line-glide {
+  from {
+    transform: translateY(2rem) rotate(6deg);
+  }
+
+  to {
+    transform: translateY(-2rem) rotate(6deg);
+  }
 }
 
 @media (max-width: 768px) {
@@ -367,6 +509,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .fp-preloader::before,
+  .fp-preloader::after,
+  .fp-ellipse-orbit {
+    animation: none;
+  }
+
   .fp-preloader {
     display: none;
   }
