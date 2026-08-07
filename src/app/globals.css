@@ -318,21 +318,35 @@
 }
 
 .fp-preloader-title {
+  align-items: center;
   color: #070c1c;
-  font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: clamp(2rem, 6vw, 5.35rem);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-inter-tight), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.85rem, 4.2vw, 3.8rem);
+  font-optical-sizing: auto;
+  gap: clamp(0.45rem, 1.4vw, 1rem);
+  justify-content: center;
   font-weight: 800;
   letter-spacing: 0;
-  line-height: 1.04;
+  line-height: 1;
   margin: 0;
-  max-width: min(1000px, calc(100vw - 32px));
+  max-width: min(760px, calc(100vw - 32px));
   opacity: 0;
   position: absolute;
   text-align: center;
   text-shadow: none;
   transform-origin: center;
-  will-change: clip-path, filter, opacity, transform;
+  will-change: opacity;
   z-index: 3;
+}
+
+.fp-preloader-word {
+  display: inline-block;
+  opacity: 0;
+  transform-origin: center;
+  white-space: nowrap;
+  will-change: filter, opacity, transform;
 }
 
 .fp-logo-loader {
@@ -353,13 +367,14 @@
   border-radius: 999px;
   inset: 0;
   margin: auto;
+  opacity: 0;
   pointer-events: none;
   position: absolute;
   width: 100%;
 }
 
 .fp-logo-reveal {
-  clip-path: circle(150% at 50% 50%);
+  clip-path: circle(0% at 50% 50%);
   display: block;
   height: clamp(8rem, 18vw, 14rem);
   position: relative;
@@ -370,7 +385,7 @@
 .fp-preloader-logo {
   display: block;
   height: 100%;
-  opacity: 1;
+  opacity: 0;
   overflow: hidden;
   position: relative;
   transform-origin: center;

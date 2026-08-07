@@ -39,46 +39,50 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
 
       timeline.to(".fp-preloader-animation", { duration: 0.2, opacity: 1 });
 
+      timeline.to(".fp-preloader-title", { duration: 0.1, opacity: 1 }, "-=0.12");
+
       timeline.fromTo(
-        ".fp-preloader-title",
+        ".fp-preloader-word",
         {
-          clipPath: "inset(0 100% 0 0)",
-          filter: "blur(6px)",
+          filter: "blur(8px)",
           opacity: 0,
-          x: -96,
+          x: -54,
+          y: 12,
         },
         {
-          clipPath: "inset(0 0% 0 0)",
-          duration: 0.72,
+          duration: 0.62,
           ease: "power4.out",
           filter: "blur(0px)",
           opacity: 1,
+          stagger: 0.16,
           x: 0,
+          y: 0,
         },
-        "-=0.18"
+        "-=0.04"
       );
 
       timeline.to(
-        ".fp-preloader-title",
+        ".fp-preloader-word",
         {
-          clipPath: "inset(0 0 0 100%)",
-          duration: 0.48,
+          duration: 0.38,
           ease: "power3.inOut",
-          filter: "blur(6px)",
+          filter: "blur(5px)",
           opacity: 0,
-          x: 96,
+          stagger: 0.08,
+          x: 44,
+          y: -8,
         },
-        "+=0.9"
+        "+=0.7"
       );
 
       timeline.fromTo(
         ".fp-logo-halo",
-        { opacity: 0.72, scale: 0.18 },
+        { opacity: 0.42, scale: 0.24 },
         {
-          duration: 1.35,
+          duration: 1.05,
           ease: "power3.out",
           opacity: 0,
-          scale: 1.42,
+          scale: 1.16,
         }
       );
 
@@ -96,26 +100,26 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
 
       timeline.fromTo(
         ".fp-preloader-logo",
-        { filter: "blur(16px)", opacity: 0, scale: 0.28, y: 42 },
+        { filter: "blur(10px)", opacity: 0, scale: 0.68, y: 24 },
         {
-          duration: 1.05,
-          ease: "back.out(1.65)",
+          duration: 0.86,
+          ease: "power4.out",
           filter: "blur(0px)",
           opacity: 1,
-          scale: 1.28,
+          scale: 1.08,
           y: 0,
         },
         "-=0.68"
       );
 
-      timeline.to(".fp-preloader-logo", { duration: 0.45, ease: "power2.inOut", scale: 0.92 });
-      timeline.to(".fp-preloader-logo", { duration: 0.58, ease: "back.out(1.45)", scale: 1.38 });
-      timeline.to(".fp-preloader-logo", { duration: 0.45, ease: "power2.out", scale: 1.12 });
+      timeline.to(".fp-preloader-logo", { duration: 0.42, ease: "power2.inOut", scale: 0.98 });
+      timeline.to(".fp-preloader-logo", { duration: 0.5, ease: "power2.out", scale: 1.08 });
+      timeline.to(".fp-preloader-logo", { duration: 0.38, ease: "power2.out", scale: 1 });
 
       timeline.to(
         ".fp-preloader-logo",
-        { duration: 0.62, filter: "blur(3px)", opacity: 0, scale: 2.65, y: 0 },
-        "+=0.85"
+        { duration: 0.5, filter: "blur(3px)", opacity: 0, scale: 1.36, y: -8 },
+        "+=0.72"
       );
 
       timeline.to(
@@ -148,7 +152,11 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
     >
       <div className="fp-preloader-animation">
         <div className="fp-preloader-stage">
-          <p className="fp-preloader-title">Permits Made Simple</p>
+          <p className="fp-preloader-title" aria-label="Permits Made Simple">
+            <span className="fp-preloader-word">Permits</span>
+            <span className="fp-preloader-word">Made</span>
+            <span className="fp-preloader-word">Simple</span>
+          </p>
           <span className="fp-logo-loader">
             <span aria-hidden="true" className="fp-logo-halo" />
             <span className="fp-logo-reveal">
