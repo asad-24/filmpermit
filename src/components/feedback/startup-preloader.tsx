@@ -40,34 +40,35 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
       timeline.to(".fp-preloader-animation", { duration: 0.2, opacity: 1 });
 
       timeline.fromTo(
-        ".fp-preloader-media",
-        { opacity: 0, scale: 1.08 },
-        {
-          duration: 0.75,
-          ease: "power2.out",
-          opacity: 1,
-          scale: 1,
-        }
-      );
-
-      timeline.fromTo(
         ".fp-preloader-title",
-        { filter: "blur(12px)", opacity: 0, scale: 0.92, y: 18 },
         {
+          clipPath: "inset(0 100% 0 0)",
+          filter: "blur(6px)",
+          opacity: 0,
+          x: -96,
+        },
+        {
+          clipPath: "inset(0 0% 0 0)",
           duration: 0.72,
           ease: "power4.out",
           filter: "blur(0px)",
           opacity: 1,
-          scale: 1,
-          y: 0,
+          x: 0,
         },
         "-=0.18"
       );
 
       timeline.to(
         ".fp-preloader-title",
-        { duration: 0.42, filter: "blur(8px)", opacity: 0, scale: 1.08, y: -16 },
-        "+=0.58"
+        {
+          clipPath: "inset(0 0 0 100%)",
+          duration: 0.48,
+          ease: "power3.inOut",
+          filter: "blur(6px)",
+          opacity: 0,
+          x: 96,
+        },
+        "+=0.9"
       );
 
       timeline.fromTo(
@@ -145,15 +146,6 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
       ref={rootRef}
       role="status"
     >
-      <Image
-        alt=""
-        className="fp-preloader-media object-cover"
-        fill
-        priority
-        sizes="100vw"
-        src="/images/cinematic-hero.png"
-      />
-      <span aria-hidden="true" className="fp-preloader-overlay" />
       <div className="fp-preloader-animation">
         <div className="fp-preloader-stage">
           <p className="fp-preloader-title">Permits Made Simple</p>
