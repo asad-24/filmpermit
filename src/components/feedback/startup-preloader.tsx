@@ -40,93 +40,96 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
       timeline.to(".fp-preloader-animation", { duration: 0.2, opacity: 1 });
 
       timeline.fromTo(
-        ".fp-animation-1 .fp-h3",
-        { opacity: 0, y: 34 },
-        { duration: 0.35, opacity: 1, y: 0 }
-      );
-
-      timeline.to(
-        ".fp-animation-1 .fp-h3",
-        { duration: 0.28, opacity: 0, y: -30 },
-        "+=1"
-      );
-
-      timeline.fromTo(
-        ".fp-reveal-box",
-        { opacity: 0, scaleX: 0, transformOrigin: "left center" },
-        { duration: 0.1, opacity: 1, scaleX: 0 }
-      );
-
-      timeline.to(".fp-reveal-box", { duration: 0.44, scaleX: 1 }, "+=0.08");
-      timeline.to(".fp-reveal-box", { duration: 0.01, transformOrigin: "right center" });
-      timeline.to(".fp-reveal-box", { duration: 0.32, scaleX: 0 });
-
-      timeline.fromTo(
-        ".fp-ellipse-ring",
-        { opacity: 0, rotate: -120, scale: 0.42 },
+        ".fp-preloader-media",
+        { opacity: 0, scale: 1.08 },
         {
-          duration: 0.7,
-          opacity: 1,
-          rotate: 0,
-          scale: 1,
-          stagger: 0.08,
-        },
-        "-=0.45"
-      );
-
-      timeline.fromTo(
-        ".fp-ellipse-dot",
-        { opacity: 0, scale: 0, x: -70 },
-        {
-          duration: 0.5,
-          ease: "back.out(1.8)",
+          duration: 0.75,
+          ease: "power2.out",
           opacity: 1,
           scale: 1,
-          stagger: 0.07,
-          x: 0,
-        },
-        "-=0.5"
+        }
       );
 
       timeline.fromTo(
-        ".fp-preloader-logo",
-        { filter: "blur(12px)", opacity: 0, scale: 0.74, y: 40 },
+        ".fp-preloader-title",
+        { filter: "blur(12px)", opacity: 0, scale: 0.92, y: 18 },
         {
           duration: 0.72,
-          ease: "back.out(1.35)",
+          ease: "power4.out",
           filter: "blur(0px)",
           opacity: 1,
           scale: 1,
           y: 0,
         },
-        "-=0.36"
+        "-=0.18"
       );
 
       timeline.to(
-        ".fp-ellipse-orbit",
-        { duration: 0.24, opacity: 0 },
-        "+=0.18"
+        ".fp-preloader-title",
+        { duration: 0.42, filter: "blur(8px)", opacity: 0, scale: 1.08, y: -16 },
+        "+=0.58"
       );
+
+      timeline.fromTo(
+        ".fp-logo-halo",
+        { opacity: 0.72, scale: 0.18 },
+        {
+          duration: 1.35,
+          ease: "power3.out",
+          opacity: 0,
+          scale: 1.42,
+        }
+      );
+
+      timeline.fromTo(
+        ".fp-logo-reveal",
+        { clipPath: "circle(0% at 50% 50%)", scale: 0.96 },
+        {
+          duration: 1.05,
+          ease: "power4.out",
+          clipPath: "circle(150% at 50% 50%)",
+          scale: 1,
+        },
+        "-=0.82"
+      );
+
+      timeline.fromTo(
+        ".fp-preloader-logo",
+        { filter: "blur(16px)", opacity: 0, scale: 0.28, y: 42 },
+        {
+          duration: 1.05,
+          ease: "back.out(1.65)",
+          filter: "blur(0px)",
+          opacity: 1,
+          scale: 1.28,
+          y: 0,
+        },
+        "-=0.68"
+      );
+
+      timeline.to(".fp-preloader-logo", { duration: 0.45, ease: "power2.inOut", scale: 0.92 });
+      timeline.to(".fp-preloader-logo", { duration: 0.58, ease: "back.out(1.45)", scale: 1.38 });
+      timeline.to(".fp-preloader-logo", { duration: 0.45, ease: "power2.out", scale: 1.12 });
 
       timeline.to(
         ".fp-preloader-logo",
-        { duration: 0.24, filter: "blur(4px)", opacity: 0, scale: 0.98, y: -14 },
-        "-=0.08"
+        { duration: 0.62, filter: "blur(3px)", opacity: 0, scale: 2.65, y: 0 },
+        "+=0.85"
       );
 
       timeline.to(
         root,
         {
-          duration: 0.22,
+          duration: 0.35,
           ease: "sine.inOut",
           opacity: 0,
           onComplete: finish,
         },
-        "+=0.12"
+        "+=0.15"
       );
     }, rootRef);
 
-    const safety = window.setTimeout(finish, 5000);
+    const safety = window.setTimeout(finish, 9000);
 
     return () => {
       window.clearTimeout(safety);
@@ -142,33 +145,34 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
       ref={rootRef}
       role="status"
     >
+      <Image
+        alt=""
+        className="fp-preloader-media object-cover"
+        fill
+        priority
+        sizes="100vw"
+        src="/images/cinematic-hero.png"
+      />
+      <span aria-hidden="true" className="fp-preloader-overlay" />
       <div className="fp-preloader-animation">
-        <div className="fp-pos-abs fp-animation-1">
-          <p className="fp-h3 fp-preloader-title">Permits made Simple</p>
-        </div>
-        <div className="fp-pos-abs fp-animation-2">
-          <div className="fp-reveal-frame">
-            <span className="fp-reveal-box" />
-            <span aria-hidden="true" className="fp-ellipse-orbit">
-              <span className="fp-ellipse-ring fp-ellipse-ring-1" />
-              <span className="fp-ellipse-ring fp-ellipse-ring-2" />
-              <span className="fp-ellipse-ring fp-ellipse-ring-3" />
-              <span className="fp-ellipse-dot fp-ellipse-dot-1" />
-              <span className="fp-ellipse-dot fp-ellipse-dot-2" />
-              <span className="fp-ellipse-dot fp-ellipse-dot-3" />
+        <div className="fp-preloader-stage">
+          <p className="fp-preloader-title">Permits Made Simple</p>
+          <span className="fp-logo-loader">
+            <span aria-hidden="true" className="fp-logo-halo" />
+            <span className="fp-logo-reveal">
+              <span className="fp-preloader-logo">
+                <Image
+                  alt="FilmPermit.ae"
+                  className="object-contain"
+                  fill
+                  loading="eager"
+                  priority
+                  sizes="(max-width: 768px) 54vw, 18rem"
+                  src="/assests/logo.png"
+                />
+              </span>
             </span>
-            <span className="fp-preloader-logo">
-              <Image
-                alt="FilmPermit.ae"
-                className="object-contain p-2"
-                fill
-                loading="eager"
-                priority
-                sizes="(max-width: 768px) 44vw, 16rem"
-                src="/assests/new_logo.png"
-              />
-            </span>
-          </div>
+          </span>
         </div>
       </div>
     </div>

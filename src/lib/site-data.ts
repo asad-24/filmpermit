@@ -31,10 +31,10 @@ export const navItems = [
 ];
 
 export const heroCredibility = [
-  { value: "350+", label: "Productions Supported" },
-  { value: "Trusted", label: "By International Productions" },
-  { value: "24/7", label: "Customer Support" },
-  { value: "99%", label: "Approval Rate" },
+  { value: 350, suffix: "+", label: "Productions Supported" },
+  { value: 7, suffix: "", label: "Emirates Covered" },
+  { value: 24, suffix: "/7", label: "Customer Support" },
+  { value: 99, suffix: "%", label: "Approval Rate" },
 ];
 
 export const stats = [
@@ -127,9 +127,14 @@ export const testimonials = [
 ];
 
 export const productionPartners = [
-  "Permits",
+  "Filming Permits",
+  "Photography Permits",
   "Crew Hire",
-  "Location Scouting",
+  "Equipment Customs Clearance",
+  "Equipment Rental",
+  "Drone Filming Support",
+  "Transportation Support",
+  "Accommodation Coordination",
 ];
 
 export const serviceCards = [
@@ -176,7 +181,7 @@ export const serviceCards = [
     image: "/images/service-crew.png",
     alt: "Local film crew preparing a camera setup in Dubai",
     description:
-      "Hire trusted local production crews.",
+      "Build your UAE production crew with trusted local professionals.",
     bullets: [
       "Camera crews",
       "Producers & Fixers",
@@ -210,7 +215,7 @@ export const serviceCards = [
     image: "/images/uae-locations-showcase.png",
     alt: "Drone filming support for UAE aerial production",
     description:
-      "Capture aerial footage legally.",
+      "Capture Aerial Footage with fully compliant drone operations.",
     bullets: [
       "Licensed drone operators",
       "Flight planning",
@@ -287,6 +292,21 @@ export const emiratesBanner = {
     "Ras Al Khaimah",
   ],
 };
+
+export const footerEmirates = emiratesBanner.emirates;
+
+export const footerLegalLinks = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms & Conditions", href: "/terms" },
+  { label: "Cookie Policy", href: "/cookies" },
+  { label: "Sitemap", href: "/sitemap.xml" },
+];
+
+export const socialLinks = [
+  { label: "Instagram", href: "#" },
+  { label: "LinkedIn", href: "#" },
+  { label: "YouTube", href: "#" },
+];
 
 export const faqs = [
   {

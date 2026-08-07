@@ -52,7 +52,7 @@ export default function ServicesPage() {
                     <h2 className="text-2xl font-black tracking-normal text-[#0a1024] md:text-3xl dark:text-white">
                       {service.title}
                     </h2>
-                    <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[#4a5874] dark:text-white/62 lg:whitespace-nowrap">
+                    <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[#4a5874] dark:text-white/62">
                       {service.description}
                     </p>
 
@@ -75,7 +75,7 @@ export default function ServicesPage() {
                         className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#00a86b] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#18c987]"
                         href={`/apply-permit?service=${service.id}`}
                       >
-                        Learn More
+                        View Service
                         <ArrowRight className="size-4" />
                       </Link>
                     </div>

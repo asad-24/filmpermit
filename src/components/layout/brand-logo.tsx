@@ -17,10 +17,10 @@ export function BrandLogo({
 }: BrandLogoProps) {
   const logoSize =
     size === "drawer"
-      ? "h-[7.25rem] w-[11rem]"
+      ? "h-[8rem] w-[12rem]"
       : size === "footer"
         ? "h-[8rem] w-[12rem]"
-        : "h-[3.55rem] w-[5.35rem] sm:h-[3.9rem] sm:w-[5.9rem]";
+        : "h-[4.2rem] w-[6.3rem] sm:h-[4.55rem] sm:w-[6.9rem]";
 
   return (
     <Link
@@ -41,10 +41,10 @@ export function BrandLogo({
           priority={size === "header"}
           sizes={
             size === "drawer"
-              ? "176px"
+              ? "192px"
               : size === "footer"
                 ? "192px"
-                : "(max-width: 640px) 86px, 94px"
+                : "(max-width: 640px) 101px, 110px"
           }
           src="/assests/new_logo.png"
         />

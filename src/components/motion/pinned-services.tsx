@@ -76,7 +76,7 @@ function ServiceTile({
         <h3 className="mt-4 min-h-[3.25rem] text-lg font-black leading-tight text-white sm:mt-5 sm:text-xl md:min-h-[3.75rem] lg:min-h-[4.25rem] xl:min-h-[3.75rem]">
           {service.title}
         </h3>
-        <p className="mt-2 min-h-[1.5rem] max-w-full text-xs leading-6 text-white/76 sm:mt-3 sm:text-sm sm:leading-7 lg:text-[12px] lg:leading-6 xl:whitespace-nowrap xl:text-[13px] 2xl:text-sm">
+        <p className="mt-2 min-h-[3rem] max-w-full text-xs leading-6 text-white/76 sm:mt-3 sm:text-sm sm:leading-7 lg:text-[12px] lg:leading-6 xl:text-[13px] 2xl:text-sm">
           {service.description}
         </p>
         <div className="mt-3 grid gap-1.5 sm:mt-4">
@@ -91,7 +91,7 @@ function ServiceTile({
           ))}
         </div>
         <span className="mt-auto inline-flex items-center gap-2 pt-5 text-xs font-black text-[#7de8c5] transition sm:text-sm">
-          Learn More
+          View Service
           <ArrowRight className="size-4 transition group-hover:translate-x-1" />
         </span>
       </div>

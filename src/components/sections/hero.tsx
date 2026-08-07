@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 import { BlurText } from "@/components/motion/blur-text";
 import { FadeContent } from "@/components/motion/fade-content";
+import { AnimatedCounter } from "@/components/motion/animated-counter";
 import { LogoLoopLite } from "@/components/motion/logo-loop-lite";
 import { buttonVariants } from "@/components/ui/button";
 import { heroCredibility } from "@/lib/site-data";
@@ -34,21 +35,20 @@ export function Hero() {
             </FadeContent>
 
             <h1 className="mt-5 max-w-5xl text-[2.05rem] font-black leading-[1.04] tracking-normal sm:mt-6 sm:text-4xl md:text-5xl lg:text-[3.35rem]">
-              <BlurText as="span" className="block" text="Everything You Need" />
+              <BlurText as="span" className="block" text="Apply for UAE Filming &" />
               <BlurText
                 as="span"
                 className="block text-white/88"
                 delay={32}
-                text="To Film In The UAE."
+                text="Photography Permits today"
               />
             </h1>
 
             <FadeContent className="mt-5 max-w-4xl sm:mt-6" delay={260}>
               <p className="text-sm leading-7 text-white/76 sm:text-base sm:leading-8 md:text-base">
-                Navigating filming regulations in the UAE doesn&apos;t have to be
-                complicated. From filming permits and government approvals to
-                local production support, we help international productions film
-                with confidence through one trusted partner.
+                From permits and government approvals to local production
+                support, we help local &amp; international production companies
+                film anywhere in the UAE with confidence.
               </p>
             </FadeContent>
 
@@ -60,7 +60,7 @@ export function Hero() {
                     key={point.label}
                   >
                     <div className="text-xl font-black tracking-normal text-white sm:text-2xl">
-                      {point.value}
+                      <AnimatedCounter end={point.value} suffix={point.suffix} />
                     </div>
                     <p className="mt-1 text-[10px] font-black uppercase leading-4 tracking-[0.08em] text-[#7de8c5] sm:text-xs sm:tracking-[0.14em]">
                       {point.label}
@@ -68,6 +68,10 @@ export function Hero() {
                   </div>
                 ))}
               </div>
+            </FadeContent>
+
+            <FadeContent className="mt-8 max-w-5xl translate-y-2" delay={340} blur>
+              <LogoLoopLite />
             </FadeContent>
 
             <FadeContent className="mt-7 sm:mt-9" delay={360} blur>
@@ -95,10 +99,6 @@ export function Hero() {
             </FadeContent>
           </div>
         </div>
-      </div>
-
-      <div className="relative z-20 mx-auto max-w-7xl hidden sm:block">
-        <LogoLoopLite />
       </div>
     </section>
   );

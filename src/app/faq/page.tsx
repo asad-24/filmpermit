@@ -19,7 +19,7 @@ export default function FAQPage() {
   return (
     <>
       <PageHero
-        eyebrow="FAQ"
+        eyebrow="Frequently Asked Questions"
         image="/images/permit-journey.png"
         title="Everything You Need To Know Before Filming In The UAE."
         description="Common questions about UAE filming permits, drone approvals, production support, customs, crew, and planning timelines."

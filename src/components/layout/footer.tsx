@@ -4,7 +4,13 @@ import { ArrowUpRight, Mail, MapPin, Phone, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { navItems, serviceCards, site } from "@/lib/site-data";
+import {
+  footerEmirates,
+  footerLegalLinks,
+  serviceCards,
+  site,
+  socialLinks,
+} from "@/lib/site-data";
 
 export function Footer() {
   return (
@@ -46,45 +52,48 @@ export function Footer() {
           </form>
         </div>
 
-        <div className="grid gap-10 pb-10 md:grid-cols-[1.35fr_0.8fr_0.9fr_1.1fr]">
+        <div className="grid gap-10 pb-10 md:grid-cols-[1.15fr_1fr_0.9fr_1.1fr]">
           <div>
             <Link
               aria-label={`${site.name} home`}
-              className="inline-flex rounded-2xl bg-white p-2"
+              className="inline-flex max-w-full rounded-2xl bg-white p-3"
               href="/"
             >
-              <span className="relative block h-[6.25rem] w-[9.4rem]">
+              <span className="relative block h-[9rem] w-[13.1rem] sm:h-[10.75rem] sm:w-[15.65rem] lg:h-[12.25rem] lg:w-[17.85rem]">
                 <Image
                   alt={site.name}
                   className="object-contain"
                   fill
-                  sizes="150px"
-                  src="/assests/new_logo.png"
+                  sizes="(max-width: 640px) 210px, (max-width: 1024px) 250px, 286px"
+                  src="/assests/logo.png"
                 />
               </span>
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-7 text-[#4a5874] dark:text-white/72">
-              Your trusted partner for UAE filming permits, photography permits,
-              production logistics, crew, equipment, and on-ground support.
-            </p>
+
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#0f172c]/10 bg-white/80 px-4 py-2 text-xs text-[#4a5874] dark:border-white/10 dark:bg-white/5 dark:text-white/80">
               <span className="size-2 rounded-full bg-[#00a86b]" />
               Dubai, UAE
             </div>
           </div>
 
-          <FooterLinks title="Quick Links" links={navItems.map((item) => ({ label: item.label, href: item.href }))} />
-
           <FooterLinks
-            title="Services"
+            title="All Services"
             links={serviceCards.map((service) => ({
               label: service.eyebrow,
               href: service.href,
             }))}
           />
 
+          <FooterLinks
+            title="Emirates"
+            links={footerEmirates.map((emirate) => ({
+              label: emirate,
+              href: "/services",
+            }))}
+          />
+
           <div>
-            <p className="text-sm font-black text-[#0a1024] dark:text-white">Contact Info</p>
+            <p className="text-sm font-black text-[#0a1024] dark:text-white">Contact Information</p>
             <div className="mt-4 space-y-4 text-sm text-[#4a5874] dark:text-white/78">
               <div className="flex gap-3">
                 <MapPin className="mt-0.5 size-4 flex-none text-[#00a86b]" />
@@ -99,6 +108,22 @@ export function Footer() {
                 {site.phone}
               </a>
             </div>
+            <div className="mt-6">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-[#647086] dark:text-white/55">
+                Social Media
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {socialLinks.map((link) => (
+                  <Link
+                    className="inline-flex h-9 items-center justify-center rounded-full border border-[#0f172c]/10 bg-white/75 px-3 text-xs font-black text-[#4a5874] transition hover:border-[#00a86b]/40 hover:text-[#00a86b] dark:border-white/10 dark:bg-white/5 dark:text-white/78 dark:hover:text-[#7de8c5]"
+                    href={link.href}
+                    key={link.label}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -106,21 +131,11 @@ export function Footer() {
           <div className="flex flex-col gap-3 text-sm text-[#647086] md:flex-row md:items-center md:justify-between dark:text-white/65">
             <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
             <div className="flex flex-wrap items-center gap-4">
-              <Link className="transition hover:text-[#0a1024] dark:hover:text-white" href="/privacy">
-                Privacy Policy
-              </Link>
-              <Link className="transition hover:text-[#0a1024] dark:hover:text-white" href="/terms">
-                Terms
-              </Link>
-              <Link className="transition hover:text-[#0a1024] dark:hover:text-white" href="/policy">
-                Policy
-              </Link>
-              <Link className="transition hover:text-[#0a1024] dark:hover:text-white" href="/ad-policy">
-                Ad Policy
-              </Link>
-              <Link className="transition hover:text-[#0a1024] dark:hover:text-white" href="/cookies">
-                Cookies
-              </Link>
+              {footerLegalLinks.map((link) => (
+                <Link className="transition hover:text-[#0a1024] dark:hover:text-white" href={link.href} key={link.label}>
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
