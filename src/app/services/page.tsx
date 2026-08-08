@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
 import { RevealSection } from "@/components/motion/reveal-section";
 import { CTA } from "@/components/sections/cta";
@@ -75,8 +75,7 @@ export default function ServicesPage() {
                         className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#00a86b] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#18c987]"
                         href={`/apply-permit?service=${service.id}`}
                       >
-                        View Service
-                        <ArrowRight className="size-4" />
+                        View Service &rarr;
                       </Link>
                     </div>
                   </div>

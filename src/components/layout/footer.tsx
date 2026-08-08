@@ -110,7 +110,7 @@ export function Footer() {
             </div>
             <div className="mt-6">
               <p className="text-xs font-black uppercase tracking-[0.16em] text-[#647086] dark:text-white/55">
-                Social Media
+                Social Media Links
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {socialLinks.map((link) => (

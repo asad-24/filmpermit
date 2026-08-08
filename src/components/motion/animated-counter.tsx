@@ -4,17 +4,19 @@ import { HTMLAttributes, useEffect, useRef, useState } from "react";
 
 type AnimatedCounterProps = HTMLAttributes<HTMLSpanElement> & {
   end: number;
+  start?: number;
   suffix?: string;
 };
 
 export function AnimatedCounter({
   end,
+  start = 0,
   suffix = "",
   className,
   ...props
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(start);
 
   useEffect(() => {
     const el = ref.current;
@@ -30,7 +32,7 @@ export function AnimatedCounter({
     }
 
     let frame = 0;
-    let start = 0;
+    let startTime = 0;
     const duration = 1200;
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -41,13 +43,13 @@ export function AnimatedCounter({
         observer.disconnect();
 
         const tick = (time: number) => {
-          if (!start) {
-            start = time;
+          if (!startTime) {
+            startTime = time;
           }
 
-          const progress = Math.min((time - start) / duration, 1);
+          const progress = Math.min((time - startTime) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
-          setValue(Math.round(end * eased));
+          setValue(Math.round(start + (end - start) * eased));
 
           if (progress < 1) {
             frame = requestAnimationFrame(tick);
@@ -65,7 +67,7 @@ export function AnimatedCounter({
       observer.disconnect();
       cancelAnimationFrame(frame);
     };
-  }, [end]);
+  }, [end, start]);
 
   return (
     <span className={className} ref={ref} {...props}>

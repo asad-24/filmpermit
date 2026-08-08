@@ -12,10 +12,10 @@ export function FAQ() {
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.7fr_1fr] lg:gap-10">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.22em] text-[#00a86b]">
-            Frequently Asked Questions
+            UAE Filming FAQ
           </p>
           <h2 className="mt-3 text-3xl font-black tracking-normal text-[#0f172c] sm:text-4xl md:text-5xl dark:text-white">
-            Everything You Need To Know Before Filming In The UAE.
+            Frequently Asked Questions
           </h2>
           <p className="mt-4 text-sm leading-7 text-[#4a5874] dark:text-white/62 sm:mt-5 sm:text-base sm:leading-8">
             Every project is different. These answers cover common permit and

@@ -60,7 +60,11 @@ export function Hero() {
                     key={point.label}
                   >
                     <div className="text-xl font-black tracking-normal text-white sm:text-2xl">
-                      <AnimatedCounter end={point.value} suffix={point.suffix} />
+                      <AnimatedCounter
+                        end={point.value}
+                        start={1}
+                        suffix={point.suffix}
+                      />
                     </div>
                     <p className="mt-1 text-[10px] font-black uppercase leading-4 tracking-[0.08em] text-[#7de8c5] sm:text-xs sm:tracking-[0.14em]">
                       {point.label}
@@ -70,7 +74,7 @@ export function Hero() {
               </div>
             </FadeContent>
 
-            <FadeContent className="mt-8 max-w-5xl translate-y-2" delay={340} blur>
+            <FadeContent className="mt-10 max-w-5xl translate-y-3 sm:mt-12" delay={340} blur>
               <LogoLoopLite />
             </FadeContent>
 

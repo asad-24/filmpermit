@@ -90,9 +90,8 @@ function ServiceTile({
             </span>
           ))}
         </div>
-        <span className="mt-auto inline-flex items-center gap-2 pt-5 text-xs font-black text-[#7de8c5] transition sm:text-sm">
-          View Service
-          <ArrowRight className="size-4 transition group-hover:translate-x-1" />
+        <span className="mt-auto inline-flex items-center pt-5 text-xs font-black text-[#7de8c5] transition group-hover:translate-x-1 sm:text-sm">
+          View Service &rarr;
         </span>
       </div>
       <div className="absolute inset-0 bg-[#00a86b]/12 opacity-0 transition duration-500 group-hover:opacity-100" />
