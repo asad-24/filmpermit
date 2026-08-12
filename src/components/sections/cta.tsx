@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, MessageCircle } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { site } from "@/lib/site-data";
 
 export function CTA() {
@@ -48,7 +49,7 @@ export function CTA() {
               rel="noreferrer"
               target="_blank"
             >
-              <MessageCircle className="size-4 opacity-90" />
+              <WhatsAppIcon className="size-4 opacity-90" />
               Chat on WhatsApp
             </a>
             <p className="text-xs text-white/58 md:text-right">

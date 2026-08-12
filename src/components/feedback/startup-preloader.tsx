@@ -1,11 +1,11 @@
 "use client";
 
 import gsap from "gsap";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export function StartupPreloader({ onDone }: { onDone: () => void }) {
   const rootRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const doneRef = useRef(false);
 
   useEffect(() => {
@@ -14,6 +14,7 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
     }
 
     const root = rootRef.current;
+    const video = videoRef.current;
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const finish = () => {
@@ -75,69 +76,60 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
         "+=0.7"
       );
 
-      timeline.fromTo(
-        ".fp-logo-halo",
-        { opacity: 0.42, scale: 0.24 },
-        {
-          duration: 1.05,
-          ease: "power3.out",
-          opacity: 0,
-          scale: 1.16,
-        }
-      );
-
-      timeline.fromTo(
-        ".fp-logo-reveal",
-        { clipPath: "circle(0% at 50% 50%)", scale: 0.96 },
-        {
-          duration: 1.05,
-          ease: "power4.out",
-          clipPath: "circle(150% at 50% 50%)",
-          scale: 1,
-        },
-        "-=0.82"
-      );
-
-      timeline.fromTo(
-        ".fp-preloader-logo",
-        { filter: "blur(10px)", opacity: 0, scale: 0.68, y: 24 },
-        {
-          duration: 0.86,
-          ease: "power4.out",
-          filter: "blur(0px)",
-          opacity: 1,
-          scale: 1.08,
-          y: 0,
-        },
-        "-=0.68"
-      );
-
-      timeline.to(".fp-preloader-logo", { duration: 0.42, ease: "power2.inOut", scale: 0.98 });
-      timeline.to(".fp-preloader-logo", { duration: 0.5, ease: "power2.out", scale: 1.08 });
-      timeline.to(".fp-preloader-logo", { duration: 0.38, ease: "power2.out", scale: 1 });
-
-      timeline.to(
-        ".fp-preloader-logo",
-        { duration: 0.5, filter: "blur(3px)", opacity: 0, scale: 1.36, y: -8 },
-        "+=0.72"
-      );
-
       timeline.to(
         root,
         {
-          duration: 0.35,
+          backgroundColor: "#000000",
+          duration: 0.45,
           ease: "sine.inOut",
-          opacity: 0,
-          onComplete: finish,
         },
-        "+=0.15"
+        "-=0.28"
+      );
+
+      timeline.fromTo(
+        ".fp-preloader-video-wrap",
+        {
+          filter: "blur(8px) brightness(0.45)",
+          opacity: 0,
+          scale: 1.08,
+        },
+        {
+          duration: 1.25,
+          ease: "power2.out",
+          filter: "blur(0px) brightness(1)",
+          opacity: 1,
+          scale: 1,
+          onStart: () => {
+            if (!video) {
+              finish();
+              return;
+            }
+
+            video.currentTime = 0;
+            void video.play().catch(finish);
+          },
+        },
+        "-=0.12"
       );
     }, rootRef);
 
-    const safety = window.setTimeout(finish, 9000);
+    const revealPage = () => {
+      gsap.to(root, {
+        duration: 0.85,
+        ease: "sine.inOut",
+        opacity: 0,
+        onComplete: finish,
+      });
+    };
+
+    video?.addEventListener("ended", revealPage);
+    video?.addEventListener("error", finish);
+    const safety = window.setTimeout(finish, 120000);
 
     return () => {
       window.clearTimeout(safety);
+      video?.removeEventListener("ended", revealPage);
+      video?.removeEventListener("error", finish);
       ctx.revert();
     };
   }, [onDone]);
@@ -157,22 +149,19 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
             <span className="fp-preloader-word">Made</span>
             <span className="fp-preloader-word">Simple</span>
           </p>
-          <span className="fp-logo-loader">
-            <span aria-hidden="true" className="fp-logo-halo" />
-            <span className="fp-logo-reveal">
-              <span className="fp-preloader-logo">
-                <Image
-                  alt="FilmPermit.ae"
-                  className="object-contain"
-                  fill
-                  loading="eager"
-                  priority
-                  sizes="(max-width: 768px) 54vw, 18rem"
-                  src="/assests/logo.png"
-                />
-              </span>
-            </span>
-          </span>
+          <div className="fp-preloader-video-wrap">
+            <video
+              aria-label="FilmPermit introduction"
+              className="fp-preloader-video"
+              muted
+              playsInline
+              preload="auto"
+              ref={videoRef}
+            >
+              <source media="(max-width: 1024px)" src="/assests/welcome_modile.mp4" type="video/mp4" />
+              <source src="/assests/download.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
     </div>

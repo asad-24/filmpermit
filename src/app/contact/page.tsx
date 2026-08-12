@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Mail, MapPin, MessageCircle, Phone, Timer } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 import { ContactForm } from "@/components/forms/contact-form";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { RevealSection } from "@/components/motion/reveal-section";
 import { PageHero } from "@/components/sections/page-hero";
 import { site } from "@/lib/site-data";
@@ -40,31 +41,17 @@ export default function ContactPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <ContactTile icon={<Mail className="size-5" />} label="Email" value={site.email} href={`mailto:${site.email}`} />
                 <ContactTile icon={<Phone className="size-5" />} label="Phone" value={site.phone} href={`tel:${site.phone}`} />
-                <ContactTile icon={<MessageCircle className="size-5" />} label="WhatsApp" value="Start a chat" href={`https://wa.me/${site.whatsapp}`} />
-                <ContactTile icon={<MapPin className="size-5" />} label="Base" value={site.address} />
+                <ContactTile icon={<WhatsAppIcon className="size-5" />} label="WhatsApp" value="Start a chat" href={`https://wa.me/${site.whatsapp}`} />
+                <ContactTile icon={<MapPin className="size-5" />} label="Headquarters" value={site.address} />
               </div>
             </div>
           </RevealSection>
 
           <RevealSection delay={120}>
-            <div className="rounded-[26px] border border-[#0f172c]/10 bg-white p-5 shadow-[0_18px_70px_rgba(15,23,44,0.09)] md:p-7 dark:border-white/10 dark:bg-white/[0.05]">
-              <div className="flex items-center gap-3">
-                <span className="flex size-11 items-center justify-center rounded-2xl bg-[#00a86b] text-white">
-                  <Timer className="size-5" />
-                </span>
-                <div>
-                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#00a86b]">
-                    Production intake
-                  </p>
-                  <h2 className="text-xl font-black text-[#0a1024] dark:text-white">
-                    Project Enquiry
-                  </h2>
-                </div>
-              </div>
-              <p className="mt-4 text-sm leading-7 text-[#647086] dark:text-white/58">
-                The form opens your email client with the enquiry details ready
-                to send to our team.
-              </p>
+            <div className="scroll-mt-28 rounded-[26px] border border-[#0f172c]/10 bg-white p-5 shadow-[0_18px_70px_rgba(15,23,44,0.09)] md:p-7 dark:border-white/10 dark:bg-white/[0.05]" id="contact-form">
+              <h2 className="text-xl font-black text-[#0a1024] dark:text-white">
+                Project Enquiry
+              </h2>
               <div className="mt-7">
                 <ContactForm />
               </div>

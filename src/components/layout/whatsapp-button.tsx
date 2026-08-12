@@ -1,5 +1,4 @@
-import { MessageCircle } from "lucide-react";
-
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { site } from "@/lib/site-data";
 
 export function WhatsAppButton() {
@@ -15,7 +14,7 @@ export function WhatsAppButton() {
       rel="noreferrer"
       target="_blank"
     >
-      <MessageCircle className="size-7" />
+      <WhatsAppIcon className="size-8" />
     </a>
   );
 }

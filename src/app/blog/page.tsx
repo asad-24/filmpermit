@@ -16,7 +16,6 @@ export default function BlogPage() {
   return (
     <>
       <PageHero
-        eyebrow="Production Guides"
         image="/images/uae-locations-showcase.png"
         title="UAE filming permit insights and production guides."
         description="Practical planning notes for producers, agencies, creators, and visiting crews preparing shoots across the Emirates."

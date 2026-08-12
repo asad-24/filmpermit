@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
+import { ChevronDown, Mail, Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 
 import { BrandLogo } from "@/components/layout/brand-logo";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { buttonVariants } from "@/components/ui/button";
 import { navItems, serviceCards, site } from "@/lib/site-data";
@@ -206,7 +207,7 @@ export function Header() {
             Request A Permit
           </Link>
           <div className="mt-3 grid grid-cols-3 gap-2">
-            <QuickAction href={`https://wa.me/${site.whatsapp}`} icon={<MessageCircle className="size-4" />} label="WhatsApp" />
+            <QuickAction href={`https://wa.me/${site.whatsapp}`} icon={<WhatsAppIcon className="size-4" />} label="WhatsApp" />
             <QuickAction href={`mailto:${site.email}`} icon={<Mail className="size-4" />} label="Email" />
             <QuickAction href={`tel:${site.phone}`} icon={<Phone className="size-4" />} label="Call" />
           </div>

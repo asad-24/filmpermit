@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { BadgeCheck, CheckCircle2, HeartHandshake, ShieldCheck } from "lucide-react";
+import { CheckCircle2, HeartHandshake, ShieldCheck } from "lucide-react";
 
 import { RevealSection } from "@/components/motion/reveal-section";
 import { CTA } from "@/components/sections/cta";
@@ -20,7 +20,7 @@ export default function AboutPage() {
         eyebrow="Why FilmPermit.ae"
         image="/images/cinematic-hero.png"
         title="From Project Brief to Production Support"
-        description="We help international crews secure filming permits, coordinate local logistics, and keep productions moving smoothly across the Emirates."
+        description="We help local and international crews secure filming permits, coordinate local logistics, and keep productions moving smoothly across the Emirates."
         align="center"
       />
 
@@ -35,15 +35,6 @@ export default function AboutPage() {
                 sizes="(min-width: 1024px) 48vw, 100vw"
                 src="/images/service-permits.png"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050915]/88 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/12 bg-black/30 p-5 text-white backdrop-blur-xl">
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#7de8c5]">
-                  Production-first support
-                </p>
-                <p className="mt-3 text-2xl font-black">
-                  Clear approvals, organized people, reliable logistics.
-                </p>
-              </div>
             </div>
           </RevealSection>
 
@@ -131,11 +122,7 @@ export default function AboutPage() {
                 <article className="h-full rounded-[28px] border border-[#0f172c]/10 bg-[#f5f7fb] p-6 dark:border-white/10 dark:bg-white/[0.05]">
                   <div className="flex items-center justify-between">
                     <span className="text-3xl font-black text-[#00a86b]">{step.step}</span>
-                    {index === permitJourney.length - 1 ? (
-                      <BadgeCheck className="size-6 text-[#00a86b]" />
-                    ) : (
-                      <ShieldCheck className="size-6 text-[#00a86b]" />
-                    )}
+                    <ShieldCheck className="size-6 text-[#00a86b]" />
                   </div>
                   <h3 className="mt-6 text-xl font-black text-[#0a1024] dark:text-white">
                     {step.title}

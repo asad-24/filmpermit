@@ -94,7 +94,6 @@ export function ContactForm() {
         <textarea
           className="min-h-40 rounded-2xl border border-input bg-[#f5f7fb] px-4 py-4 text-sm outline-none transition placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 dark:border-white/10 dark:bg-white/[0.06] dark:text-white"
           name="message"
-          placeholder="Shoot dates, locations, crew size, equipment, drone use, and any urgent deadlines."
           required
         />
       </label>

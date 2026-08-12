@@ -29,6 +29,7 @@ export function StartupShell({ children }: { children: ReactNode }) {
   const handleDone = useCallback(() => {
     hasBootedApp = true;
     setReady(true);
+    window.dispatchEvent(new Event("filmpermit:ready"));
     window.setTimeout(() => setShowPreloader(false), 350);
   }, []);
 

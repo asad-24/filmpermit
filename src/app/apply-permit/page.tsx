@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
 import { PermitApplicationForm } from "@/components/forms/permit-application-form";
-import { site } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Apply for a Filming Permit",
@@ -31,15 +30,13 @@ export default function ApplyPermitPage() {
             production.
           </p>
 
-          <a
+          <Link
             className="mt-7 inline-flex h-14 w-full items-center justify-center gap-4 rounded-xl border-2 border-[#070c1f] px-6 text-sm font-black text-[#070c1f] transition hover:-translate-y-0.5 hover:bg-[#070c1f] hover:text-white"
-            href={`https://wa.me/${site.whatsapp}`}
-            rel="noreferrer"
-            target="_blank"
+            href="/contact#contact-form"
           >
-            <MessageCircle className="size-6" />
+            <Mail className="size-6" />
             Contact Our Team
-          </a>
+          </Link>
 
           <div className="my-7 h-px bg-[#cbd4e5]" />
 

@@ -33,38 +33,51 @@ export function AnimatedCounter({
 
     let frame = 0;
     let startTime = 0;
-    const duration = 1200;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
+    let observer: IntersectionObserver | null = null;
+    const duration = 2600;
 
-        observer.disconnect();
-
-        const tick = (time: number) => {
-          if (!startTime) {
-            startTime = time;
+    const observeCounter = () => {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) {
+            return;
           }
 
-          const progress = Math.min((time - startTime) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          setValue(Math.round(start + (end - start) * eased));
+          observer?.disconnect();
 
-          if (progress < 1) {
-            frame = requestAnimationFrame(tick);
-          }
-        };
+          const tick = (time: number) => {
+            if (!startTime) {
+              startTime = time;
+            }
 
-        frame = requestAnimationFrame(tick);
-      },
-      { threshold: 0.35 }
-    );
+            const progress = Math.min((time - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setValue(Math.round(start + (end - start) * eased));
 
-    observer.observe(el);
+            if (progress < 1) {
+              frame = requestAnimationFrame(tick);
+            }
+          };
+
+          frame = requestAnimationFrame(tick);
+        },
+        { threshold: 0.35 }
+      );
+
+      observer.observe(el);
+    };
+
+    const preloader = document.querySelector(".fp-preloader");
+
+    if (preloader) {
+      window.addEventListener("filmpermit:ready", observeCounter, { once: true });
+    } else {
+      observeCounter();
+    }
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener("filmpermit:ready", observeCounter);
+      observer?.disconnect();
       cancelAnimationFrame(frame);
     };
   }, [end, start]);

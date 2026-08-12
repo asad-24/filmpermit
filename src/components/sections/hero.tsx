@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -12,20 +11,22 @@ import { cn } from "@/lib/utils";
 
 export function Hero() {
   return (
-    <section className="relative z-10 overflow-hidden px-4 pb-8 pt-24 text-white sm:px-6 sm:pb-10 md:pt-28 lg:min-h-[88vh] lg:pt-32">
-      <Image
-        alt="Cinematic Dubai production setup with camera and skyline"
-        className="absolute inset-0 z-0 object-cover"
-        fill
-        priority
-        sizes="100vw"
-        src="/images/cinematic-hero.png"
+    <section className="relative z-10 min-h-[100svh] w-full max-w-full overflow-hidden bg-black px-4 pb-8 pt-20 text-white sm:px-6 sm:pb-10 sm:pt-24 md:pt-28 lg:pt-32">
+      <video
+        aria-hidden="true"
+        autoPlay
+        className="pointer-events-none absolute inset-0 z-[1] block h-full min-h-full w-full min-w-full max-w-none object-cover object-center opacity-35"
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        src="/assests/hero.mp4"
       />
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(90deg,rgba(5,9,21,0.86)_0%,rgba(5,9,21,0.58)_48%,rgba(5,9,21,0.18)_100%)]" />
+      <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(5,9,21,0.86)_0%,rgba(5,9,21,0.58)_48%,rgba(5,9,21,0.18)_100%)]" />
 
-      <div className="relative z-20 mx-auto flex min-h-[calc(100svh-6rem)] w-full max-w-7xl items-center py-6 sm:min-h-[calc(100svh-7rem)] lg:min-h-[calc(88vh-7rem)] lg:py-0">
+      <div className="relative z-20 mx-auto flex min-h-[calc(100svh-5rem)] w-full min-w-0 max-w-7xl items-center py-5 sm:min-h-[calc(100svh-6rem)] sm:py-6 lg:min-h-[calc(100svh-8rem)] lg:py-0">
         <div className="grid w-full gap-8 lg:grid-cols-[1.05fr_0.7fr] lg:items-end">
-          <div className="max-w-5xl lg:col-span-2">
+          <div className="min-w-0 lg:col-span-2">
             <FadeContent blur>
               <div className="inline-flex max-w-full flex-wrap items-center gap-1.5 rounded-full border border-white/18 bg-white/10 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.12em] text-white/88 shadow-sm backdrop-blur sm:gap-2 sm:px-4 sm:py-2 sm:text-[11px] sm:tracking-[0.18em]">
                 FilmPermit.ae
@@ -34,7 +35,7 @@ export function Hero() {
               </div>
             </FadeContent>
 
-            <h1 className="mt-5 max-w-5xl text-[2.05rem] font-black leading-[1.04] tracking-normal sm:mt-6 sm:text-4xl md:text-5xl lg:text-[3.35rem]">
+            <h1 className="mt-5 max-w-5xl text-[clamp(1.85rem,9vw,2.05rem)] font-black leading-[1.06] tracking-normal sm:mt-6 sm:text-4xl md:text-5xl lg:text-[3.35rem]">
               <BlurText as="span" className="block" text="Apply for UAE Filming &" />
               <BlurText
                 as="span"
@@ -74,10 +75,6 @@ export function Hero() {
               </div>
             </FadeContent>
 
-            <FadeContent className="mt-10 max-w-5xl translate-y-3 sm:mt-12" delay={340} blur>
-              <LogoLoopLite />
-            </FadeContent>
-
             <FadeContent className="mt-7 sm:mt-9" delay={360} blur>
               <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
                 <Link
@@ -100,6 +97,10 @@ export function Hero() {
                   Explore Our Services
                 </Link>
               </div>
+            </FadeContent>
+
+            <FadeContent className="mt-14 w-full sm:mt-16 lg:mt-20" delay={420} blur>
+              <LogoLoopLite />
             </FadeContent>
           </div>
         </div>

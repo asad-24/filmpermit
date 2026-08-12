@@ -49,10 +49,9 @@ export default function ArticlePage() {
             Back to articles
           </Link>
 
-          <div className="mt-8 flex flex-wrap gap-4 text-sm font-medium text-[#647086] dark:text-white/55">
-            <span>{article.category}</span>
-            <span>{article.date}</span>
-          </div>
+          <p className="mt-8 text-sm font-medium text-[#647086] dark:text-white/55">
+            {article.category}
+          </p>
 
           <h1 className="mt-6 text-4xl font-black leading-tight tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
             {article.title}
@@ -78,11 +77,7 @@ export default function ArticlePage() {
             </div>
           </div>
 
-          <p className="mt-10 text-lg font-black text-[#0a1024] dark:text-white">
-            Published: {article.published}
-          </p>
-
-          <div className="prose-space mt-16 rounded-[28px] bg-white/45 px-0 py-2 dark:bg-transparent">
+          <div className="prose-space mt-12 rounded-[28px] bg-white/45 px-0 py-2 dark:bg-transparent">
             {article.sections.map((section) => (
               <section className="mb-20" key={section.heading}>
                 <h2 className="text-3xl font-black tracking-normal text-[#0a1024] dark:text-white">

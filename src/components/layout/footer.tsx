@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone, Send } from "lucide-react";
 
+import { FacebookIcon, InstagramIcon, LinkedInIcon, YouTubeIcon } from "@/components/icons/social-icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -70,10 +71,6 @@ export function Footer() {
               </span>
             </Link>
 
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#0f172c]/10 bg-white/80 px-4 py-2 text-xs text-[#4a5874] dark:border-white/10 dark:bg-white/5 dark:text-white/80">
-              <span className="size-2 rounded-full bg-[#00a86b]" />
-              Dubai, UAE
-            </div>
           </div>
 
           <FooterLinks
@@ -115,11 +112,15 @@ export function Footer() {
               <div className="mt-3 flex flex-wrap gap-2">
                 {socialLinks.map((link) => (
                   <Link
-                    className="inline-flex h-9 items-center justify-center rounded-full border border-[#0f172c]/10 bg-white/75 px-3 text-xs font-black text-[#4a5874] transition hover:border-[#00a86b]/40 hover:text-[#00a86b] dark:border-white/10 dark:bg-white/5 dark:text-white/78 dark:hover:text-[#7de8c5]"
+                    aria-label={link.label}
+                    className="inline-flex size-10 items-center justify-center rounded-full border border-[#0f172c]/10 bg-white/75 text-[#4a5874] transition hover:border-[#00a86b]/40 hover:text-[#00a86b] dark:border-white/10 dark:bg-white/5 dark:text-white/78 dark:hover:text-[#7de8c5]"
                     href={link.href}
                     key={link.label}
                   >
-                    {link.label}
+                    {link.label === "Instagram" ? <InstagramIcon className="size-5" /> : null}
+                    {link.label === "LinkedIn" ? <LinkedInIcon className="size-5" /> : null}
+                    {link.label === "YouTube" ? <YouTubeIcon className="size-5" /> : null}
+                    {link.label === "Facebook" ? <FacebookIcon className="size-5" /> : null}
                   </Link>
                 ))}
               </div>

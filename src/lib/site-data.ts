@@ -306,6 +306,7 @@ export const socialLinks = [
   { label: "Instagram", href: "#" },
   { label: "LinkedIn", href: "#" },
   { label: "YouTube", href: "#" },
+  { label: "Facebook", href: "#" },
 ];
 
 export const faqs = [

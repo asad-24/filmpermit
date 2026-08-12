@@ -71,7 +71,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           </Link>
 
           <p className="mt-8 text-sm font-semibold text-[#647086] dark:text-white/55">
-            {post.category} · {post.date}
+            {post.category}
           </p>
           <h1 className="mt-5 text-4xl font-black leading-tight tracking-normal text-[#0a1024] md:text-5xl dark:text-white">
             {post.title}

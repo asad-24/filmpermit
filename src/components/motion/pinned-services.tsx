@@ -17,10 +17,7 @@ export function PinnedServices() {
       <div className="pointer-events-none absolute -right-32 top-20 h-80 w-80 rounded-full bg-[#00a86b]/12 blur-3xl" />
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b] dark:text-[#7de8c5]">
-            UAE permit services
-          </p>
-          <h2 className="mt-3 text-3xl font-black tracking-normal sm:mt-4 sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-black tracking-normal sm:text-4xl md:text-5xl">
             Our Services
           </h2>
           <p className="mt-4 text-sm leading-7 text-[#4a5874] dark:text-white/62 sm:mt-5 sm:text-base sm:leading-8">

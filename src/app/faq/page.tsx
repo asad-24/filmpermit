@@ -30,10 +30,7 @@ export default function FAQPage() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.68fr_1fr]">
           <RevealSection>
             <div className="sticky top-28 rounded-[32px] border border-[#0f172c]/10 bg-white/82 p-7 shadow-[0_18px_60px_rgba(15,23,44,0.08)] backdrop-blur dark:border-white/10 dark:bg-white/[0.06]">
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-[#00a86b]">
-                Permit desk notes
-              </p>
-              <h2 className="mt-4 text-3xl font-black tracking-normal text-[#0a1024] md:text-4xl dark:text-white">
+              <h2 className="text-3xl font-black tracking-normal text-[#0a1024] md:text-4xl dark:text-white">
                 Better questions create faster planning.
               </h2>
               <p className="mt-5 text-sm leading-7 text-[#647086] dark:text-white/60">

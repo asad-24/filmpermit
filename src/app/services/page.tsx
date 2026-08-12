@@ -19,7 +19,7 @@ export default function ServicesPage() {
     <>
       <PageHero
         align="center"
-        description="Complete production coordination for international crews filming anywhere in the UAE, from permits and customs to crew, equipment, locations, transport, and accommodation."
+        description="Complete production coordination for local and international crews filming anywhere in the UAE. From permits and customs, to crew, equipment, locations, transport, and accommodation."
         image="/images/production-services.png"
         title="Everything Your Production Needs Before Cameras Roll"
       />

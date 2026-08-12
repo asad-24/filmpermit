@@ -26,7 +26,7 @@ export function PermitApplicationForm() {
     const crewSize = String(form.get("crewSize") ?? "");
     const description = String(form.get("description") ?? "");
 
-    if (!name.trim() || !email.trim() || !phone.trim()) {
+    if (!name.trim() || !email.trim() || !phone.trim() || !projectType.trim()) {
       return;
     }
 
@@ -88,36 +88,35 @@ export function PermitApplicationForm() {
           <option>Music Video</option>
           <option>Social / Creator Content</option>
           <option>Feature / TV Production</option>
+          <option>Other</option>
         </select>
       </Field>
 
-      <Field label="Desired Filming Locations *">
+      <Field label="Desired Filming Locations">
         <input
           className={fieldClass}
           name="locations"
           placeholder="e.g., Dubai Marina, Desert, Heritage Village"
-          required
         />
       </Field>
 
       <div className="grid gap-5 md:grid-cols-3">
-        <Field label="Start Date *">
-          <DateLikeInput name="startDate" required />
+        <Field label="Start Date">
+          <DateLikeInput name="startDate" />
         </Field>
-        <Field label="End Date *">
-          <DateLikeInput name="endDate" required />
+        <Field label="End Date">
+          <DateLikeInput name="endDate" />
         </Field>
         <Field label="Crew Size">
           <input className={fieldClass} inputMode="numeric" name="crewSize" placeholder="e.g., 25" />
         </Field>
       </div>
 
-      <Field label="Project Description *">
+      <Field label="Project Description">
         <textarea
           className="min-h-36 w-full rounded-xl border border-[#c8d3e6] bg-[#f3f5fa] px-4 py-4 text-sm leading-7 text-[#0a1024] outline-none transition placeholder:text-[#9ba9c1] focus:border-[#0a1024] focus:ring-3 focus:ring-[#0a1024]/10"
           name="description"
           placeholder="Tell us about your project, specific requirements, or any questions you have..."
-          required
         />
       </Field>
 
