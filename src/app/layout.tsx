@@ -41,6 +41,9 @@ export const metadata: Metadata = {
       "Trusted UAE production support partner for permits, crew, equipment, logistics, and filming operations.",
     images: ["/images/hero-dubai-film-production.png"],
   },
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
@@ -65,6 +68,7 @@ export default function RootLayout({
     >
       <head>
         <InlineScript html={startupScript} />
+        <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
       </head>
       <body className="min-h-full flex flex-col">
         <StartupShell>

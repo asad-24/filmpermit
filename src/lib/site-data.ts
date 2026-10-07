@@ -18,7 +18,7 @@ export const site = {
   email: "info@filmpermit.ae",
   phone: "0000000000",
   whatsapp: "971501234567",
-  address: "Dubai, United Arab Emirates",
+  address: "Sahara Productions, Business Centre, Building A3, Business Park, Dubai South",
   url: "https://filmpermit.ae",
 };
 
@@ -305,7 +305,6 @@ export const footerLegalLinks = [
 export const socialLinks = [
   { label: "Instagram", href: "#" },
   { label: "LinkedIn", href: "#" },
-  { label: "YouTube", href: "#" },
   { label: "Facebook", href: "#" },
 ];
 

@@ -6,22 +6,14 @@ import { FadeContent } from "@/components/motion/fade-content";
 import { AnimatedCounter } from "@/components/motion/animated-counter";
 import { LogoLoopLite } from "@/components/motion/logo-loop-lite";
 import { buttonVariants } from "@/components/ui/button";
+import { HeroBackgroundVideo } from "@/components/sections/hero-background-video";
 import { heroCredibility } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 export function Hero() {
   return (
     <section className="relative z-10 min-h-[100svh] w-full max-w-full overflow-hidden bg-black px-4 pb-8 pt-20 text-white sm:px-6 sm:pb-10 sm:pt-24 md:pt-28 lg:pt-32">
-      <video
-        aria-hidden="true"
-        autoPlay
-        className="pointer-events-none absolute inset-0 z-[1] block h-full min-h-full w-full min-w-full max-w-none object-cover object-center opacity-35"
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        src="/assests/hero.mp4"
-      />
+      <HeroBackgroundVideo />
       <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(5,9,21,0.86)_0%,rgba(5,9,21,0.58)_48%,rgba(5,9,21,0.18)_100%)]" />
 
       <div className="relative z-20 mx-auto flex min-h-[calc(100svh-5rem)] w-full min-w-0 max-w-7xl items-center py-5 sm:min-h-[calc(100svh-6rem)] sm:py-6 lg:min-h-[calc(100svh-8rem)] lg:py-0">

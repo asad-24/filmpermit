@@ -73,9 +73,9 @@ export default function ServicesPage() {
                     <div className="mt-8">
                       <Link
                         className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#00a86b] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#18c987]"
-                        href={`/apply-permit?service=${service.id}`}
+                        href="/contact#contact-form"
                       >
-                        View Service &rarr;
+                        Contact Us &rarr;
                       </Link>
                     </div>
                   </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone, Send } from "lucide-react";
 
-import { FacebookIcon, InstagramIcon, LinkedInIcon, YouTubeIcon } from "@/components/icons/social-icons";
+import { FacebookIcon, InstagramIcon, LinkedInIcon } from "@/components/icons/social-icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -70,7 +70,9 @@ export function Footer() {
                 />
               </span>
             </Link>
-
+            <p className="mt-4 max-w-sm text-sm font-semibold leading-6 text-[#4a5874] dark:text-white/78">
+              Filmpermit.ae is a subsidiary of Sahara Productions DWC-LLC
+            </p>
           </div>
 
           <FooterLinks
@@ -106,10 +108,10 @@ export function Footer() {
               </a>
             </div>
             <div className="mt-6">
-              <p className="text-xs font-black uppercase tracking-[0.16em] text-[#647086] dark:text-white/55">
+              <p className="text-center text-xs font-black uppercase tracking-[0.16em] text-[#647086] dark:text-white/55">
                 Social Media Links
               </p>
-              <div className="mt-3 flex flex-wrap gap-2">
+              <div className="mt-3 flex flex-wrap justify-center gap-2">
                 {socialLinks.map((link) => (
                   <Link
                     aria-label={link.label}
@@ -119,7 +121,6 @@ export function Footer() {
                   >
                     {link.label === "Instagram" ? <InstagramIcon className="size-5" /> : null}
                     {link.label === "LinkedIn" ? <LinkedInIcon className="size-5" /> : null}
-                    {link.label === "YouTube" ? <YouTubeIcon className="size-5" /> : null}
                     {link.label === "Facebook" ? <FacebookIcon className="size-5" /> : null}
                   </Link>
                 ))}

@@ -31,21 +31,10 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
       return;
     }
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".fp-preloader-video-wrap",
-        { opacity: 0 },
-        { duration: 0.55, ease: "sine.out", opacity: 1 }
-      );
-
-      if (!video) {
-        finish();
-        return;
-      }
-
-      video.currentTime = 0;
-      void video.play().catch(finish);
-    }, rootRef);
+    if (!video) {
+      finish();
+      return;
+    }
 
     const revealPage = () => {
       gsap.to(root, {
@@ -56,14 +45,36 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
       });
     };
 
-    video?.addEventListener("ended", revealPage);
-    video?.addEventListener("error", finish);
+    const playVideo = () => {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+      video.currentTime = 0;
+      void video.play().catch(finish);
+    };
+
+    video.addEventListener("ended", revealPage);
+    video.addEventListener("error", finish);
+    video.addEventListener("canplay", playVideo, { once: true });
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".fp-preloader-video-wrap",
+        { opacity: 0 },
+        { duration: 0.55, ease: "sine.out", opacity: 1 }
+      );
+
+      playVideo();
+    }, rootRef);
     const safety = window.setTimeout(finish, 120000);
 
     return () => {
       window.clearTimeout(safety);
-      video?.removeEventListener("ended", revealPage);
-      video?.removeEventListener("error", finish);
+      video.removeEventListener("ended", revealPage);
+      video.removeEventListener("error", finish);
+      video.removeEventListener("canplay", playVideo);
       ctx.revert();
     };
   }, [onDone]);
@@ -87,7 +98,6 @@ export function StartupPreloader({ onDone }: { onDone: () => void }) {
               preload="auto"
               ref={videoRef}
             >
-              <source media="(max-width: 1024px)" src="/assests/mobile.mp4" type="video/mp4" />
               <source src="/assests/download.mp4" type="video/mp4" />
             </video>
           </div>
