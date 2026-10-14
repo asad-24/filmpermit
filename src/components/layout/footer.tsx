@@ -104,7 +104,7 @@ export function Footer() {
               </a>
               <a className="flex items-center gap-3 transition hover:text-[#0a1024] dark:hover:text-white" href={`tel:${site.phone}`}>
                 <Phone className="size-4 flex-none text-[#00a86b]" />
-                {site.phone}
+                {site.phoneDisplay}
               </a>
             </div>
             <div className="mt-6">

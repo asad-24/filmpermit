@@ -16,8 +16,9 @@ import {
 export const site = {
   name: "FilmPermit.ae",
   email: "info@filmpermit.ae",
-  phone: "0000000000",
-  whatsapp: "971501234567",
+  phone: "+971505656739",
+  phoneDisplay: "+ 971 50 5656 739",
+  whatsapp: "971505656739",
   address: "Sahara Productions, Business Centre, Building A3, Business Park, Dubai South",
   url: "https://filmpermit.ae",
 };

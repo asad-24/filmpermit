@@ -40,7 +40,7 @@ export default function ContactPage() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <ContactTile icon={<Mail className="size-5" />} label="Email" value={site.email} href={`mailto:${site.email}`} />
-                <ContactTile icon={<Phone className="size-5" />} label="Phone" value={site.phone} href={`tel:${site.phone}`} />
+                <ContactTile icon={<Phone className="size-5" />} label="Phone" value={site.phoneDisplay} href={`tel:${site.phone}`} />
                 <ContactTile icon={<WhatsAppIcon className="size-5" />} label="WhatsApp" value="Start a chat" href={`https://wa.me/${site.whatsapp}`} />
                 <ContactTile icon={<MapPin className="size-5" />} label="Headquarters" value={site.address} />
               </div>

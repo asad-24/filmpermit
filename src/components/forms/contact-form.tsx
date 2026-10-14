@@ -1,48 +1,16 @@
 "use client";
 
-import { FormEvent, useState } from "react";
 import { Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { site } from "@/lib/site-data";
+import { useFormSubmission } from "@/components/forms/use-form-submission";
 
 export function ContactForm() {
-  const [sent, setSent] = useState(false);
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const form = new FormData(event.currentTarget);
-    const name = String(form.get("name") ?? "");
-    const email = String(form.get("email") ?? "");
-    const phone = String(form.get("phone") ?? "");
-    const service = String(form.get("service") ?? "");
-    const message = String(form.get("message") ?? "");
-
-    if (!name.trim() || !email.trim() || !phone.trim()) {
-      return;
-    }
-
-    const subject = encodeURIComponent(`New production support enquiry from ${name}`);
-    const body = encodeURIComponent(
-      [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Phone: ${phone}`,
-        `Service: ${service}`,
-        "",
-        "Project Details:",
-        message,
-      ].join("\n")
-    );
-
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
-    setSent(true);
-  }
+  const { sent, pending, error, handleSubmit } = useFormSubmission("contact");
 
   return (
-    <form className="grid gap-4" onSubmit={handleSubmit}>
+    <form aria-busy={pending} className="grid gap-4" onSubmit={handleSubmit}>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-2 text-sm font-black text-[#24304a] dark:text-white/75">
           Full name
@@ -97,15 +65,16 @@ export function ContactForm() {
           required
         />
       </label>
-      <Button className="h-12 w-full rounded-full bg-[#00a86b] px-7 font-black text-white hover:bg-[#18c987] sm:w-fit" type="submit">
-       Submit
+      <Button className="h-12 w-full rounded-full bg-[#00a86b] px-7 font-black text-white hover:bg-[#18c987] sm:w-fit" disabled={pending} type="submit">
+        {pending ? "Submitting..." : "Submit"}
         <Send className="size-4" />
       </Button>
       {sent ? (
-        <p className="text-sm font-medium text-emerald-700">
-          Your email client has been opened with the enquiry details.
+        <p role="status" className="text-sm font-medium text-emerald-700 dark:text-emerald-400">
+          Thank you for contacting Filmpermit.ae. Our team will get in touch with you as soon as possible.
         </p>
       ) : null}
+      {error ? <p role="alert" className="text-sm font-medium text-red-700 dark:text-red-400">{error}</p> : null}
     </form>
   );
 }
